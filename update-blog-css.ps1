@@ -4,7 +4,6 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-# The standardized boilerplate template (just the CSS, no <style> tags)
 $boilerplate = @'
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -75,7 +74,7 @@ section{padding:60px 0}
 }
 '@
 
-# List of class/selector names that are considered "page-specific" (NOT in styles.css)
+# Page-specific class names (NOT in styles.css - these SHOULD be preserved)
 $pageSpecificClassNames = @(
     'comparison-table'
     'tldr-box'
@@ -98,47 +97,18 @@ $pageSpecificClassNames = @(
     'faq-item'
     'faq-question'
     'faq-answer'
-    '.toc{'
-    '.toc '
     'author-bio'
     'comparison-table-wrap'
+    '.toc'
 )
 
-# Known boilerplate-only class/selector names (to filter out orphaned media query rules)
-$boilerplateClassNames = @(
-    'menu-toggle'
-    'mobile-menu'
-    'nav-links'
-    'nav-dropdown'
-    'nav-cta'
-    'nav-logo'
-    'footer-grid'
-    'footer-brand'
-    'footer-social'
-    'footer-col'
-    'footer-bottom'
-    'footer-bottom-links'
-    'section-label'
-    'btn-primary'
-    'header nav'
-    'section '
-    'footer '
-    'nav-links'
-    '.container'
-    'html'
-    'body'
-    'img'
-    'a{'
-)
-
-# List of selectors covered by styles.css (to filter out)
+# Covered by styles.css - these should NOT be in page-specific CSS
 $coveredClassNames = @(
     'post-hero'
     'post-content'
     'post-meta'
     'post-toc'
     'featured-image-section'
-    'featured-image '
     'featured-image-caption'
     'verdict-box'
     'highlight-box'
@@ -155,43 +125,76 @@ $coveredClassNames = @(
     'comparison-col'
 )
 
-# Helper: check if line contains any of the given patterns
-function Test-ContainsAny {
-    param([string]$Line, [string[]]$Patterns)
-    $lower = $Line.ToLowerInvariant()
-    foreach ($p in $Patterns) {
+# Known boilerplate-only selectors (to filter out orphaned rules)
+$boilerplateFullPatterns = @(
+    'a{color:inherit}'
+    'img{max-width:100%'
+    'html{scroll-behavior:smooth}'
+    'body{font-family'
+    'section{padding:100px 0}'
+    'section{padding:60px 0}'
+    '.menu-toggle{display'
+    '.footer-grid{grid-template-columns:1fr 1fr'
+    '.footer-grid{grid-template-columns:1fr}'
+    '.footer-bottom{flex-direction:column'
+    'footer .footer-grid{grid-template-columns:1fr 1fr'
+)
+
+# Check if a rule text contains any page-specific class pattern
+function Test-IsPageSpecificRule {
+    param([string]$Rule)
+    $lower = $Rule.ToLowerInvariant()
+    foreach ($p in $pageSpecificClassNames) {
         if ($lower.Contains($p.ToLowerInvariant())) { return $true }
     }
     return $false
 }
 
-# Helper: check if a rule ONLY contains boilerplate/covered classes (no page-specific classes)
-function Test-OnlyBoilerplateOrCovered {
+# Check if a rule is definitely boilerplate (element selectors or known patterns)
+function Test-IsBoilerplateRule {
     param([string]$Rule)
-    # Get the selector part (everything before the first {)
-    $braceIdx = $Rule.IndexOf('{')
-    $selector = if ($braceIdx -ge 0) { $Rule.Substring(0, $braceIdx) } else { $Rule }
+    $trimmed = $Rule.Trim()
 
-    # Check if selector has any page-specific class
-    $hasPageSpecific = Test-ContainsAny -Line $selector -Patterns $pageSpecificClassNames
-    if ($hasPageSpecific) { return $false }
-
-    # Check if selector has any covered class
-    $hasCovered = Test-ContainsAny -Line $selector -Patterns $coveredClassNames
-    if ($hasCovered) { return $true }
-
-    # Check if selector has any boilerplate class
-    $hasBoilerplate = Test-ContainsAny -Line $selector -Patterns $boilerplateClassNames
-    if ($hasBoilerplate) { return $true }
-
-    # If it's a bare `@media` or `}` or empty, it's boilerplate
-    if ($selector -match '^\s*@media' -or $selector -match '^\s*\}' -or [string]::IsNullOrWhiteSpace($selector)) {
-        return $true
+    # Check exact matches against known boilerplate full patterns
+    foreach ($p in $boilerplateFullPatterns) {
+        if ($trimmed.StartsWith($p)) { return $true }
     }
 
-    # If it contains '::before', '::after', '.container', 'header', 'nav' it's likely boilerplate
-    if ($selector -match '(::before|::after|\.container|header\s|nav\s|footer\s)') {
-        return $true
+    # Get the selector part
+    $braceIdx = $trimmed.IndexOf('{')
+    $selector = if ($braceIdx -ge 0) { $trimmed.Substring(0, $braceIdx).Trim() } else { $trimmed }
+
+    # Bare HTML element selectors
+    $bareElements = @('html', 'body', 'a', 'img', 'section', 'footer', 'header')
+    if ($selector -in $bareElements) { return $true }
+
+    # Known boilerplate class patterns (in selector)
+    $boilerplateSelectors = @(
+        '.container'
+        '.nav-logo'
+        '.nav-links'
+        '.nav-dropdown'
+        '.nav-cta'
+        '.menu-toggle'
+        '.mobile-menu'
+        '.section-label'
+        '.btn-primary'
+        '.footer-grid'
+        '.footer-brand'
+        '.footer-social'
+        '.footer-col'
+        '.footer-bottom'
+        '.footer-bottom-links'
+        'header nav'
+        'footer '
+    )
+    foreach ($s in $boilerplateSelectors) {
+        if ($selector.Contains($s)) { return $true }
+    }
+
+    # Check if selector contains a covered class
+    foreach ($c in $coveredClassNames) {
+        if ($selector.Contains($c)) { return $true }
     }
 
     return $false
@@ -228,7 +231,7 @@ foreach ($dir in $articleDirs) {
     $beforeStyle = $content.Substring(0, $startIdx)
     $afterStyle = $content.Substring($endIdx + $styleEnd.Length)
 
-    # Split old CSS into individual rules
+    # Split old CSS into individual rules (by closing braces)
     $rules = $oldStyle -split '(?<=\})'
 
     # Process rules: keep only page-specific ones
@@ -239,14 +242,21 @@ foreach ($dir in $articleDirs) {
         if ([string]::IsNullOrEmpty($trimmedRule)) { continue }
         if ($trimmedRule -match '^\s*(/\*|$)') { continue }
         if ($trimmedRule -match '^\s*@media') { continue }
+        if ($trimmedRule -match '^\s*\}') { continue }
 
-        # If the rule has page-specific selectors, keep it
-        if (-not (Test-OnlyBoilerplateOrCovered -Rule $trimmedRule)) {
+        if (Test-IsPageSpecificRule -Rule $trimmedRule) {
             $pageSpecificCssLines += $trimmedRule
+        }
+        elseif (-not (Test-IsBoilerplateRule -Rule $trimmedRule)) {
+            # Not page-specific, not boilerplate - might be unknown custom CSS
+            # Only keep if it references custom classes with dots
+            if ($trimmedRule -match '\.\w') {
+                $pageSpecificCssLines += $trimmedRule
+            }
         }
     }
 
-    # Build new content: boilerplate + page-specific additions
+    # Build new content
     $newStyleContent = $boilerplate
 
     if ($pageSpecificCssLines.Count -gt 0) {
@@ -256,7 +266,6 @@ foreach ($dir in $articleDirs) {
         }
     }
 
-    # Reconstruct the file
     $newContent = $beforeStyle + $styleStart + "`n" + $newStyleContent + "`n" + $styleEnd + $afterStyle
 
     Set-Content -Path $filePath -Value $newContent -NoNewline -Encoding UTF8
