@@ -84,41 +84,48 @@
   /* ============================================
      Counter Animation
   ============================================ */
+  function animateCounter(el) {
+    var text = el.textContent.trim();
+    var numStr = text.replace(/[^0-9.]/g, '');
+    var suffix = text.replace(/[0-9.]/g, '');
+    var target = parseFloat(numStr, 10);
+    if (isNaN(target) || target === 0) return;
+
+    var duration = 2000;
+    var startTime = null;
+    var isDecimal = numStr.indexOf('.') > -1;
+
+    function animate(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = eased * target;
+      if (isDecimal) {
+        el.textContent = current.toFixed(1) + suffix;
+      } else {
+        el.textContent = Math.floor(current) + suffix;
+      }
+      if (progress < 1) {
+        window.requestAnimationFrame(animate);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    window.requestAnimationFrame(animate);
+  }
+
   function initCounters() {
-    var counters = document.querySelectorAll('.hero-stat h3');
+    var counters = document.querySelectorAll('.hero-stat h3, .metric-number');
     if (!counters.length) return;
 
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          var el = entry.target;
-          var text = el.textContent.trim();
-          var numStr = text.replace(/[^0-9]/g, '');
-          var suffix = text.replace(/[0-9]/g, '');
-          var target = parseInt(numStr, 10);
-          if (isNaN(target) || target === 0) return;
-
-          var duration = 2000;
-          var startTime = null;
-
-          function animate(timestamp) {
-            if (!startTime) startTime = timestamp;
-            var progress = Math.min((timestamp - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            var current = Math.floor(eased * target);
-            el.textContent = current + suffix;
-            if (progress < 1) {
-              window.requestAnimationFrame(animate);
-            } else {
-              el.textContent = target + suffix;
-            }
-          }
-
-          window.requestAnimationFrame(animate);
-          observer.unobserve(el);
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     counters.forEach(function(el) {
       observer.observe(el);
