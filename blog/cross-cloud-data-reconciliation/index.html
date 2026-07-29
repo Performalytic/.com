@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
@@ -102,6 +102,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e29
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 a{color:inherit}
 img{max-width:100%;height:auto}
+
+/* Nav */
 header nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.06)}
 header nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.25rem;color:#0f172a;letter-spacing:-0.5px}
@@ -118,7 +120,6 @@ header nav .container{display:flex;align-items:center;justify-content:space-betw
 .nav-dropdown a:hover{background:#f8fafc;color:#2563eb}
 .nav-cta{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff!important;padding:10px 32px!important;border-radius:100px;font-weight:600;font-size:0.88rem;letter-spacing:0.01em;transition:all 0.25s}
 .nav-cta:hover{background:linear-gradient(135deg,#1d4ed8,#6d28d9)!important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.35)}
-.nav-cta:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
 .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
 .menu-toggle span{display:block;width:24px;height:2px;background:#0f172a;border-radius:2px;transition:transform 0.3s,opacity 0.3s}
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;padding:24px;box-shadow:0 20px 40px rgba(0,0,0,0.1);flex-direction:column;gap:8px;z-index:999;max-height:calc(100vh - 72px);overflow-y:auto}
@@ -128,21 +129,20 @@ header nav .container{display:flex;align-items:center;justify-content:space-betw
 .mobile-menu a{text-decoration:none;color:#0f172a;font-size:0.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid #f1f5f9;display:block}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu .nav-cta{text-align:center;padding:14px;margin-top:8px;border-radius:100px;display:block}
+
 section{padding:100px 0}
 .section-label{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,0.08);padding:6px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;color:#2563eb;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
-.section-title{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:16px;color:#0f172a}
-.section-subtitle{font-size:1.1rem;color:#475569;max-width:640px;line-height:1.7;margin-bottom:48px}
-.text-center{text-align:center}
-.mx-auto{margin-left:auto;margin-right:auto}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#2563eb;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.2s;border:none;cursor:pointer}
 .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,99,235,0.3)}
+
+/* Footer */
 footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56px 0 24px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
 .footer-brand-logo{height:64px;max-width:160px;display:block;margin-bottom:16px}
 .footer-brand p{font-size:0.85rem;color:#94a3b8;line-height:1.7;max-width:320px}
 .footer-social{display:flex;gap:12px;margin-top:24px}
-.footer-social a{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#cbd5e1;text-decoration:none;transition:all 0.2s;font-size:0.9rem;font-weight:700}
+.footer-social a{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#cbd5e1;text-decoration:none;font-size:0.9rem;font-weight:700;transition:all 0.2s}
 .footer-social a:hover{border-color:#2563eb;color:#2563eb;background:rgba(37,99,235,0.1)}
 .footer-col h5{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#e2e8f0;margin-bottom:20px}
 .footer-col a{display:block;font-size:0.85rem;color:#94a3b8;text-decoration:none;padding:5px 0;transition:color 0.2s}
@@ -151,6 +151,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
 .footer-bottom a{color:#94a3b8;text-decoration:none}
 .footer-bottom a:hover{color:#cbd5e1}
 .footer-bottom-links{display:flex;gap:24px}
+
 @media(max-width:768px){
 .nav-links,.nav-cta{display:none}
 .menu-toggle{display:flex}
@@ -162,19 +163,17 @@ section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;gap:12px;text-align:center}
 }
-.post-hero .hero-description{color:#cbd5e1;font-size:1.15rem;max-width:700px;line-height:1.7;margin-top:16px}
-.featured-image-section{padding:40px 0}
-.featured-image-section .featured-image{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 14px 40px rgba(15,23,42,0.22)}
-.post-content{max-width:780px;margin:0 auto;font-size:1.05rem;color:#334155;line-height:1.8}
-.post-content p{margin-bottom:1.25rem}
-.post-content h2{margin-top:2.5rem;margin-bottom:1rem;color:#0f172a;font-size:1.65rem;font-weight:800;letter-spacing:-0.3px}
-.post-content h3{margin-top:2rem;margin-bottom:0.75rem;color:#0f172a;font-size:1.25rem;font-weight:700}
-.post-content ul,.post-content ol{margin-bottom:1.25rem;padding-left:1.5rem}
-.post-content li{margin-bottom:0.5rem}
-.post-content blockquote{border-left:4px solid #2563eb;background:#f8fafc;padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:0 12px 12px 0;font-style:italic;color:#475569;font-size:1.05rem}
-.post-content blockquote p{margin:0}
-.post-meta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:20px;font-size:0.85rem;color:#64748b;font-weight:500}
-.post-meta-category{background:rgba(37,99,235,0.08);padding:4px 12px;border-radius:100px;color:#2563eb;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.3px}
+
+/* Page-specific styles */
+a{color:inherit}
+section{padding:100px 0}
+.section-title{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:16px;color:#0f172a}
+.section-subtitle{font-size:1.1rem;color:#475569;max-width:640px;line-height:1.7;margin-bottom:48px}
+.text-center{text-align:center}
+.mx-auto{margin-left:auto;margin-right:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56px 0 24px}
+section{padding:60px 0}
 .toc{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem 2rem;margin:1.5rem 0 2rem}
 .toc h3{font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#94a3b8;margin-bottom:0.75rem;margin-top:0}
 .toc ol{margin:0;padding-left:1.25rem}
@@ -189,25 +188,12 @@ section{padding:60px 0}
 .author-bio-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;flex-shrink:0}
 .author-bio-body h4{font-size:0.95rem;font-weight:700;color:#0f172a;margin:0 0 4px}
 .author-bio-body p{font-size:0.88rem;color:#64748b;margin:0;line-height:1.6}
-.post-footer-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:3rem;padding-top:2rem;border-top:1px solid #e2e8f0}
-.post-footer-nav a{text-decoration:none;padding:1rem 1.25rem;border-radius:10px;border:1px solid #e2e8f0;transition:all 0.2s}
-.post-footer-nav a:hover{border-color:#2563eb;background:#f8fafc}
-.post-footer-nav a.next{text-align:right}
-.post-footer-nav .nav-label{display:block;font-size:0.78rem;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:4px}
-.post-footer-nav .nav-title{display:block;font-size:0.92rem;color:#0f172a;font-weight:600;line-height:1.4}
-.blog-cta{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff}
 .blog-cta .section-title{color:#fff}
 .blog-cta .section-subtitle{color:#cbd5e1}
 .blog-cta .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#e2e8f0;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;border:1px solid rgba(255,255,255,0.2);transition:all 0.2s;margin-left:12px}
 .blog-cta .btn-secondary:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.3)}
-.blog-cta-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px}
-.gradient-text{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-@media(max-width:640px){
-.post-footer-nav{grid-template-columns:1fr}
-.post-footer-nav a.next{text-align:left}
-.blog-cta-actions{flex-direction:column}
 .blog-cta .btn-secondary{margin-left:0}
-}
+
 </style>
 </head>
 <body>
@@ -307,7 +293,7 @@ section{padding:60px 0}
   <div class="container post-content">
     <p>Here's the reality of modern enterprise data: 87% of organizations now run workloads in two or more public clouds. The average enterprise uses 3.4 cloud providers plus on-premises systems. Each environment stores overlapping datasets in different formats, with different schemas, under different consistency models.</p>
 
-    <p>The result is a reconciliation nightmare. The same customer might have one record in AWS Redshift, another in Azure Synapse, and a third in GCP BigQuery — with different field names, different update times, and different levels of completeness. When a report asks for the "total customers," which number is correct?</p>
+    <p>The result is a reconciliation nightmare. The same customer might have one record in AWS Redshift, another in Azure Synapse, and a third in GCP BigQuery â€” with different field names, different update times, and different levels of completeness. When a report asks for the "total customers," which number is correct?</p>
 
     <p>This isn't a data quality problem you can solve with better ETL. It's a fundamental architectural challenge of operating data across heterogeneous cloud platforms. Here's how to approach it.</p>
 
@@ -326,7 +312,7 @@ section{padding:60px 0}
     </div>
 
     <h2 id="why-cross-cloud">Why Cross-Cloud Reconciliation Is So Hard</h2>
-    <p>Reconciling data within a single cloud is straightforward — you're operating within one ecosystem, one set of tools, one consistency model. Cross-cloud reconciliation introduces challenges at every layer:</p>
+    <p>Reconciling data within a single cloud is straightforward â€” you're operating within one ecosystem, one set of tools, one consistency model. Cross-cloud reconciliation introduces challenges at every layer:</p>
     <ul>
       <li><strong>Different storage formats:</strong> AWS favors Parquet, Azure leans toward Delta Lake, GCP uses Avro, and on-prem systems may use CSV or proprietary formats. Each format has different metadata, partitioning schemes, and compression characteristics.</li>
       <li><strong>Different schema evolution models:</strong> Schema-on-read (BigQuery) behaves differently than schema-on-write (Redshift, Synapse). A column added in one cloud may not propagate to others, creating silent drift.</li>
@@ -339,11 +325,11 @@ section{padding:60px 0}
     <p>There are three primary patterns for reconciling data across cloud platforms, each with different tradeoffs:</p>
 
     <h3>Hub-and-Spoke Reconciliation</h3>
-    <p>Select one environment as the reconciliation hub — typically your primary analytics platform or a neutral lakehouse layer. All other environments periodically publish their data profiles to the hub, which performs record-level matching, schema comparison, and drift detection. This pattern is straightforward to implement but creates a single point of truth and potential bottleneck.</p>
+    <p>Select one environment as the reconciliation hub â€” typically your primary analytics platform or a neutral lakehouse layer. All other environments periodically publish their data profiles to the hub, which performs record-level matching, schema comparison, and drift detection. This pattern is straightforward to implement but creates a single point of truth and potential bottleneck.</p>
     <p><strong>Best for:</strong> Organizations with a clear primary analytics platform and a need for a single source of truth.</p>
 
     <h3>Peer-to-Peer Reconciliation</h3>
-    <p>Each environment maintains its own reconciliation agent that compares data with every other environment. When drift is detected, alerts are raised in all affected environments simultaneously. This pattern is resilient (no single point of failure) but creates combinatorial complexity — n environments require n(n-1)/2 pairwise comparisons.</p>
+    <p>Each environment maintains its own reconciliation agent that compares data with every other environment. When drift is detected, alerts are raised in all affected environments simultaneously. This pattern is resilient (no single point of failure) but creates combinatorial complexity â€” n environments require n(n-1)/2 pairwise comparisons.</p>
     <p><strong>Best for:</strong> Organizations with evenly distributed workloads across clouds and high availability requirements.</p>
 
     <h3>Federated Catalog Reconciliation</h3>
@@ -363,21 +349,21 @@ section{padding:60px 0}
     </ul>
 
     <blockquote>
-      "Schema drift between clouds is rarely a technical failure — it's a communication failure. The systems are fine; the coordination between them isn't."
+      "Schema drift between clouds is rarely a technical failure â€” it's a communication failure. The systems are fine; the coordination between them isn't."
     </blockquote>
 
     <h2 id="data-drift">Data Drift Monitoring</h2>
-    <p>Beyond schema differences, cross-cloud environments suffer from data drift — where the same logical dataset has different content across clouds. Data drift manifests in several ways:</p>
+    <p>Beyond schema differences, cross-cloud environments suffer from data drift â€” where the same logical dataset has different content across clouds. Data drift manifests in several ways:</p>
     <ul>
       <li><strong>Record count drift:</strong> Different numbers of records for the same logical entity across clouds. Caused by timing differences, duplicate filtering inconsistencies, or partition boundary misalignment.</li>
       <li><strong>Value distribution drift:</strong> The same metric computed differently across clouds (e.g., SUM(revenue) differs because one environment includes tax and another doesn't).</li>
       <li><strong>Temporal drift:</strong> Data that exists in one environment but hasn't arrived in another yet. The "latest" record may be 1 minute old in AWS and 45 minutes old in GCP.</li>
-      <li><strong>Null pattern drift:</strong> Different null handling across clouds — one environment represents missing values as NULL, another as empty string, another as 0.</li>
+      <li><strong>Null pattern drift:</strong> Different null handling across clouds â€” one environment represents missing values as NULL, another as empty string, another as 0.</li>
     </ul>
     <p>Data drift monitoring requires statistical comparison of data profiles across environments: row counts, column-level aggregates, distribution shapes, and null percentages. When these profiles diverge beyond configured thresholds, an alert is raised.</p>
 
     <h2 id="lakehouse">Reconciliation at the Lakehouse Layer</h2>
-    <p>The lakehouse architecture — with open formats like Apache Iceberg, Delta Lake, and Apache Hudi — offers a promising foundation for cross-cloud reconciliation. By storing data in open formats that any cloud can read, the lakehouse provides a neutral ground for comparison.</p>
+    <p>The lakehouse architecture â€” with open formats like Apache Iceberg, Delta Lake, and Apache Hudi â€” offers a promising foundation for cross-cloud reconciliation. By storing data in open formats that any cloud can read, the lakehouse provides a neutral ground for comparison.</p>
     <p>Key capabilities for lakehouse reconciliation:</p>
     <ul>
       <li><strong>Cross-cloud catalog integration:</strong> A lakehouse catalog (like Nessie or the Apache Iceberg REST catalog) can provide a unified metadata namespace across clouds. Tables have a single logical definition even when their physical data lives in multiple environments.</li>
@@ -389,28 +375,28 @@ section{padding:60px 0}
     <p>Our team at Performalytic has deep experience building cross-cloud lakehouse architectures. See our <a href="/enterprise-solution-development/">enterprise solution development</a> services for more on how we approach these challenges.</p>
 
     <h2 id="eventual-consistency">Handling Eventual Consistency</h2>
-    <p>One of the most frustrating aspects of cross-cloud reconciliation is that the data is rarely perfectly in sync. Different clouds have different consistency models, and real-time synchronization across geographic regions is constrained by physics — data takes time to propagate.</p>
+    <p>One of the most frustrating aspects of cross-cloud reconciliation is that the data is rarely perfectly in sync. Different clouds have different consistency models, and real-time synchronization across geographic regions is constrained by physics â€” data takes time to propagate.</p>
     <p>Here's how to handle it:</p>
     <ul>
       <li><strong>Define acceptable drift windows:</strong> Not every inconsistency needs immediate resolution. Define SLAs for data consistency per entity and data class. "Orders" might have a 5-minute drift window. "Customer profiles" might have 1 hour. "Historical aggregates" might have 24 hours.</li>
-      <li><strong>Use version-based reconciliation:</strong> Instead of comparing raw values, compare version markers. Each record carries a version timestamp or sequence number. Reconciliation compares versions, not values — if two environments have the same version for a record, no further check is needed.</li>
+      <li><strong>Use version-based reconciliation:</strong> Instead of comparing raw values, compare version markers. Each record carries a version timestamp or sequence number. Reconciliation compares versions, not values â€” if two environments have the same version for a record, no further check is needed.</li>
       <li><strong>Implement reconciliation priority levels:</strong> Critical inconsistencies (e.g., financial totals don't match) trigger immediate investigation. Non-critical inconsistencies (e.g., minor count differences in staging tables) are queued for periodic review.</li>
-      <li><strong>Build idempotent reconciliation processes:</strong> Reconcile records should be replayable — running the same reconciliation twice should produce the same result, and re-running should not duplicate corrections.</li>
+      <li><strong>Build idempotent reconciliation processes:</strong> Reconcile records should be replayable â€” running the same reconciliation twice should produce the same result, and re-running should not duplicate corrections.</li>
     </ul>
 
     <blockquote>
-      "You can't eliminate eventual consistency. You can only decide how much inconsistency you can live with — and for how long."
+      "You can't eliminate eventual consistency. You can only decide how much inconsistency you can live with â€” and for how long."
     </blockquote>
 
     <h2 id="practical-path">A Practical Path Forward</h2>
     <p>Getting started with cross-cloud reconciliation doesn't require standing up a massive platform. Here's a practical approach:</p>
     <ol>
-      <li><strong>Map your cross-cloud data flows</strong> — Document every dataset that exists in more than one cloud. Include format, schema, update frequency, and consistency model. You'll likely find 10-20 datasets that are the highest priority for reconciliation.</li>
-      <li><strong>Start with a single critical entity</strong> — Pick one dataset where inconsistency causes the most pain (customer, order, product are good candidates). Implement record-level reconciliation for that dataset first.</li>
-      <li><strong>Establish baseline profiles</strong> — Capture data profiles (row counts, column stats, schema) from each environment for your critical entity. This gives you a baseline to measure drift against.</li>
-      <li><strong>Implement automated schema comparison</strong> — Use a federated catalog or custom scripts to compare schemas across clouds on a scheduled basis. Schema drift detection is lower effort than data-level reconciliation and catches many issues early.</li>
-      <li><strong>Add data-level reconciliation</strong> — Implement record-level comparison starting with high-value reconciled outputs. Use hash-based comparison (compare hash of sorted records) rather than row-by-row comparison for performance.</li>
-      <li><strong>Establish reconciliation governance</strong> — Define who owns each cross-cloud dataset, what the acceptable drift windows are, and what happens when reconciliation fails. Without governance, reconciliation becomes a technical exercise without business impact.</li>
+      <li><strong>Map your cross-cloud data flows</strong> â€” Document every dataset that exists in more than one cloud. Include format, schema, update frequency, and consistency model. You'll likely find 10-20 datasets that are the highest priority for reconciliation.</li>
+      <li><strong>Start with a single critical entity</strong> â€” Pick one dataset where inconsistency causes the most pain (customer, order, product are good candidates). Implement record-level reconciliation for that dataset first.</li>
+      <li><strong>Establish baseline profiles</strong> â€” Capture data profiles (row counts, column stats, schema) from each environment for your critical entity. This gives you a baseline to measure drift against.</li>
+      <li><strong>Implement automated schema comparison</strong> â€” Use a federated catalog or custom scripts to compare schemas across clouds on a scheduled basis. Schema drift detection is lower effort than data-level reconciliation and catches many issues early.</li>
+      <li><strong>Add data-level reconciliation</strong> â€” Implement record-level comparison starting with high-value reconciled outputs. Use hash-based comparison (compare hash of sorted records) rather than row-by-row comparison for performance.</li>
+      <li><strong>Establish reconciliation governance</strong> â€” Define who owns each cross-cloud dataset, what the acceptable drift windows are, and what happens when reconciliation fails. Without governance, reconciliation becomes a technical exercise without business impact.</li>
     </ol>
 
     <h2 id="faq">Frequently Asked Questions</h2>
@@ -438,7 +424,7 @@ section{padding:60px 0}
       </div>
       <div class="faq-item">
         <h3>How often should cross-cloud reconciliation run?</h3>
-        <p>Frequency depends on data criticality and change velocity. Real-time financial data may need sub-minute reconciliation. customer profiles may need hourly. Historical aggregates may be daily. The key is monitoring drift over time and adjusting frequency based on observed drift patterns — not running all reconciliations at the same frequency.</p>
+        <p>Frequency depends on data criticality and change velocity. Real-time financial data may need sub-minute reconciliation. customer profiles may need hourly. Historical aggregates may be daily. The key is monitoring drift over time and adjusting frequency based on observed drift patterns â€” not running all reconciliations at the same frequency.</p>
       </div>
     </div>
 
@@ -450,7 +436,7 @@ section{padding:60px 0}
       </div>
     </div>
 
-    <p>At Performalytic, we help enterprises design and implement cross-cloud data reconciliation frameworks that ensure data consistency across AWS, Azure, GCP, and on-premises environments. From architecture design and schema drift detection to lakehouse integration and reconciliation governance — we build solutions that solve the hardest problems in multi-cloud data management. <a href="/contact/">Schedule a consultation</a> to learn how we can help you reconcile data across your cloud platforms.</p>
+    <p>At Performalytic, we help enterprises design and implement cross-cloud data reconciliation frameworks that ensure data consistency across AWS, Azure, GCP, and on-premises environments. From architecture design and schema drift detection to lakehouse integration and reconciliation governance â€” we build solutions that solve the hardest problems in multi-cloud data management. <a href="/contact/">Schedule a consultation</a> to learn how we can help you reconcile data across your cloud platforms.</p>
 
     <nav class="post-footer-nav" aria-label="Post navigation">
       <a href="/blog/mdm-ai-era/">
@@ -469,7 +455,7 @@ section{padding:60px 0}
   <div class="container text-center">
     <span class="section-label">Unify Your Multi-Cloud Data</span>
     <h2 class="section-title">Stop guessing which cloud has the <span class="gradient-text">right</span> data.</h2>
-    <p class="section-subtitle">Our data architects will help you design and implement a cross-cloud data reconciliation framework — from schema drift detection and data profiling to lakehouse integration and reconciliation governance.</p>
+    <p class="section-subtitle">Our data architects will help you design and implement a cross-cloud data reconciliation framework â€” from schema drift detection and data profiling to lakehouse integration and reconciliation governance.</p>
     <div class="blog-cta-actions">
       <a href="/contact/" class="btn-primary">Schedule a Free Consultation &rarr;</a>
       <a href="/enterprise-solution-development/" class="btn-secondary">Explore Data Architecture Services</a>
@@ -484,7 +470,7 @@ section{padding:60px 0}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" aria-label="Performalytic home"><img src="/assets/images/performalytic-logo-original.png" alt="Performalytic" class="footer-brand-logo" width="397" height="69" loading="lazy" decoding="async" /></a>
-        <p>We help enterprises turn data into a competitive advantage. From strategy and analytics to AI and application development — we deliver solutions that drive growth.</p>
+        <p>We help enterprises turn data into a competitive advantage. From strategy and analytics to AI and application development â€” we deliver solutions that drive growth.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/performalytic-corp/" target="_blank" rel="noopener noreferrer" aria-label="Follow Performalytic on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://twitter.com/performalytic-corp" target="_blank" rel="noopener noreferrer" aria-label="Follow Performalytic on X"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
