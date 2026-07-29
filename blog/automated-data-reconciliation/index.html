@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
@@ -88,11 +88,11 @@ gtag('config', 'G-FV09CSCD2C');
   "mainEntity":[{
     "@type":"Question",
     "name":"What is automated data reconciliation?",
-    "acceptedAnswer":{"@type":"Answer","text":"Automated data reconciliation is the process of systematically comparing data across two or more systems, databases, or data sets to identify discrepancies, validate accuracy, and ensure consistency â€” all without manual intervention. It uses predefined rules, algorithms, and comparison logic to detect mismatches in records, values, totals, and metadata between source and target systems."}
+    "acceptedAnswer":{"@type":"Answer","text":"Automated data reconciliation is the process of systematically comparing data across two or more systems, databases, or data sets to identify discrepancies, validate accuracy, and ensure consistency — all without manual intervention. It uses predefined rules, algorithms, and comparison logic to detect mismatches in records, values, totals, and metadata between source and target systems."}
   },{
     "@type":"Question",
     "name":"What are the main types of data reconciliation?",
-    "acceptedAnswer":{"@type":"Answer","text":"The three main types are: (1) Horizontal reconciliation â€” comparing data across columns within the same record, (2) Vertical reconciliation â€” comparing aggregate totals across rows, and (3) Cross-system reconciliation â€” comparing data between two different systems or databases. Additional types include inter-company reconciliation (matching transactions between business entities) and bank reconciliation (matching internal records with bank statements)."}
+    "acceptedAnswer":{"@type":"Answer","text":"The three main types are: (1) Horizontal reconciliation — comparing data across columns within the same record, (2) Vertical reconciliation — comparing aggregate totals across rows, and (3) Cross-system reconciliation — comparing data between two different systems or databases. Additional types include inter-company reconciliation (matching transactions between business entities) and bank reconciliation (matching internal records with bank statements)."}
   },{
     "@type":"Question",
     "name":"What tools are best for automated data reconciliation?",
@@ -100,7 +100,7 @@ gtag('config', 'G-FV09CSCD2C');
   },{
     "@type":"Question",
     "name":"How do you implement data reconciliation in a data lake?",
-    "acceptedAnswer":{"@type":"Answer","text":"For data lakes, implement reconciliation at each layer: (1) Ingestion layer â€” validate source-to-landing completeness and schema conformance, (2) Processing layer â€” compare raw vs transformed records, (3) Serving layer â€” validate aggregated outputs against source systems. Use hash-based checksums for large datasets, row-count validation for completeness, and statistical sampling for deep content comparison. Tools like Great Expectations, dbt tests, or custom PySpark jobs work well in lake architectures."}
+    "acceptedAnswer":{"@type":"Answer","text":"For data lakes, implement reconciliation at each layer: (1) Ingestion layer — validate source-to-landing completeness and schema conformance, (2) Processing layer — compare raw vs transformed records, (3) Serving layer — validate aggregated outputs against source systems. Use hash-based checksums for large datasets, row-count validation for completeness, and statistical sampling for deep content comparison. Tools like Great Expectations, dbt tests, or custom PySpark jobs work well in lake architectures."}
   }]
 }]</script>
 
@@ -174,42 +174,10 @@ section{padding:60px 0}
 }
 
 /* Page-specific styles */
-.section-title{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.5px;margin-bottom:16px;color:#0f172a}
-.section-subtitle{font-size:1.1rem;color:#475569;max-width:640px;line-height:1.7;margin-bottom:48px}
-.text-center{text-align:center}
-.mx-auto{margin-left:auto;margin-right:auto}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#1e293b;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;border:1px solid #e2e8f0;transition:all 0.2s}
 .btn-secondary:hover{background:#f8fafc;border-color:#cbd5e1}
 .btn-secondary-light{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#e2e8f0;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;border:1px solid rgba(255,255,255,0.2);transition:all 0.2s}
 .btn-secondary-light:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.3)}
-.comparison-table thead{background:#0f172a;color:#fff}
-.comparison-table th{padding:14px 16px;text-align:left;font-weight:700;border-right:1px solid rgba(255,255,255,0.1)}
-.comparison-table th:last-child{border-right:none}
-.comparison-table td{padding:14px 16px;border-bottom:1px solid #e2e8f0;color:#334155}
-.comparison-table tr:hover td{background:#f8fafc}
-.comparison-table .feature-col{font-weight:700;color:#0f172a;width:30%}
-.comparison-table .winner{background:#ecfdf5;font-weight:600}
-.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.verdict-item{padding:20px;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
-.verdict-item h4{font-size:0.95rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.verdict-item p{font-size:0.88rem;color:#475569;line-height:1.7;margin:0}
-.tldr-box h3{font-size:1.1rem;font-weight:800;margin-bottom:16px}
-.tldr-box ul{list-style:none;padding:0;margin:0}
-.tldr-box li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.95rem;color:#cbd5e1;display:flex;gap:12px}
-.tldr-box li:last-child{border-bottom:none}
-.tldr-box .tldr-icon{flex-shrink:0;width:20px;height:20px;background:rgba(37,99,235,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#60a5fa}
-.diagram-section{padding:40px 0}
-.diagram-section .diagram-container{background:#0f172a;border-radius:12px;padding:24px;margin:24px 0;border:1px solid rgba(255,255,255,0.08);overflow-x:auto}
-.diagram-section .diagram-container svg{width:100%;min-width:700px;height:auto}
-.diagram-section .diagram-caption{text-align:center;color:#94a3b8;font-size:0.85rem;margin-top:16px;font-style:italic}
-.blog-cta .section-title{color:#fff}
-.blog-cta .section-subtitle{color:#cbd5e1}
-.verdict-grid{grid-template-columns:1fr}
-.tldr-box{padding:24px 16px}
-.comparison-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px -24px;padding:0 24px}
-.comparison-table{min-width:600px}
-.comparison-table th,.comparison-table td{padding:10px 8px;font-size:0.78rem}
 
 </style>
 </head>
@@ -301,10 +269,10 @@ section{padding:60px 0}
     <div class="post-content">
 
       <h2>What is Data Reconciliation?</h2>
-      <p>Data reconciliation is the process of comparing and validating data across two or more systems, databases, or data sets to identify discrepancies, verify accuracy, and ensure consistency. In 2026, with the average enterprise maintaining 900+ data sources, automated data reconciliation isn't optional â€” it's a foundational requirement for trustworthy analytics, regulatory compliance, and operational integrity.</p>
+      <p>Data reconciliation is the process of comparing and validating data across two or more systems, databases, or data sets to identify discrepancies, verify accuracy, and ensure consistency. In 2026, with the average enterprise maintaining 900+ data sources, automated data reconciliation isn't optional — it's a foundational requirement for trustworthy analytics, regulatory compliance, and operational integrity.</p>
 
       <div class="tldr-box">
-        <h3>TL;DR â€” Key Takeaways</h3>
+        <h3>TL;DR — Key Takeaways</h3>
         <ul>
           <li><span class="tldr-icon">1</span>Data reconciliation validates that data is consistent, complete, and accurate across systems</li>
           <li><span class="tldr-icon">2</span>Three core types: horizontal (row-level), vertical (aggregate), and cross-system</li>
@@ -387,7 +355,7 @@ section{padding:60px 0}
             </defs>
           </svg>
         </div>
-        <p class="diagram-caption">Automated data reconciliation flow: sources â†’ ingestion â†’ comparison engine â†’ matched/mismatched outcomes</p>
+        <p class="diagram-caption">Automated data reconciliation flow: sources → ingestion → comparison engine → matched/mismatched outcomes</p>
       </div>
 
       <h2>Why Manual Reconciliation Fails</h2>
@@ -401,7 +369,7 @@ section{padding:60px 0}
       </ul>
 
       <blockquote>
-        <p>"If you can't measure it, you can't manage it. And if you can't reconcile it, you can't trust it." â€” Data engineering principle</p>
+        <p>"If you can't measure it, you can't manage it. And if you can't reconcile it, you can't trust it." — Data engineering principle</p>
       </blockquote>
 
       <h2>The Three Types of Data Reconciliation</h2>
@@ -415,7 +383,7 @@ section{padding:60px 0}
       </ul>
 
       <h3>2. Vertical Reconciliation (Aggregate-Level)</h3>
-      <p>Compares summary statistics â€” totals, counts, averages, min/max â€” between source and target. Does not validate individual records but catches aggregate-level discrepancies that affect reports and dashboards.</p>
+      <p>Compares summary statistics — totals, counts, averages, min/max — between source and target. Does not validate individual records but catches aggregate-level discrepancies that affect reports and dashboards.</p>
       <ul>
         <li><strong>Best for:</strong> Financial reporting, executive dashboards, compliance audits</li>
         <li><strong>Key challenge:</strong> Choosing the right metrics; masking row-level issues</li>
@@ -493,19 +461,19 @@ section{padding:60px 0}
             <rect x="40" y="20" width="820" height="80" rx="12" fill="url(#layer1)" opacity="0.15" stroke="#2563eb" stroke-width="1"/>
             <text x="60" y="50" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#2563eb">LAYER 1</text>
             <text x="60" y="70" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0f172a">Ingestion Reconciliation</text>
-            <text x="300" y="70" font-family="Inter, sans-serif" font-size="11" fill="#475569">Source â†’ Landing: row counts, schema validation, null checks, type matching</text>
+            <text x="300" y="70" font-family="Inter, sans-serif" font-size="11" fill="#475569">Source → Landing: row counts, schema validation, null checks, type matching</text>
 
             <!-- Layer 2: Processing -->
             <rect x="40" y="120" width="820" height="80" rx="12" fill="url(#layer2)" opacity="0.15" stroke="#7c3aed" stroke-width="1"/>
             <text x="60" y="150" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7c3aed">LAYER 2</text>
             <text x="60" y="170" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0f172a">Processing Reconciliation</text>
-            <text x="300" y="170" font-family="Inter, sans-serif" font-size="11" fill="#475569">Raw â†’ Transformed: business rule validation, aggregation checks, deduplication</text>
+            <text x="300" y="170" font-family="Inter, sans-serif" font-size="11" fill="#475569">Raw → Transformed: business rule validation, aggregation checks, deduplication</text>
 
             <!-- Layer 3: Serving -->
             <rect x="40" y="220" width="820" height="80" rx="12" fill="url(#layer3)" opacity="0.15" stroke="#059669" stroke-width="1"/>
             <text x="60" y="250" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#059669">LAYER 3</text>
             <text x="60" y="270" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0f172a">Serving Reconciliation</text>
-            <text x="300" y="270" font-family="Inter, sans-serif" font-size="11" fill="#475569">Warehouse â†’ Reports: aggregate matching, cross-system totals, freshness checks</text>
+            <text x="300" y="270" font-family="Inter, sans-serif" font-size="11" fill="#475569">Warehouse → Reports: aggregate matching, cross-system totals, freshness checks</text>
 
             <!-- Arrows between layers -->
             <path d="M450 100 L450 120" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
@@ -555,11 +523,11 @@ section{padding:60px 0}
         <h3>Reconciliation Rule Example (YAML)</h3>
         <div class="verdict-grid">
           <div class="verdict-item">
-            <h4>âœ… Completeness Check</h4>
-            <p><code>source_count: SELECT COUNT(*) FROM orders WHERE date = CURRENT_DATE</code><br/>Tolerance: Â±0.1% of expected count</p>
+            <h4>✅ Completeness Check</h4>
+            <p><code>source_count: SELECT COUNT(*) FROM orders WHERE date = CURRENT_DATE</code><br/>Tolerance: ±0.1% of expected count</p>
           </div>
           <div class="verdict-item">
-            <h4>âœ… Accuracy Check</h4>
+            <h4>✅ Accuracy Check</h4>
             <p><code>SELECT order_id, source.total, target.total FROM source JOIN target ON ... WHERE source.total != target.total</code></p>
           </div>
         </div>
@@ -745,7 +713,7 @@ section{padding:60px 0}
       </ul>
 
       <blockquote>
-        <p>"Reconciliation is not a one-time project â€” it's a continuous practice. The goal is to make data trustworthiness the default, not the exception."</p>
+        <p>"Reconciliation is not a one-time project — it's a continuous practice. The goal is to make data trustworthiness the default, not the exception."</p>
       </blockquote>
 
       <!-- Post Navigation -->

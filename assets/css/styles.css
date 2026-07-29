@@ -880,3 +880,75 @@ section:first-of-type {
 .post-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 70%);pointer-events:none}
 .post-hero h1{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:var(--space-md);max-width:800px}
 .post-hero .hero-description{color:#cbd5e1;font-size:1.08rem;max-width:640px;line-height:1.7}
+
+/* Comparison Table (page-specific components) */
+.comparison-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
+.comparison-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px -24px;padding:0 24px}
+.comparison-table thead{background:#0f172a;color:#fff}
+.comparison-table th{padding:14px 16px;text-align:left;font-weight:700;border-right:1px solid rgba(255,255,255,.1)}
+.comparison-table th:last-child{border-right:none}
+.comparison-table td{padding:14px 16px;border-bottom:1px solid #e2e8f0;color:#334155}
+.comparison-table tr:hover td{background:#f8fafc}
+.comparison-table .feature-col{font-weight:700;color:#0f172a;width:30%}
+.comparison-table .winner{background:#ecfdf5;font-weight:600}
+
+/* TLDR Box */
+.tldr-box{background:#0f172a;color:#fff;border-radius:16px;padding:32px;margin:32px 0}
+.tldr-box h3{font-size:1.1rem;font-weight:800;margin-bottom:16px;color:#fff}
+.tldr-box ul{list-style:none;padding:0;margin:0}
+.tldr-box li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.95rem;color:#cbd5e1;display:flex;gap:12px}
+.tldr-box li:last-child{border-bottom:none}
+.tldr-box .tldr-icon{flex-shrink:0;width:20px;height:20px;background:rgba(37,99,235,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#60a5fa}
+
+/* Diagram containers */
+.architecture-diagram,.use-case-diagram,.diagram-section{padding:40px 0}
+.architecture-diagram .diagram-container,.use-case-diagram .diagram-container{background:#0f172a;border-radius:12px;padding:24px;margin:24px 0;border:1px solid rgba(255,255,255,.08);overflow-x:auto}
+.architecture-diagram .diagram-container svg,.use-case-diagram .diagram-container svg{width:100%;min-width:700px;height:auto}
+.architecture-diagram .diagram-caption,.use-case-diagram .diagram-caption{text-align:center;color:#94a3b8;font-size:.85rem;margin-top:16px;font-style:italic}
+
+/* Pricing Cards */
+.pricing-comparison{padding:40px 0}
+.pricing-comparison .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+.pricing-comparison .pricing-card{background:#1e293b;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:28px}
+.pricing-comparison .pricing-card h3{font-size:1.1rem;margin-bottom:16px}
+.pricing-comparison .pricing-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem}
+.pricing-comparison .pricing-item:last-child{border-bottom:none}
+.pricing-comparison .pricing-label{color:#94a3b8}
+.pricing-comparison .pricing-value{color:#e2e8f0;font-weight:600}
+
+/* FAQ Section */
+.faq-section{margin:32px 0}
+.faq-item{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-question{padding:16px 20px;background:#f8fafc;font-weight:600;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-answer{padding:16px 20px;color:#475569;font-size:.95rem;line-height:1.7}
+
+/* Author Bio */
+.author-bio{display:flex;gap:20px;align-items:flex-start;padding:24px;background:#f8fafc;border-radius:16px;margin:40px 0}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#7c3aed);flex-shrink:0}
+.author-bio-info h4{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.author-bio-info p{font-size:.9rem;color:#64748b;line-height:1.6;margin:0}
+
+/* Verdict Grid (page-specific) */
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.verdict-item{padding:20px;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
+.verdict-item h4{font-size:.95rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;color:#0f172a}
+.verdict-item p{font-size:.88rem;color:#475569;line-height:1.7;margin:0}
+
+/* Blog CTA base */
+.blog-cta{padding:80px 0}
+.blog-cta .section-title{color:#fff}
+.blog-cta .section-subtitle{color:#cbd5e1}
+
+/* Agent/RAG pipeline diagrams */
+.agent-loop-diagram,.rag-pipeline-diagram{padding:40px 0}
+
+@media(max-width:768px){
+.comparison-table{min-width:600px}
+.comparison-table th,.comparison-table td{padding:10px 8px;font-size:.78rem}
+.architecture-diagram .diagram-container,.use-case-diagram .diagram-container{padding:16px}
+.pricing-comparison .pricing-grid{grid-template-columns:1fr}
+.verdict-grid{grid-template-columns:1fr}
+.tldr-box{padding:24px 16px}
+.blog-cta{padding:48px 0}
+.faq-section .comparison-table-wrap{overflow-x:auto}
+}
