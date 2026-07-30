@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
@@ -307,6 +307,18 @@ section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;gap:12px;text-align:center}
 }
+.hero-particles{position:absolute;inset:0;pointer-events:none;z-index:1}
+.hero-particle{position:absolute;animation:particleFloat 8s ease-in-out infinite}
+.hero-particle-1{top:15%;left:8%;width:20px;animation-delay:0s;animation-duration:7s}
+.hero-particle-2{top:60%;left:5%;width:16px;animation-delay:1.5s;animation-duration:9s}
+.hero-particle-3{top:25%;right:12%;width:12px;animation-delay:3s;animation-duration:6s}
+.hero-particle-4{bottom:20%;right:8%;width:18px;animation-delay:2s;animation-duration:8s}
+@keyframes particleFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(5deg)}50%{transform:translateY(-8px) rotate(-3deg)}75%{transform:translateY(-20px) rotate(4deg)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.services-grid .service-card,.solutions-grid .solution-card,.tech-grid .tech-item,.trust-grid .trust-item,.process-grid .process-step,.industries-grid .industry-card,.impact-grid .impact-item,.team-grid .team-card,.values-grid .value-tag{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.services-grid .service-card.revealed,.solutions-grid .solution-card.revealed,.tech-grid .tech-item.revealed,.trust-grid .trust-item.revealed,.process-grid .process-step.revealed,.industries-grid .industry-card.revealed,.impact-grid .impact-item.revealed,.team-grid .team-card.revealed,.values-grid .value-tag.revealed{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.hero-content{animation:none}.hero-visual{animation:none}.services-grid .service-card,.solutions-grid .solution-card,.tech-grid .tech-item,.trust-grid .trust-item,.process-grid .process-step,.industries-grid .industry-card,.impact-grid .impact-item,.team-grid .team-card,.values-grid .value-tag{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -385,8 +397,14 @@ section{padding:60px 0}
 
 <main>
 <section class="hero" id="home" aria-label="Hero banner">
+  <div class="hero-particles" aria-hidden="true">
+    <svg class="hero-particle hero-particle-1" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#60a5fa" opacity="0.4"/></svg>
+    <svg class="hero-particle hero-particle-2" viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" rx="2" fill="#a78bfa" opacity="0.3" transform="rotate(45 8 8)"/></svg>
+    <svg class="hero-particle hero-particle-3" viewBox="0 0 12 12"><circle cx="6" cy="6" r="2" fill="#60a5fa" opacity="0.25"/></svg>
+    <svg class="hero-particle hero-particle-4" viewBox="0 0 18 18"><circle cx="9" cy="9" r="2.5" fill="#a78bfa" opacity="0.3"/></svg>
+  </div>
   <div class="container">
-    <div class="hero-badge" role="text" aria-label="Trusted by 500 plus enterprises worldwide">&#9670; Trusted by 500+ enterprises worldwide</div>
+    <div class="hero-badge" role="text" aria-label="Trusted by 500 plus enterprises worldwide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Trusted by 500+ enterprises worldwide</div>
     <h1>Dedicated to delivering <span>excellence</span></h1>
     <p>Everyone has a story. Here is ours.</p>
     <div class="hero-btns">
@@ -430,7 +448,7 @@ section{padding:60px 0}
     </div>
     <div class="impact-grid" role="list">
       <article class="impact-item" role="listitem">
-        <div class="impact-icon icon-blue">&#9670;</div>
+        <div class="impact-icon icon-blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> </div>
         <h4>Decision Making</h4>
         <p>The better the data accuracy, the more confidence users will have in the outputs they produce, lowering risk in the outcomes and increasing efficiency. When outputs are reliable, guesswork and risk in decision making can be mitigated.</p>
       </article>

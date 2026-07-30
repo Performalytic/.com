@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs><linearGradient id="kcheck" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2563eb"/><stop offset="100%" style="stop-color:#7c3aed"/></linearGradient></defs>
+  <rect width="64" height="64" rx="16" fill="rgba(37,99,235,0.08)"/>
+  <g transform="translate(32,32)">
+    <rect x="-16" y="-16" width="32" height="32" rx="8" fill="none" stroke="url(#kcheck)" stroke-width="2.5"/>
+    <polyline points="-6,0 -1,6 10,-6" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
