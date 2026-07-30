@@ -317,6 +317,9 @@ section{padding:60px 0}
 .hero-particle-2{top:60%;left:5%;width:16px;animation-delay:1.5s;animation-duration:9s}
 .hero-particle-3{top:25%;right:12%;width:12px;animation-delay:3s;animation-duration:6s}
 .hero-particle-4{bottom:20%;right:8%;width:18px;animation-delay:2s;animation-duration:8s}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);align-items:center}
+.hero-illustration{width:100%;max-width:480px;height:auto;filter:drop-shadow(0 20px 60px rgba(37,99,235,0.15));animation:heroFloat 6s ease-in-out infinite}
 @keyframes particleFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(5deg)}50%{transform:translateY(-8px) rotate(-3deg)}75%{transform:translateY(-20px) rotate(4deg)}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-content{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards}
@@ -410,13 +413,16 @@ section{padding:60px 0}
     <svg class="hero-particle hero-particle-4" viewBox="0 0 18 18"><circle cx="9" cy="9" r="2.5" fill="#a78bfa" opacity="0.3"/></svg>
   </div>
   <div class="container">
-    <div class="hero-badge" role="text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> BI Integration</div>
+    <div class="hero-grid">
+      <div class="hero-badge" role="text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> BI Integration</div>
     <h1>Data Integration for <span>Business Intelligence</span></h1>
     <p>Applying advanced analytics and BI integration to transform and reshape your business. We connect your systems so you get real-time visibility and actionable insights when it matters most.</p>
     <div class="hero-btns">
       <a href="/contact/" class="btn-primary">Start Your Free Consultation &rarr;</a>
       <a href="#capabilities" class="btn-secondary">Explore Capabilities</a>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -432,7 +438,9 @@ section{padding:60px 0}
       <div>
         <p class="intro-text">In this technology-driven world, the data comes from multiple sources. The influx of data can seem overwhelming, if not properly utilized. The only way to extract real insights from these raw inputs is through integration. Properly integrated data has a deep impact on all business processes, such as sales, vendor acquisition, business intelligence, etc. Implementing this level of integration enables businesses to make continuous improvements to their products and services.</p>
       </div>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -473,7 +481,9 @@ section{padding:60px 0}
       <h5 class="callout-title">Don't see your industry?</h5>
       <p class="callout-text">This overview is not comprehensive. Let's connect to better understand your industry and share our relevant experience.</p>
       <a href="/contact/" class="btn-primary">Schedule a Consultation</a>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -509,7 +519,9 @@ section{padding:60px 0}
         <p>We translate data into action by enabling unified visibility across stores, e-commerce, and supply chains. Integrated BI improves operational efficiency, customer experience, and continuous optimization across retail operations.</p>
         <a href="/contact/">Learn more &rarr;</a>
       </article>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -538,7 +550,9 @@ section{padding:60px 0}
         <p>Discover the key ingredients for fostering a data-driven culture - from leadership buy-in to data literacy programs.</p>
         <a href="/blog/build-data-driven-culture/">Read more &rarr;</a>
       </article>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -592,7 +606,9 @@ section{padding:60px 0}
         <p>We leverage Microsoft Fabric's unified analytics platform to build end-to-end BI solutions with native Power BI integration, OneLake storage, and AI-powered Copilot for faster insights.</p>
         <a href="/contact/">Learn more &rarr;</a>
       </article>
+    
     </div>
+  </div>
   </div>
 </section>
 

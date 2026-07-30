@@ -313,6 +313,9 @@ section{padding:60px 0}
 .hero-particle-2{top:60%;left:5%;width:16px;animation-delay:1.5s;animation-duration:9s}
 .hero-particle-3{top:25%;right:12%;width:12px;animation-delay:3s;animation-duration:6s}
 .hero-particle-4{bottom:20%;right:8%;width:18px;animation-delay:2s;animation-duration:8s}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);align-items:center}
+.hero-illustration{width:100%;max-width:480px;height:auto;filter:drop-shadow(0 20px 60px rgba(37,99,235,0.15));animation:heroFloat 6s ease-in-out infinite}
 @keyframes particleFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(5deg)}50%{transform:translateY(-8px) rotate(-3deg)}75%{transform:translateY(-20px) rotate(4deg)}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-content{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards}
@@ -406,19 +409,20 @@ section{padding:60px 0}
     <svg class="hero-particle hero-particle-4" viewBox="0 0 18 18"><circle cx="9" cy="9" r="2.5" fill="#a78bfa" opacity="0.3"/></svg>
   </div>
   <div class="container">
-    <div class="hero-badge" role="text" aria-label="Trusted by 500 plus enterprises worldwide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Trusted by 500+ enterprises worldwide</div>
-    <h1>Dedicated to delivering <span>excellence</span></h1>
-    <p>Everyone has a story. Here is ours.</p>
-    <div class="hero-btns">
-      <a href="/contact/" class="btn-primary">Start Your Free Consultation &rarr;</a>
-      <a href="/" class="btn-secondary">Explore Our Services</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge" role="text" aria-label="Trusted by 500 plus enterprises worldwide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Trusted by 500+ enterprises worldwide</div>
+        <h1>Dedicated to delivering <span>excellence</span></h1>
+        <p>Everyone has a story. Here is ours.</p>
+        <div class="hero-btns">
+          <a href="/contact/" class="btn-primary">Start Your Free Consultation &rarr;</a>
+          <a href="/" class="btn-secondary">Explore Our Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/assets/images/svg/hero-about.svg" alt="Our team illustration" class="hero-illustration" width="400" height="280" />
+      </div>
     </div>
-    <!-- <div class="hero-stats" role="list" aria-label="Key metrics">
-      <div class="hero-stat" role="listitem"><h3>800<span>+</span></h3><p>Professionals on Staff</p></div>
-      <div class="hero-stat" role="listitem"><h3>10<span>+</span></h3><p>Years Delivering Impact</p></div>
-      <div class="hero-stat" role="listitem"><h3>500<span>+</span></h3><p>Enterprise Clients</p></div>
-      <div class="hero-stat" role="listitem"><h3>3</h3><p>Global Delivery Centers</p></div>
-    </div> -->
   </div>
 </section>
 
@@ -437,7 +441,9 @@ section{padding:60px 0}
     <div class="story-mission">
       <h3>Our Mission</h3>
       <p>To empower organizations to turn data into a competitive advantage - by delivering strategies, systems, and solutions that drive smarter decisions, stronger growth, and lasting results.</p>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -475,7 +481,9 @@ section{padding:60px 0}
       <h3>Better together</h3>
       <p>We believe meaningful work can be both impactful and enjoyable. At Performalytic, we value our partnerships and approach every engagement with energy, creativity, and purpose - solving complex challenges while making the journey rewarding for everyone involved. We're passionate about what we do and committed to helping our clients succeed. Because when you enjoy the work, better outcomes naturally follow.</p>
       <a href="/contact/" class="btn-primary">Get in touch &rarr;</a>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -517,7 +525,9 @@ section{padding:60px 0}
         <span class="value-tag" role="listitem">AI-Powered Intelligence</span>
         <span class="value-tag" role="listitem">Scalable Digital Solutions</span>
       </div>
+    
     </div>
+  </div>
   </div>
 </section>
 

@@ -308,6 +308,9 @@ section{padding:60px 0}
 .hero-particle-2{top:60%;left:5%;width:16px;animation-delay:1.5s;animation-duration:9s}
 .hero-particle-3{top:25%;right:12%;width:12px;animation-delay:3s;animation-duration:6s}
 .hero-particle-4{bottom:20%;right:8%;width:18px;animation-delay:2s;animation-duration:8s}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);align-items:center}
+.hero-illustration{width:100%;max-width:480px;height:auto;filter:drop-shadow(0 20px 60px rgba(37,99,235,0.15));animation:heroFloat 6s ease-in-out infinite}
 @keyframes particleFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(5deg)}50%{transform:translateY(-8px) rotate(-3deg)}75%{transform:translateY(-20px) rotate(4deg)}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-content{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards}
@@ -401,7 +404,8 @@ section{padding:60px 0}
     <svg class="hero-particle hero-particle-4" viewBox="0 0 18 18"><circle cx="9" cy="9" r="2.5" fill="#a78bfa" opacity="0.3"/></svg>
   </div>
   <div class="container">
-    <div class="hero-badge" role="text" aria-label="Service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Enterprise Solutions</div>
+    <div class="hero-grid">
+      <div class="hero-badge" role="text" aria-label="Service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Enterprise Solutions</div>
     <h1>Enterprise Systems &amp; <span>Application Development</span></h1>
     <p>Applying advanced analytics to drive business transformation and growth. We craft tailored, high-quality software solutions that are scalable, cost-effective, and built for your business success.</p>
     <div class="hero-btns">
@@ -413,7 +417,9 @@ section{padding:60px 0}
       <div class="hero-stat" role="listitem"><h3>10<span>+</span></h3><p>Years Delivering Impact</p></div>
       <div class="hero-stat" role="listitem"><h3>500<span>+</span></h3><p>Enterprise Clients</p></div>
       <div class="hero-stat" role="listitem"><h3>3</h3><p>Global Delivery Centers</p></div>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -445,7 +451,9 @@ section{padding:60px 0}
         <h4>Managed Operations</h4>
         <p>Ongoing support, monitoring, and optimization to ensure your enterprise solutions perform reliably at scale.</p>
       </div>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -481,7 +489,9 @@ section{padding:60px 0}
         <p>Build agile, cloud-native data platforms that scale with your business. Our solutions modernize infrastructure, improve data accessibility, and enable faster insights with measurable business impact.</p>
         <a href="/contact/">Learn more &rarr;</a>
       </article>
+    
     </div>
+  </div>
   </div>
 </section>
 
@@ -511,7 +521,9 @@ section{padding:60px 0}
         <p>Discover the key ingredients for fostering a data-driven culture from leadership buy-in to data literacy programs.</p>
         <a href="/blog/build-data-driven-culture/">Read more &rarr;</a>
       </article>
+    
     </div>
+  </div>
   </div>
 </section>
 

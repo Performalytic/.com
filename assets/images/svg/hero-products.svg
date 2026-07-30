@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="110" fill="url(#prodGrad)" opacity="0.5"/>
+  <!-- Dashboard frame -->
+  <rect x="100" y="60" width="200" height="160" rx="12" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="100" y1="90" x2="300" y2="90" stroke="#60a5fa" stroke-width="1" opacity="0.3"/>
+  <circle cx="115" cy="75" r="4" fill="#ef4444" opacity="0.5"/>
+  <circle cx="128" cy="75" r="4" fill="#eab308" opacity="0.5"/>
+  <circle cx="141" cy="75" r="4" fill="#22c55e" opacity="0.5"/>
+  <!-- Chart bars -->
+  <rect x="115" y="140" width="16" height="50" rx="3" fill="rgba(96,165,250,0.3)" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="140" y="120" width="16" height="70" rx="3" fill="rgba(96,165,250,0.35)" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="165" y="100" width="16" height="90" rx="3" fill="rgba(96,165,250,0.4)" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="190" y="110" width="16" height="80" rx="3" fill="rgba(124,58,237,0.35)" stroke="#a78bfa" stroke-width="1"/>
+  <rect x="215" y="95" width="16" height="95" rx="3" fill="rgba(124,58,237,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="240" y="105" width="16" height="85" rx="3" fill="rgba(124,58,237,0.35)" stroke="#a78bfa" stroke-width="1"/>
+  <rect x="265" y="115" width="16" height="75" rx="3" fill="rgba(96,165,250,0.3)" stroke="#60a5fa" stroke-width="1"/>
+  <!-- Line chart overlay -->
+  <polyline points="123,135 148,115 173,95 198,105 223,90 248,100 273,110" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+</svg>

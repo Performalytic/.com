@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="careerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="110" fill="url(#careerGrad)" opacity="0.5"/>
+  <!-- Rising bars -->
+  <rect x="100" y="160" width="24" height="60" rx="6" fill="rgba(96,165,250,0.2)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="140" y="130" width="24" height="90" rx="6" fill="rgba(96,165,250,0.25)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="180" y="100" width="24" height="120" rx="6" fill="rgba(96,165,250,0.3)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="220" y="80" width="24" height="140" rx="6" fill="rgba(124,58,237,0.3)" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="260" y="60" width="24" height="160" rx="6" fill="rgba(124,58,237,0.35)" stroke="#a78bfa" stroke-width="2"/>
+  <!-- Growth arrow -->
+  <polyline points="112,155 152,125 192,95 232,75 272,55" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <polygon points="272,55 262,60 268,50" fill="#60a5fa" opacity="0.6"/>
+  <!-- Star -->
+  <circle cx="280" cy="45" r="4" fill="#a78bfa" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="110" fill="url(#toolGrad)" opacity="0.5"/>
+  <!-- Calculator body -->
+  <rect x="145" y="55" width="110" height="170" rx="14" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <!-- Screen -->
+  <rect x="155" y="68" width="90" height="40" rx="6" fill="rgba(96,165,250,0.08)" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="230" y="95" fill="#60a5fa" font-size="20" font-weight="700" text-anchor="end" opacity="0.7">12,847</text>
+  <!-- Buttons grid -->
+  <rect x="155" y="120" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="180" y="120" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="205" y="120" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="230" y="120" width="20" height="16" rx="3" fill="rgba(124,58,237,0.2)" stroke="#a78bfa" stroke-width="0.8"/>
+  <rect x="155" y="142" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="180" y="142" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="205" y="142" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="230" y="142" width="20" height="16" rx="3" fill="rgba(124,58,237,0.2)" stroke="#a78bfa" stroke-width="0.8"/>
+  <rect x="155" y="164" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="180" y="164" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="205" y="164" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="230" y="164" width="20" height="16" rx="3" fill="rgba(124,58,237,0.25)" stroke="#a78bfa" stroke-width="1"/>
+  <rect x="155" y="186" width="45" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="205" y="186" width="20" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <rect x="230" y="186" width="20" height="28" rx="3" fill="rgba(37,99,235,0.3)" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="155" y="208" width="70" height="16" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.8"/>
+  <!-- Floating sparks -->
+  <circle cx="100" cy="90" r="3" fill="#60a5fa" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="190" r="2" fill="#a78bfa" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

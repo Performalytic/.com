@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="solGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="110" fill="url(#solGrad)" opacity="0.5"/>
+  <!-- Central gear -->
+  <circle cx="200" cy="130" r="35" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <circle cx="200" cy="130" r="15" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1.5"/>
+  <circle cx="200" cy="130" r="5" fill="#60a5fa" opacity="0.4"/>
+  <!-- Gear teeth -->
+  <rect x="195" y="92" width="10" height="12" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="195" y="156" width="10" height="12" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="162" y="125" width="12" height="10" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="226" y="125" width="12" height="10" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <!-- Small gears -->
+  <circle cx="120" cy="90" r="18" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="120" cy="90" r="6" fill="rgba(167,139,250,0.15)"/>
+  <circle cx="280" cy="90" r="18" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="280" cy="90" r="6" fill="rgba(167,139,250,0.15)"/>
+  <circle cx="120" cy="180" r="18" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="120" cy="180" r="6" fill="rgba(96,165,250,0.15)"/>
+  <circle cx="280" cy="180" r="18" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="280" cy="180" r="6" fill="rgba(96,165,250,0.15)"/>
+  <!-- Connection lines -->
+  <line x1="168" y1="118" x2="138" y2="100" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="232" y1="118" x2="262" y2="100" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="168" y1="142" x2="138" y2="172" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="232" y1="142" x2="262" y2="172" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+</svg>
