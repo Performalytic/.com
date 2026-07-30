@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="analyticsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="110" fill="url(#analyticsGrad)" opacity="0.5"/>
+  <!-- Neural network nodes -->
+  <circle cx="200" cy="70" r="20" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <circle cx="200" cy="62" r="7" fill="rgba(96,165,250,0.15)"/>
+  <circle cx="150" cy="130" r="16" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+  <circle cx="150" cy="124" r="6" fill="rgba(167,139,250,0.15)"/>
+  <circle cx="250" cy="130" r="16" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <circle cx="250" cy="124" r="6" fill="rgba(96,165,250,0.15)"/>
+  <circle cx="130" cy="190" r="14" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+  <circle cx="130" cy="185" r="5" fill="rgba(167,139,250,0.15)"/>
+  <circle cx="200" cy="195" r="14" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <circle cx="200" cy="190" r="5" fill="rgba(96,165,250,0.15)"/>
+  <circle cx="270" cy="190" r="14" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+  <circle cx="270" cy="185" r="5" fill="rgba(167,139,250,0.15)"/>
+  <!-- Connection lines -->
+  <line x1="185" y1="88" x2="162" y2="116" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="215" y1="88" x2="238" y2="116" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="162" y1="146" x2="142" y2="178" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="150" y1="146" x2="198" y2="180" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="250" y1="146" x2="210" y2="180" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="250" y1="146" x2="258" y2="178" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <!-- Data flow arrow -->
+  <path d="M310,200 L370,200 L360,194 M370,200 L360,206" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+  <!-- Sparkle nodes -->
+  <circle cx="200" cy="40" r="3" fill="#60a5fa" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="230" r="2" fill="#a78bfa" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="230" r="2" fill="#60a5fa" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+</svg>
