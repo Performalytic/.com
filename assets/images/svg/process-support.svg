@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="sGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.06"/>
+    </linearGradient>
+    <linearGradient id="sGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+    <filter id="sShadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#059669" flood-opacity="0.12"/></filter>
+  </defs>
+  
+  <rect width="400" height="280" rx="16" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="100" fill="url(#sGrad1)" opacity="0.4"/>
+  
+  <!-- Shield / protection icon -->
+  <g transform="translate(200, 100)">
+    <path d="M0-40 L35-25 L35,10 C35,30 0,50 0,50 C0,50-35,30-35,10 L-35-25 Z" fill="none" stroke="#4ade80" stroke-width="2.5" opacity="0.8" filter="url(#sShadow)"/>
+    <path d="M0-30 L28-18 L28,8 C28,24 0,40 0,40 C0,40-28,24-28,8 L-28-18 Z" fill="rgba(74,222,128,0.08)"/>
+    <!-- Checkmark in shield -->
+    <polyline points="-10,5 -3,14 12,-4" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dashoffset" values="40;0" dur="1.5s" fill="freeze"/>
+      <animate attributeName="stroke-dasharray" values="0,40;40,0" dur="1.5s" fill="freeze"/>
+    </polyline>
+  </g>
+  
+  <!-- Circular orbit rings -->
+  <circle cx="200" cy="100" r="65" fill="none" stroke="rgba(74,222,128,0.15)" stroke-width="1" stroke-dasharray="4,4">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 100" to="360 200 100" dur="30s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="100" r="85" fill="none" stroke="rgba(96,165,250,0.1)" stroke-width="1" stroke-dasharray="6,6">
+    <animateTransform attributeName="transform" type="rotate" from="360 200 100" to="0 200 100" dur="40s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Orbiting dots -->
+  <circle cx="265" cy="100" r="4" fill="#4ade80" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 100" to="360 200 100" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="15" r="3" fill="#60a5fa" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="120 200 100" to="480 200 100" dur="16s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Bottom status cards -->
+  <rect x="70" y="200" width="110" height="50" rx="10" fill="rgba(74,222,128,0.08)" stroke="rgba(74,222,128,0.15)" stroke-width="1"/>
+  <circle cx="92" cy="218" r="5" fill="#4ade80" opacity="0.6"/>
+  <text x="92" y="220" text-anchor="middle" fill="#0f1d35" font-family="Inter,sans-serif" font-size="6" font-weight="700">!</text>
+  <text x="108" y="220" fill="#4ade80" font-family="Inter,sans-serif" font-size="10" font-weight="600">Systems</text>
+  <text x="108" y="236" fill="#94a3b8" font-family="Inter,sans-serif" font-size="8">All operational</text>
+  
+  <rect x="220" y="200" width="110" height="50" rx="10" fill="rgba(96,165,250,0.08)" stroke="rgba(96,165,250,0.15)" stroke-width="1"/>
+  <circle cx="242" cy="218" r="5" fill="#60a5fa" opacity="0.6"/>
+  <text x="242" y="220" text-anchor="middle" fill="#0f1d35" font-family="Inter,sans-serif" font-size="6" font-weight="700">?</text>
+  <text x="258" y="220" fill="#60a5fa" font-family="Inter,sans-serif" font-size="10" font-weight="600">Monitoring</text>
+  <text x="258" y="236" fill="#94a3b8" font-family="Inter,sans-serif" font-size="8">24/7 active</text>
+  
+  <!-- Pulse animation on shield -->
+  <circle cx="200" cy="100" r="50" fill="none" stroke="#4ade80" stroke-width="1" opacity="0">
+    <animate attributeName="r" values="50;70;50" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -17,11 +17,34 @@
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -60px 0px'
     });
 
     revealEls.forEach(function(el) {
       observer.observe(el);
+    });
+
+    // Staggered reveal for grid items
+    var gridContainers = document.querySelectorAll('.services-grid, .solutions-grid, .tech-grid, .trust-grid, .process-grid, .industries-grid');
+    gridContainers.forEach(function(grid) {
+      var items = grid.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card');
+      if (!items.length) return;
+
+      var gridObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var gridItems = entry.target.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card');
+            gridItems.forEach(function(item, index) {
+              setTimeout(function() {
+                item.classList.add('revealed');
+              }, index * 100);
+            });
+            gridObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      gridObserver.observe(grid);
     });
   }
 

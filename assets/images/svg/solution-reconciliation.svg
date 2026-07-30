@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="rgba(124,58,237,0.1)"/>
+  <g transform="translate(24,24)">
+    <!-- Two arrows reconciling -->
+    <path d="M-12,-4 L-4,-4 L-4,-10" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12,4 L4,4 L4,10" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Center sync circle -->
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#7c3aed" stroke-width="2"/>
+    <path d="M-3,-1 L0,2 L3,-1" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M-3,1 L0,-2 L3,1" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+  </g>
+</svg>

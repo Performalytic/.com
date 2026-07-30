@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="dGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.06"/>
+    </linearGradient>
+    <linearGradient id="dGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <filter id="dShadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#7c3aed" flood-opacity="0.12"/></filter>
+  </defs>
+  
+  <rect width="400" height="280" rx="16" fill="#0f1d35"/>
+  <circle cx="200" cy="140" r="100" fill="url(#dGrad1)" opacity="0.4"/>
+  
+  <!-- Code editor window -->
+  <rect x="80" y="40" width="240" height="200" rx="12" fill="#1e293b" stroke="rgba(255,255,255,0.08)" stroke-width="1" filter="url(#dShadow)"/>
+  
+  <!-- Editor title bar -->
+  <rect x="80" y="40" width="240" height="36" rx="12" fill="#0f172a"/>
+  <rect x="80" y="64" width="240" height="12" fill="#0f172a"/>
+  <circle cx="100" cy="58" r="5" fill="#ef4444" opacity="0.7"/>
+  <circle cx="118" cy="58" r="5" fill="#eab308" opacity="0.7"/>
+  <circle cx="136" cy="58" r="5" fill="#22c55e" opacity="0.7"/>
+  
+  <!-- Code lines with syntax highlighting -->
+  <rect x="100" y="88" width="40" height="5" rx="2" fill="#7c3aed" opacity="0.7"/>
+  <rect x="148" y="88" width="55" height="5" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="210" y="88" width="30" height="5" rx="2" fill="#eab308" opacity="0.4"/>
+  
+  <rect x="100" y="102" width="20" height="5" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="128" y="102" width="65" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+  
+  <rect x="115" y="116" width="50" height="5" rx="2" fill="#22c55e" opacity="0.5"/>
+  <rect x="173" y="116" width="35" height="5" rx="2" fill="#7c3aed" opacity="0.5"/>
+  
+  <rect x="115" y="130" width="70" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+  
+  <rect x="100" y="144" width="30" height="5" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect x="138" y="144" width="45" height="5" rx="2" fill="#eab308" opacity="0.4"/>
+  
+  <rect x="100" y="158" width="15" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- Cursor blink -->
+  <rect x="120" y="172" width="2" height="14" rx="1" fill="#60a5fa" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Terminal output at bottom -->
+  <rect x="100" y="190" width="200" height="36" rx="6" fill="rgba(0,0,0,0.3)"/>
+  <text x="112" y="206" fill="#4ade80" font-family="monospace" font-size="9" opacity="0.8">$ npm run build</text>
+  <text x="112" y="220" fill="#94a3b8" font-family="monospace" font-size="8" opacity="0.6">Build successful in 2.4s</text>
+  
+  <!-- Floating gear icon -->
+  <g transform="translate(350, 80)" opacity="0.5">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <line x1="0" y1="-16" x2="0" y2="-22" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="16" x2="0" y2="22" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-16" y1="0" x2="-22" y2="0" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16" y1="0" x2="22" y2="0" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 350 80" to="360 350 80" dur="20s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Connection nodes -->
+  <circle cx="60" cy="140" r="4" fill="#7c3aed" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="360" cy="200" r="3" fill="#60a5fa" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
