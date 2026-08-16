@@ -1,0 +1,158 @@
+# Performalytic — Full Site Guide
+
+## Company Overview
+
+Performalytic is an enterprise data analytics, AI, and DevOps consulting firm headquartered at 111 W. Jackson Blvd, Suite 1700, Chicago, IL 60604, USA, with a global delivery center in Patia, Bhubaneswar, Odisha 751024, India. We help organizations turn data into a competitive advantage through digital strategy, advanced analytics, artificial intelligence, business intelligence, and application development.
+
+- **Founded:** 2023
+- **Team:** 800+ data professionals
+- **Clients:** 500+ enterprises, including Fortune 500 companies
+- **Client satisfaction:** 99.9%
+- **Projects delivered:** 10,000+ across 15+ industries
+- **Contact:** support@performalytic.com
+- **Social:** https://www.linkedin.com/company/performalytic-corp/
+
+## What We Do
+
+Performalytic delivers four core service lines:
+
+### 1. Enterprise Solution Development
+Data strategy, data architecture, master data management (MDM), entity resolution, data governance, and platform modernization for on-premise and cloud environments. We align business goals with modern BI-driven data architectures and design scalable, integrated platforms that unify data sources.
+
+### 2. Advanced Analytics & AI
+Machine learning, predictive analytics, generative AI, retrieval-augmented generation (RAG), autonomous AI agents, and responsible AI governance. We help organizations build production-ready AI solutions grounded in their own data — from RAG systems to AI agents that execute multi-step workflows.
+
+### 3. BI Integration
+Business intelligence implementation and integration across Power BI, SAP (SAP Analytics Cloud, SAP BW/4HANA, SAP Datasphere), Snowflake, Databricks, and Microsoft Fabric. We connect analytics with enterprise systems and data pipelines to deliver timely, trusted insights.
+
+### 4. Application Development & System Integration
+Custom application development, continuous integration/continuous deployment (CI/CD) pipeline automation, schema compare and version control, and enterprise system integration. We modernize platforms and processes by embedding BI across operations.
+
+## Key Solutions
+
+- **AI-Powered MDM & Entity Resolution:** Build a unified, trusted source of truth through intelligent entity resolution, automated matching and merging, and centralized master data management.
+- **Automated Data Reconciliation:** Continuously validate, reconcile, and maintain accurate data across all platforms, ensuring consistent alignment between source systems and analytics databases.
+- **Data Quality & Observability:** End-to-end visibility to monitor data quality across all stages of your data pipelines.
+- **CI/CD Pipeline Automation:** Streamline incremental database object changes through automated CI/CD pipelines.
+- **Schema Compare & Version Control:** Compare and version-control database objects across environments.
+- **Entity Relationship Modeling:** Maintain accurate relationships between core business entities such as Customers, Products, and Revenue.
+
+## Products & Tools
+
+- **4DAlert:** AI-powered data management platform for data reconciliation, quality, and CI/CD (https://performalytic.com/products/).
+- **Data ROI Calculator:** Free interactive tool that estimates cost savings from better data management (https://performalytic.com/tools/data-roi-calculator/).
+- **Tools Hub:** https://performalytic.com/tools/
+
+## Industries Served
+
+Performalytic serves regulated industries including Industry & Manufacturing, Transportation & Logistics, Healthcare, Banks & Insurance, Financial Services, and Non-Profit organizations, delivering data-driven solutions that address unique sector challenges.
+
+## Technology Expertise
+
+- **High Load Systems:** Scala, Java, Python, NodeJS
+- **Business Intelligence:** Power BI, Tableau, Looker, SAP, Microsoft Fabric
+- **Data Science & Machine Learning:** Modern ML/AI methods, neural networks
+- **Data Warehousing:** Snowflake, Databricks, SAP BW/4HANA, Microsoft Fabric, cloud data platforms
+- **Big Data:** Apache Spark, Delta Lake, Databricks
+- **Cloud Platforms:** Microsoft Azure, Amazon Web Services (AWS), Google Cloud Platform (GCP), Oracle Cloud
+- **Visualization:** Enterprise dashboarding and reporting
+- **DevOps:** CI/CD automation, observability
+
+## Engagement Process
+
+1. **Business Analysis:** We establish business needs, analyze data sources, and gather requirements for end-user reports. Engineers create software architecture, estimate time frames, and design the BI system.
+2. **Development:** Engineers develop BI solutions, validate results after deployment, and optimize performance using flexible architecture that supports lifecycle management.
+3. **Lifecycle Management & Support:** Experts test big data at different stages, then support and maintain deployed solutions with flexible architecture for future improvements.
+
+## Why Clients Choose Performalytic
+
+- Deep business intelligence expertise (10+ years)
+- Hands-on industry experience (15+ years)
+- Technical proficiency across the Microsoft BI stack and modern data platforms
+- Insights translated into strategic decisions for executives
+- Client-first, results-obsessed, independent, transparent
+
+## Client Testimonials
+
+Performalytic maintains a 4.9/5 average rating from 150+ client reviews.
+
+- "Performalytic transformed our data infrastructure. We went from manual reports to real-time dashboards in weeks." — Sarah Chen, VP of Analytics, Global Retail Corp
+- "Their AI team built a predictive model that reduced our churn by 25%. Incredible ROI." — Michael Rodriguez, CTO, FinServ Holdings
+- "The team's expertise in SAP and cloud migration was exceptional. They delivered on time and under budget." — Dr. Lisa Wang, CIO, MedTech Systems
+- "Their BI integration gave us a single source of truth across 12 departments. Game-changing." — Emily Foster, Director of Data, InsureCo
+- "The 4DAlert platform they built has become essential to our data operations." — Alex Kim, Head of Engineering, TechVenture Inc
+- "From strategy to implementation, they were true partners. Our energy consumption analytics now save us millions." — Robert Chang, VP Operations, PowerGrid Energy
+
+## Case Study Highlights
+
+- **Global Retail Chain — Data Platform Modernization:** Modernized data platform for a 2,000+ store global retailer.
+- **Fortune 500 Financial Services — Real-Time Analytics:** Real-time analytics implementation for a Fortune 500 financial services firm.
+- **Healthcare Provider — Predictive Analytics:** Predictive analytics for a healthcare provider.
+- **Manufacturing Enterprise — IoT Data Pipeline:** IoT data pipeline for a manufacturing enterprise.
+- **Insurance Company — Claims Automation:** Claims automation with data and AI.
+
+## Frequently Asked Questions
+
+**What services does Performalytic offer?**
+Enterprise Solution Development, Advanced Analytics & AI, Business Intelligence Integration, and App Development & System Integration.
+
+**How can Performalytic help my business with data?**
+We partner with organizations to architect data strategies, deploy advanced analytics, and build the digital infrastructure that powers smarter decisions, faster growth, and lasting results.
+
+**Where is Performalytic located?**
+Our headquarters is in Chicago, IL with a global delivery center in Bhubaneswar, India.
+
+**How do I get started with Performalytic?**
+Schedule a free consultation through our contact form. We'll respond within one business day with a tailored plan based on your goals and challenges.
+
+**What industries does Performalytic serve?**
+We serve enterprises across regulated industries including finance, healthcare, technology, and manufacturing — helping them turn data into a competitive advantage.
+
+## Leadership
+
+- **Nihar Rout** — Managing Partner & Advisor. Former senior roles at Accenture, Ecolab, and General Electric. MBA from Northwestern's Kellogg School of Management.
+- **Abani Pattanayak** — Partner & Advisor. SAP Catalyst, SAP Executive Data Chef, and SAP HANA Distinguished Engineer. Regular speaker at SAP TechEd, Sapphire, and S-KOM.
+
+## Blog Articles
+
+- Databricks vs Snowflake: The Complete Comparison Guide for 2026 — https://performalytic.com/blog/databricks-vs-snowflake/
+- Enterprise RAG Architecture: A Practical Guide for 2026 — https://performalytic.com/blog/enterprise-rag-architecture/
+- AI Agents in the Enterprise: From Copilots to Autonomous Workflows — https://performalytic.com/blog/ai-agents-enterprise/
+- The Real Cost of Bad Data — https://performalytic.com/blog/real-cost-of-bad-data/
+- Master Data Management (MDM) in the AI Era — https://performalytic.com/blog/mdm-ai-era/
+- Building a Responsible AI Framework — https://performalytic.com/blog/responsible-ai-framework/
+- Automated Data Reconciliation: The Ultimate Guide for 2026 — https://performalytic.com/blog/automated-data-reconciliation/
+- How to Build a Data-Driven Culture — https://performalytic.com/blog/build-data-driven-culture/
+- What is Business Intelligence? A Complete Guide for 2026 — https://performalytic.com/blog/what-is-business-intelligence/
+- The Data Modeling Crisis: Why 89% of Teams Struggle with Semantics — https://performalytic.com/blog/data-modeling-crisis/
+- How AI Is Changing Data Quality — https://performalytic.com/blog/ai-changing-data-quality/
+- 5 Signs Your Data Infrastructure Is Holding Your Business Back — https://performalytic.com/blog/signs-data-infrastructure-holding-back/
+- DevOps Best Practices for Data Teams — https://performalytic.com/blog/devops-best-practices/
+- How to Choose the Right Analytics Platform — https://performalytic.com/blog/choose-right-analytics-platform/
+- Data Reconciliation Across Cloud Platforms — https://performalytic.com/blog/cross-cloud-data-reconciliation/
+- The Ultimate Guide to Data-Driven Decision Making in 2026 — https://performalytic.com/blog/data-driven-decision-making/
+- How AI is Transforming Business Intelligence — https://performalytic.com/blog/ai-business-intelligence/
+- Data-driven Decision Making Guide — https://performalytic.com/blog/data-driven-decision-making/
+
+## Full Site Index
+
+- Home: https://performalytic.com/
+- About: https://performalytic.com/about/
+- Enterprise Solution Development: https://performalytic.com/enterprise-solution-development/
+- Advanced Analytics & AI: https://performalytic.com/advanced-analytics-ai/
+- BI Integration: https://performalytic.com/bi-integration/
+- Application Development & System Integration: https://performalytic.com/application-development-and-system-integration/
+- Products: https://performalytic.com/products/
+- Technologies: https://performalytic.com/technologies/
+- Industries: https://performalytic.com/industries/
+- Case Studies: https://performalytic.com/case-studies/
+- Testimonials: https://performalytic.com/testimonials/
+- Blog: https://performalytic.com/blog/
+- Tools: https://performalytic.com/tools/
+- Knowledge Hub: https://performalytic.com/knowledge/
+- FAQ: https://performalytic.com/faq/
+- Careers: https://performalytic.com/careers/
+- Contact: https://performalytic.com/contact/
+- Privacy Policy: https://performalytic.com/privacy-policy/
+- Terms & Conditions: https://performalytic.com/terms-conditions/
+- Cookie Policy: https://performalytic.com/cookie-policy/

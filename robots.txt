@@ -4,4 +4,20 @@ Disallow: /404.html
 Disallow: /maintenance.html
 Disallow: /thank-you.html
 
+# AI / LLM crawlers (explicitly allowed)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://performalytic.com/sitemap.xml

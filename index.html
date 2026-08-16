@@ -13,7 +13,7 @@
 
 <title>Performalytic - Digital Strategy, Data Analytics, AI &amp; DevOps Solutions</title>
 <meta name="keywords" content="data analytics, digital strategy, AI consulting, business intelligence, DevOps, data management, enterprise solutions, data transformation, cloud analytics, performalytic" />
-<meta name="description" content="Performalytic delivers data-driven digital strategy, advanced analytics, AI solutions, and DevOps. Turn your data into a competitive advantage with 800+ experts." />
+<meta name="description" content="Data-driven digital strategy, advanced analytics, AI, and DevOps for enterprises. Rated 4.9/5 by 150+ clients. Request a free consultation." />
 <link rel="canonical" href="https://performalytic.com/" />
 <link rel="alternate" hreflang="en" href="https://performalytic.com/" />
 <link rel="alternate" hreflang="x-default" href="https://performalytic.com/" />
@@ -81,14 +81,19 @@ gtag('config', 'G-FV09CSCD2C');
 "addressRegion":"Odisha",
 "postalCode":"751024",
 "addressCountry":"IN"
-}]
+}],
+"aggregateRating":{
+"@type":"AggregateRating",
+"ratingValue":"4.9",
+"bestRating":"5",
+"reviewCount":"150"
+}
 },{
 "@context":"https://schema.org",
 "@type":"WebSite",
 "url":"https://performalytic.com/",
 "name":"Performalytic",
-"description":"Data-Driven Growth for Your Business",
-
+"description":"Data-Driven Growth for Your Business"
 },{
 "@context":"https://schema.org",
 "@type":"WebPage",
@@ -534,6 +539,54 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
 .partners-grid img:hover{opacity:1;filter:grayscale(0%)}
 
 /* ========================================
+   HERO RATING
+======================================== */
+.hero-rating{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:var(--space-lg)}
+.hero-stars{display:flex;gap:2px;color:#fbbf24}
+.hero-stars svg{width:16px;height:16px;fill:currentColor}
+.hero-rating-text{font-size:.85rem;color:#94a3b8}
+.hero-rating-text strong{color:#fff;font-weight:700}
+.hero-rating-link{color:#93c5fd;font-size:.85rem;font-weight:600;text-decoration:none;transition:color .2s}
+.hero-rating-link:hover{color:#60a5fa;text-decoration:underline}
+
+/* ========================================
+   TESTIMONIALS
+======================================== */
+.testimonials{background:#fff}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-lg)}
+.testimonial-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-md);transition:all .3s;position:relative;overflow:hidden}
+.testimonial-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-grad);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.testimonial-card:hover::before{transform:scaleX(1)}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.05);border-color:transparent}
+.t-stars{display:flex;gap:2px;color:#f59e0b}
+.t-stars svg{width:16px;height:16px;fill:currentColor}
+.t-quote{font-size:.9rem;color:#475569;line-height:1.65;margin:0}
+.t-author{display:flex;align-items:center;gap:12px;margin-top:auto}
+.t-avatar{width:42px;height:42px;border-radius:50%;background:var(--accent-grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+.t-name{font-weight:700;font-size:.9rem;color:#0f172a}
+.t-role{font-size:.78rem;color:#64748b}
+.t-industry{display:inline-block;align-self:flex-start;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:20px;background:#eff6ff;color:#2563eb}
+.testimonials-cta{margin-top:var(--space-2xl)}
+
+/* ========================================
+   INSIGHTS / BLOG
+======================================== */
+.insights{background:#fff}
+.insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-lg)}
+.blog-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.06);border-color:transparent}
+.blog-thumb{height:150px;background:#f8fafc;display:flex;align-items:center;justify-content:center;padding:var(--space-lg)}
+.blog-thumb img{width:100%;max-height:110px;height:auto;object-fit:contain}
+.blog-body{padding:var(--space-lg);display:flex;flex-direction:column;gap:var(--space-sm);flex:1}
+.blog-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed;background:#f5f3ff;align-self:flex-start;padding:4px 10px;border-radius:20px}
+.blog-title{font-size:.95rem;font-weight:700;color:#0f172a;line-height:1.4;text-decoration:none}
+.blog-title:hover{color:#2563eb}
+.blog-excerpt{font-size:.82rem;color:#64748b;line-height:1.6;margin:0}
+.blog-link{color:#2563eb;text-decoration:none;font-weight:600;font-size:.82rem;display:inline-flex;align-items:center;gap:6px;margin-top:auto;transition:gap .2s}
+.blog-link:hover{gap:10px}
+.insights-cta{margin-top:var(--space-2xl)}
+
+/* ========================================
    KEYFRAMES
 ======================================== */
 @keyframes fadeScaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
@@ -714,6 +767,17 @@ section{padding:var(--section-pad)0}
           <div class="hero-stat" role="listitem"><h3>15<span class="accent">+</span></h3><p>Years Impact</p></div>
           <div class="hero-stat" role="listitem"><h3>500<span class="accent">+</span></h3><p>Enterprise Clients</p></div>
           <div class="hero-stat" role="listitem"><h3>99.9<span class="accent">%</span></h3><p>Satisfaction</p></div>
+        </div>
+        <div class="hero-rating" aria-label="Rated 4.9 out of 5 by 150 clients">
+          <span class="hero-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <span class="hero-rating-text"><strong>4.9/5</strong> average from 150+ client reviews</span>
+          <a href="/testimonials/" class="hero-rating-link">Read reviews &rarr;</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -1202,6 +1266,93 @@ section{padding:var(--section-pad)0}
   </div>
 </section>
 
+<section class="testimonials" id="testimonials" aria-label="Client testimonials">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Client Love</span>
+      <h2 class="section-title">Rated 4.9/5 by the enterprises we serve</h2>
+      <p class="section-subtitle mx-auto">Real results from real clients across finance, healthcare, retail, insurance, and technology.</p>
+    </div>
+    <div class="testimonials-grid" role="list">
+      <article class="testimonial-card" role="listitem">
+        <div class="t-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="t-industry">Retail</span>
+        <blockquote class="t-quote">&ldquo;Performalytic transformed our data infrastructure. We went from manual reports to real-time dashboards in weeks. The ROI was visible within the first quarter.&rdquo;</blockquote>
+        <div class="t-author">
+          <span class="t-avatar" aria-hidden="true">SC</span>
+          <div>
+            <div class="t-name">Sarah Chen</div>
+            <div class="t-role">VP of Analytics, Global Retail Corp</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" role="listitem">
+        <div class="t-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="t-industry">Finance</span>
+        <blockquote class="t-quote">&ldquo;Their AI team built a predictive model that reduced our churn by 25%. Incredible ROI.&rdquo;</blockquote>
+        <div class="t-author">
+          <span class="t-avatar" aria-hidden="true">MR</span>
+          <div>
+            <div class="t-name">Michael Rodriguez</div>
+            <div class="t-role">CTO, FinServ Holdings</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" role="listitem">
+        <div class="t-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="t-industry">Healthcare</span>
+        <blockquote class="t-quote">&ldquo;The team's expertise in SAP and cloud migration was exceptional. They delivered on time and under budget.&rdquo;</blockquote>
+        <div class="t-author">
+          <span class="t-avatar" aria-hidden="true">LW</span>
+          <div>
+            <div class="t-name">Dr. Lisa Wang</div>
+            <div class="t-role">CIO, MedTech Systems</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" role="listitem">
+        <div class="t-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="t-industry">Insurance</span>
+        <blockquote class="t-quote">&ldquo;Their BI integration gave us a single source of truth across 12 departments. Game-changing.&rdquo;</blockquote>
+        <div class="t-author">
+          <span class="t-avatar" aria-hidden="true">EF</span>
+          <div>
+            <div class="t-name">Emily Foster</div>
+            <div class="t-role">Director of Data, InsureCo</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="testimonials-cta text-center">
+      <a href="/testimonials/" class="btn-primary">Read all testimonials &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <section class="team" id="team" aria-label="Leadership team">
   <div class="container">
     <div class="text-center reveal">
@@ -1238,6 +1389,65 @@ section{padding:var(--section-pad)0}
         <span class="value-tag" role="listitem">Deeply Competent</span>
         <span class="value-tag" role="listitem">Radically Transparent</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="insights" id="insights" aria-label="Latest insights and blog posts">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Latest Insights</span>
+      <h2 class="section-title">Expert guidance on data, AI &amp; analytics</h2>
+      <p class="section-subtitle mx-auto">Practical, research-backed articles to help enterprise leaders make smarter data decisions.</p>
+    </div>
+    <div class="insights-grid" role="list">
+      <article class="blog-card" role="listitem">
+        <div class="blog-thumb">
+          <img src="/assets/images/blog/hero-databricks-vs-snowflake.svg" alt="Databricks vs Snowflake comparison illustration" width="300" height="150" loading="lazy" decoding="async" />
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Data Platform</span>
+          <a class="blog-title" href="/blog/databricks-vs-snowflake/">Databricks vs Snowflake: The Complete Comparison Guide for 2026</a>
+          <p class="blog-excerpt">Compare architecture, performance, pricing, and governance to pick the right enterprise data platform.</p>
+          <a class="blog-link" href="/blog/databricks-vs-snowflake/">Read article &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card" role="listitem">
+        <div class="blog-thumb">
+          <img src="/assets/images/blog/hero-enterprise-rag.svg" alt="Enterprise RAG architecture illustration" width="300" height="150" loading="lazy" decoding="async" />
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">AI &amp; Generative AI</span>
+          <a class="blog-title" href="/blog/enterprise-rag-architecture/">Enterprise RAG Architecture: A Practical Guide for 2026</a>
+          <p class="blog-excerpt">Design production-ready retrieval-augmented generation systems grounded in your enterprise data.</p>
+          <a class="blog-link" href="/blog/enterprise-rag-architecture/">Read article &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card" role="listitem">
+        <div class="blog-thumb">
+          <img src="/assets/images/blog/hero-ai-agents.svg" alt="AI agents in the enterprise illustration" width="300" height="150" loading="lazy" decoding="async" />
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">AI Agents</span>
+          <a class="blog-title" href="/blog/ai-agents-enterprise/">AI Agents in the Enterprise: From Copilots to Autonomous Workflows</a>
+          <p class="blog-excerpt">How agentic AI is reshaping enterprise operations — architecture, risks, and implementation best practices.</p>
+          <a class="blog-link" href="/blog/ai-agents-enterprise/">Read article &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card" role="listitem">
+        <div class="blog-thumb">
+          <img src="/assets/images/blog/hero-cost-of-bad-data.svg" alt="Cost of bad data illustration" width="300" height="150" loading="lazy" decoding="async" />
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Data Quality</span>
+          <a class="blog-title" href="/blog/real-cost-of-bad-data/">The Real Cost of Bad Data: How Poor Data Quality Impacts Your Bottom Line</a>
+          <p class="blog-excerpt">Poor data quality costs enterprises millions. Learn how to measure it and fix it.</p>
+          <a class="blog-link" href="/blog/real-cost-of-bad-data/">Read article &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <div class="insights-cta text-center">
+      <a href="/blog/" class="btn-secondary">Explore all articles &rarr;</a>
     </div>
   </div>
 </section>
