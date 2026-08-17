@@ -38,6 +38,7 @@
 - [AI Agents in the Enterprise: From Copilots to Autonomous Workflows](/blog/ai-agents-enterprise/)
 - [The Real Cost of Bad Data: How Poor Data Quality Impacts Your Bottom Line](/blog/real-cost-of-bad-data/)
 - [Master Data Management (MDM) in the AI Era](/blog/mdm-ai-era/)
+- [What Is Master Data Management (MDM)? A Complete Guide](/blog/what-is-master-data-management/)
 - [Building a Responsible AI Framework: Governance, Bias, and Compliance in 2026](/blog/responsible-ai-framework/)
 - [Automated Data Reconciliation: The Ultimate Guide for 2026](/blog/automated-data-reconciliation/)
 - [How to Build a Data-Driven Culture in Your Organization](/blog/build-data-driven-culture/)

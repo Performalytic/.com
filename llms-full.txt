@@ -120,6 +120,7 @@ We serve enterprises across regulated industries including finance, healthcare, 
 - AI Agents in the Enterprise: From Copilots to Autonomous Workflows — https://performalytic.com/blog/ai-agents-enterprise/
 - The Real Cost of Bad Data — https://performalytic.com/blog/real-cost-of-bad-data/
 - Master Data Management (MDM) in the AI Era — https://performalytic.com/blog/mdm-ai-era/
+- What Is Master Data Management (MDM)? A Complete Guide — https://performalytic.com/blog/what-is-master-data-management/
 - Building a Responsible AI Framework — https://performalytic.com/blog/responsible-ai-framework/
 - Automated Data Reconciliation: The Ultimate Guide for 2026 — https://performalytic.com/blog/automated-data-reconciliation/
 - How to Build a Data-Driven Culture — https://performalytic.com/blog/build-data-driven-culture/
