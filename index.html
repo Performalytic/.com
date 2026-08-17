@@ -530,10 +530,12 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
 /* ========================================
    PARTNERS
 ======================================== */
-.partners{background:#f8fafc}
-.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:var(--space-lg);align-items:center}
-.partners-grid img{width:100%;max-width:110px;height:auto;margin:0 auto;display:block;opacity:.55;transition:all .3s;filter:grayscale(30%)}
-.partners-grid img:hover{opacity:1;filter:grayscale(0%)}
+.partners{background:#f8fafc;overflow:hidden}
+.partners-track{display:flex;align-items:center;width:max-content;animation:partner-scroll 30s linear infinite}
+.partners-track:hover{animation-play-state:paused}
+.partners-track img{width:auto;max-width:110px;height:50px;object-fit:contain;margin-right:var(--space-lg);flex-shrink:0;opacity:.55;transition:all .3s;filter:grayscale(30%)}
+.partners-track img:hover{opacity:1;filter:grayscale(0%)}
+@keyframes partner-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ========================================
    HERO RATING
@@ -644,7 +646,7 @@ section{padding:var(--section-pad) 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;gap:var(--space-sm);text-align:center}
 .industries-grid{grid-template-columns:repeat(2,1fr)}
-.partners-grid{grid-template-columns:repeat(2,1fr)}
+.partners-track img{max-width:80px;height:36px;margin-right:var(--space-md)}
 .hero-stats{flex-direction:column;gap:var(--space-md);align-items:flex-start}
 .hero-stat::after{display:none!important}
 .hero-stat h3{font-size:1.3rem}
@@ -1577,7 +1579,7 @@ section{padding:var(--section-pad) 0}
       <h2 class="section-title">Recognized by the best</h2>
       <p class="section-subtitle mx-auto">Endorsed by clients and partners for excellence in data-driven solutions.</p>
     </div>
-    <div class="partners-grid" role="list">
+    <div class="partners-track" role="list" aria-label="Recognized by partner logos">
       <img src="/assets/images/partner-1.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
       <img src="/assets/images/partner-2.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
       <img src="/assets/images/partner-3.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
@@ -1586,6 +1588,14 @@ section{padding:var(--section-pad) 0}
       <img src="/assets/images/partner-6.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
       <img src="/assets/images/partner-7.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
       <img src="/assets/images/partner-8.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
+      <img src="/assets/images/partner-1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-2.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-3.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-4.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-5.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-6.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-7.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <img src="/assets/images/partner-8.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
     </div>
   </div>
 </section>
