@@ -531,10 +531,11 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
    PARTNERS
 ======================================== */
 .partners{background:#f8fafc;overflow:hidden}
-.partners-track{display:flex;align-items:center;width:max-content;animation:partner-scroll 30s linear infinite}
+.partners-track{display:flex;width:max-content;will-change:transform;animation:partner-scroll 30s linear infinite}
 .partners-track:hover{animation-play-state:paused}
-.partners-track img{width:auto;max-width:110px;height:50px;object-fit:contain;margin-right:var(--space-lg);flex-shrink:0;opacity:.55;transition:all .3s;filter:grayscale(30%)}
-.partners-track img:hover{opacity:1;filter:grayscale(0%)}
+.partners-group{display:flex;align-items:center;flex-shrink:0}
+.partners-group img{width:170px;height:60px;object-fit:contain;margin-right:var(--space-xl);flex-shrink:0;opacity:.55;transition:all .3s;filter:grayscale(30%)}
+.partners-group img:hover{opacity:1;filter:grayscale(0%)}
 @keyframes partner-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ========================================
@@ -646,7 +647,7 @@ section{padding:var(--section-pad) 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;gap:var(--space-sm);text-align:center}
 .industries-grid{grid-template-columns:repeat(2,1fr)}
-.partners-track img{max-width:80px;height:36px;margin-right:var(--space-md)}
+.partners-group img{width:120px;height:42px;margin-right:var(--space-lg)}
 .hero-stats{flex-direction:column;gap:var(--space-md);align-items:flex-start}
 .hero-stat::after{display:none!important}
 .hero-stat h3{font-size:1.3rem}
@@ -1580,22 +1581,26 @@ section{padding:var(--section-pad) 0}
       <p class="section-subtitle mx-auto">Endorsed by clients and partners for excellence in data-driven solutions.</p>
     </div>
     <div class="partners-track" role="list" aria-label="Recognized by partner logos">
-      <img src="/assets/images/partner-1.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-2.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-3.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-4.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-5.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-6.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-7.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-8.png" alt="Partner" loading="lazy" decoding="async" width="140" height="50" role="listitem" />
-      <img src="/assets/images/partner-1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-2.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-3.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-4.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-5.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-6.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-7.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
-      <img src="/assets/images/partner-8.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="140" height="50" />
+      <div class="partners-group">
+        <img src="/assets/images/partner-1.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-2.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-3.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-4.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-5.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-6.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-7.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+        <img src="/assets/images/partner-8.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
+      </div>
+      <div class="partners-group" aria-hidden="true">
+        <img src="/assets/images/partner-1.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-2.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-3.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-4.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-5.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-6.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-7.png" alt="" decoding="async" width="140" height="50" />
+        <img src="/assets/images/partner-8.png" alt="" decoding="async" width="140" height="50" />
+      </div>
     </div>
   </div>
 </section>
