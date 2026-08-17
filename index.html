@@ -530,7 +530,8 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
 /* ========================================
    PARTNERS
 ======================================== */
-.partners{background:#f8fafc;overflow:hidden}
+.partners{background:#f8fafc}
+.partners-viewport{overflow:hidden;max-width:900px;margin:0 auto}
 .partners-track{display:flex;width:max-content;will-change:transform;animation:partner-scroll 30s linear infinite}
 .partners-track:hover{animation-play-state:paused}
 .partners-group{display:flex;align-items:center;flex-shrink:0}
@@ -1580,6 +1581,7 @@ section{padding:var(--section-pad) 0}
       <h2 class="section-title">Recognized by the best</h2>
       <p class="section-subtitle mx-auto">Endorsed by clients and partners for excellence in data-driven solutions.</p>
     </div>
+    <div class="partners-viewport">
     <div class="partners-track" role="list" aria-label="Recognized by partner logos">
       <div class="partners-group">
         <img src="/assets/images/partner-1.png" alt="Partner" decoding="async" width="140" height="50" role="listitem" />
@@ -1601,6 +1603,7 @@ section{padding:var(--section-pad) 0}
         <img src="/assets/images/partner-7.png" alt="" decoding="async" width="140" height="50" />
         <img src="/assets/images/partner-8.png" alt="" decoding="async" width="140" height="50" />
       </div>
+    </div>
     </div>
   </div>
 </section>
