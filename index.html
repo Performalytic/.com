@@ -432,7 +432,7 @@ section{padding:var(--section-pad) 0}
 .checkbox-group{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;color:#94a3b8;margin-bottom:var(--space-md)}
 .checkbox-group input{margin-top:3px;accent-color:#2563eb;flex-shrink:0}
 .checkbox-group a{color:#60a5fa}
-.btn-submit{width:100%;justify-content:center}.cta-grid>div:last-child{display:flex;flex-direction:column;justify-content:center}
+.btn-submit{width:100%;justify-content:center}.cta-actions{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;margin-top:40px}.cta-actions .btn-primary{font-size:1.05rem;padding:18px 44px}.cta-steps-wrap{margin-top:48px}.cta-steps-heading{text-align:center;font-size:1.1rem;font-weight:700;color:#e2e8f0;margin-bottom:24px}.btn-cta-phone{display:inline-flex;align-items:center;gap:8px;padding:18px 32px;border-radius:12px;border:1px solid rgba(255,255,255,0.25);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s}.btn-cta-phone:hover{border-color:#60a5fa;color:#93c5fd}
 
 /* ========================================
    FOOTER
@@ -1462,28 +1462,12 @@ section{padding:var(--section-pad) 0}
       <h2 class="section-title">Partner with us for comprehensive DATA solutions</h2>
       <p class="section-subtitle mx-auto">We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
     </div>
-    <div class="cta-grid">
-      <div class="cta-info">
-        <h4>Reach out to our team</h4>
-        <p>Tell us about your goals and challenges. We'll respond within one business day with a plan tailored to your needs.</p>
-
-        <h5 class="cta-benefits-title">Your benefits:</h5>
-        <table class="cta-benefits-table">
-          <tr>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Client-oriented</span></div></td>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Results-driven</span></div></td>
-          </tr>
-          <tr>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Independent</span></div></td>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Problem-solving</span></div></td>
-          </tr>
-          <tr>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Competent</span></div></td>
-            <td><div class="cta-benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Transparent</span></div></td>
-          </tr>
-        </table>
-        <h4 class="cta-steps-mt">How it works</h4>
-        <div class="steps" role="list" aria-label="Process steps">
+        <div class="cta-actions">
+          <a href="/contact/" class="btn-primary">Go to Contact Form &rarr;</a>
+    </div>
+    <div class="cta-steps-wrap">
+          <h4 class="cta-steps-heading">How it works</h4>
+          <div class="steps" role="list" aria-label="Process steps">
           <div class="step" role="listitem">
             <span class="step-num" aria-hidden="true">1</span>
             <h5>Discovery Call</h5>
@@ -1500,11 +1484,6 @@ section{padding:var(--section-pad) 0}
             <p>You receive a plan, timeline, and investment</p>
           </div>
         </div>
-      </div>
-      <div>
-        <h4 class="cta-form-title">Request a free consultation</h4>
-        <a href="/contact/" class="btn-primary btn-submit">Go to Contact Form &rarr;</a>
-      </div>
     </div>
     <div class="cta-locations-mt">
       <div class="text-center">
