@@ -27,6 +27,7 @@
 - [Testimonials](/testimonials/)
 - [Industries](/industries/)
 - [Technologies](/technologies/)
+- [Technology Partners](/partners/)
 - [Knowledge Hub](/knowledge/)
 - [FAQ](/faq/)
 - [Careers](/careers/)
