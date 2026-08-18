@@ -210,7 +210,7 @@ section{padding:var(--section-pad) 0}
 .newsletter-form .form-group input:focus{outline:none;border-color:#2563eb;background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
 .newsletter-form .form-group input::placeholder{color:#94a3b8}
 .newsletter-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
-.newsletter-form .btn-submit{width:100%;justify-content:center;background:var(--accent-grad);color:#fff;padding:16px;border-radius:12px;border:none;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.newsletter-form .btn-submit{width:100%;justify-content:center;background:var(--accent-grad);color:#fff;padding:16px;border-radius:12px;border:none;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}.cta-grid>div:last-child{display:flex;flex-direction:column;justify-content:center}
 .newsletter-form .btn-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 20%,rgba(255,255,255,.12) 50%,transparent 80%);transform:translateX(-100%);transition:transform .5s}
 .newsletter-form .btn-submit:hover::before{transform:translateX(100%)}
 .newsletter-form .btn-submit:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(37,99,235,.35)}
@@ -743,50 +743,7 @@ section{padding:var(--section-pad) 0}
       </div>
       <div class="reveal">
         <h4 class="cta-form-title">Request a free consultation</h4>
-        <form action="/contact/" method="POST" autocomplete="on" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c-fname">First name <span aria-hidden="true">*</span></label>
-              <input type="text" id="c-fname" name="fname" placeholder="John" required autocomplete="given-name" maxlength="100" />
-            </div>
-            <div class="form-group">
-              <label for="c-lname">Last name <span aria-hidden="true">*</span></label>
-              <input type="text" id="c-lname" name="lname" placeholder="Doe" required autocomplete="family-name" maxlength="100" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="c-company">Company / Organization</label>
-            <input type="text" id="c-company" name="company" placeholder="Acme Inc." autocomplete="organization" maxlength="200" />
-          </div>
-          <div class="form-group">
-            <label for="c-email">Work email <span aria-hidden="true">*</span></label>
-            <input type="email" id="c-email" name="email" placeholder="john@acme.com" required autocomplete="email" inputmode="email" maxlength="254" />
-          </div>
-          <div class="form-group">
-            <label for="c-phone">Phone number</label>
-            <input type="tel" id="c-phone" name="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" inputmode="tel" maxlength="30" pattern="[\+\d\s\-\(\)\.]+" title="Phone number (digits, spaces, hyphens, parentheses)" />
-          </div>
-          <div class="form-group">
-            <label for="c-service">I'm interested in</label>
-            <select id="c-service" name="service" autocomplete="off">
-              <option value="">Select a service</option>
-              <option value="Enterprise Solution Development">Enterprise Solution Development</option>
-              <option value="Advanced Analytics AI">Advanced Analytics &amp; AI</option>
-              <option value="BI Integration">BI Integration</option>
-              <option value="Application Development">Application Development &amp; System Integration</option>
-              <option value="Other">Something else</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="c-message">Tell us about your project</label>
-            <textarea id="c-message" name="message" placeholder="What challenges are you facing? What goals are you working toward?" autocomplete="off" maxlength="5000"></textarea>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="c-consent" name="consent" required aria-required="true" />
-            <label for="c-consent">I agree to the <a href="/privacy-policy/" rel="noopener noreferrer" target="_blank">Privacy Policy</a> and consent to having my data processed for this inquiry.</label>
-          </div>
-          <button type="submit" class="btn-primary btn-submit">Submit &rarr;</button>
-        </form>
+        <a href="/contact/" class="btn-primary btn-submit">Go to Contact Form &rarr;</a>
       </div>
     </div>
   </div>

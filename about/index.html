@@ -295,7 +295,7 @@ section{padding:80px 0}
 .checkbox-group{display:flex;align-items:flex-start;gap:10px;font-size:0.8rem;color:#cbd5e1;margin-bottom:16px}
 .checkbox-group input{margin-top:3px;accent-color:#2563eb;flex-shrink:0}
 .checkbox-group a{color:#60a5fa}
-.btn-submit{width:100%;justify-content:center}
+.btn-submit{width:100%;justify-content:center}.cta-grid>div:last-child{display:flex;flex-direction:column;justify-content:center}
 
 /* Footer */
 footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56px 0 24px}
@@ -589,50 +589,7 @@ section{padding:60px 0}
       </div>
       <div>
         <h4 class="cta-form-title">Request a free consultation</h4>
-        <form action="/contact/" method="POST" autocomplete="on" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First name <span aria-hidden="true">*</span></label>
-              <input type="text" id="fname" name="fname" placeholder="John" required autocomplete="given-name" maxlength="100" />
-            </div>
-            <div class="form-group">
-              <label for="lname">Last name <span aria-hidden="true">*</span></label>
-              <input type="text" id="lname" name="lname" placeholder="Doe" required autocomplete="family-name" maxlength="100" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="company">Company / Organization</label>
-            <input type="text" id="company" name="company" placeholder="Acme Inc." autocomplete="organization" maxlength="200" />
-          </div>
-          <div class="form-group">
-            <label for="email">Work email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" placeholder="john@acme.com" required autocomplete="email" inputmode="email" maxlength="254" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" inputmode="tel" maxlength="30" pattern="[\+\d\s\-\(\)\.]+" title="Phone number (digits, spaces, hyphens, parentheses)" />
-          </div>
-          <div class="form-group">
-            <label for="service">I'm interested in</label>
-            <select id="service" name="service" autocomplete="off">
-              <option value="">Select a service</option>
-              <option value="Enterprise Solution Development">Enterprise Solution Development</option>
-              <option value="Advanced Analytics AI">Advanced Analytics & AI</option>
-              <option value="BI Integration">BI Integration</option>
-              <option value="Application Development">Application Development & System Integration</option>
-              <option value="Other">Something else</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" placeholder="What challenges are you facing? What goals are you working toward?" autocomplete="off" maxlength="5000"></textarea>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="consent" name="consent" required aria-required="true" />
-            <label for="consent">I agree to the <a href="/privacy-policy/" rel="noopener noreferrer" target="_blank">Privacy Policy</a> and consent to having my data processed for this inquiry.</label>
-          </div>
-          <button type="submit" class="btn-primary btn-submit" id="formSubmit">Submit &rarr;</button>
-        </form>
+        <a href="/contact/" class="btn-primary btn-submit">Go to Contact Form &rarr;</a>
       </div>
     </div>
     <div class="cta-locations-mt">
