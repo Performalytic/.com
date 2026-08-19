@@ -1024,3 +1024,17 @@ section:first-of-type {
 .blog-cta{padding:48px 0}
 .faq-section .comparison-table-wrap{overflow-x:auto}
 }
+
+/* ========================================
+   MOBILE FONT SCALING - REDUCE FONT SIZE
+======================================== */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
