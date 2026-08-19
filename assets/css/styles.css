@@ -1032,9 +1032,25 @@ section:first-of-type {
   html {
     font-size: 15px;
   }
+  .nav-logo img {
+    height: 30px !important;
+    width: 200px !important;
+  }
+  .footer-brand-logo {
+    height: 48px !important;
+    max-width: 120px !important;
+  }
 }
 @media (max-width: 480px) {
   html {
     font-size: 14px;
+  }
+  .nav-logo img {
+    height: 28px !important;
+    width: 187px !important;
+  }
+  .footer-brand-logo {
+    height: 44px !important;
+    max-width: 110px !important;
   }
 }
