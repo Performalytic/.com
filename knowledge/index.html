@@ -680,7 +680,7 @@ section{padding:var(--section-pad) 0}
         </ul>
       </div>
       <div class="newsletter-form">
-        <form action="/contact/" method="POST" autocomplete="on" novalidate>
+        <form action="/contact/" method="POST" autocomplete="on" novalidate id="newsletter-form">
           <div class="form-row">
             <div class="form-group">
               <label for="nl-fname">First name</label>
@@ -801,13 +801,19 @@ function tm(e){if(mm){var a=mm.classList.toggle('active');if(mt)mt.setAttribute(
 if(mt)mt.addEventListener('click',tm);
 if(mm){var q=mm.querySelectorAll('a');for(var i=0;i<q.length;i++)q[i].addEventListener('click',cm)}
 var tk=false;window.addEventListener('scroll',function(){if(!tk){window.requestAnimationFrame(function(){cm();tk=false});tk=true}},{passive:true});
-var fm=document.querySelector('form');if(fm){fm.addEventListener('submit',function(e){
+var fms=document.querySelectorAll('form');for(var fi=0;fi<fms.length;fi++){fms[fi].addEventListener('submit',function(e){
 e.preventDefault();
-var cc=document.getElementById('consent');if(cc&&!cc.checked){cc.focus();return}
 var f=e.target;
-var ff=document.createElement('form');ff.method='POST';ff.action='https://docs.google.com/forms/d/e/1FAIpQLSeBNXijGL8QmOTltX27X9RsMdxXtzGsFZOcy5INLIAPdRAaag/formResponse';ff.target='gfi';ff.style.display='none';
+var cc=f.querySelector('[name=consent]');if(cc&&!cc.checked){cc.focus();return}
+var nf=(f.id==='newsletter-form');
+var ff=document.createElement('form');ff.method='POST';ff.action=nf?'https://docs.google.com/forms/d/e/1FAIpQLSeqpLVV4I_NbJJnvZCoEng2b8h8p5C9sHPlkX1Y-Ta1F28yow/formResponse':'https://docs.google.com/forms/d/e/1FAIpQLSeBNXijGL8QmOTltX27X9RsMdxXtzGsFZOcy5INLIAPdRAaag/formResponse';ff.target='gfi';ff.style.display='none';
 var gi=document.createElement('iframe');gi.name='gfi';gi.style.display='none';
 function ga(n,v){var i=document.createElement('input');i.name=n;i.value=v;ff.appendChild(i)}
+if(nf){
+ga('entry.121777155',(f.querySelector('[name=fname],[name=firstName]')||{}).value||'');
+ga('entry.1451072047',(f.querySelector('[name=lname],[name=lastName]')||{}).value||'');
+ga('entry.1461003306',(f.querySelector('[name=email]')||{}).value||'');
+}else{
 ga('entry.1456592303',(f.querySelector('[name=fname],[name=firstName]')||{}).value||'');
 ga('entry.459583080',(f.querySelector('[name=lname],[name=lastName]')||{}).value||'');
 ga('entry.1395818759',(f.querySelector('[name=company]')||{}).value||'');
@@ -815,11 +821,12 @@ ga('entry.1275424648',(f.querySelector('[name=email]')||{}).value||'');
 ga('entry.1473316045',(f.querySelector('[name=phone]')||{}).value||'');
 ga('entry.1963168480',(f.querySelector('[name=service]')||{}).value||'Not specified');
 ga('entry.429425792',(f.querySelector('[name=message]')||{}).value||'Not specified');
+}
 ga('emailAddress',(f.querySelector('[name=email]')||{}).value||'');
 ga('fvv','1');ga('pageHistory','0');
 document.body.appendChild(gi);document.body.appendChild(ff);ff.submit();
 setTimeout(function(){document.body.removeChild(ff);document.body.removeChild(gi)},5000);
-f.innerHTML='<div class="form-success"><div class="form-success-icon">\u2713</div><h4>Thank You!</h4><p>Your message has been received. We\'ll get back to you within 1 business day.</p></div>';
+f.innerHTML=nf?'<div class="form-success"><div class="form-success-icon">\u2713</div><h4>Thanks for subscribing!</h4><p>You\'re on the list. We\'ll send you practical data insights every week.</p></div>':'<div class="form-success"><div class="form-success-icon">\u2713</div><h4>Thank You!</h4><p>Your message has been received. We\'ll get back to you within 1 business day.</p></div>';
 })}})();
 if(typeof gtag==='function'){
 document.querySelectorAll('a[href^="http"]:not([href*="performalytic.com"])').forEach(function(el){
@@ -828,7 +835,7 @@ el.addEventListener('click',function(){gtag('event','click',{event_category:'out
 document.querySelectorAll('.btn-primary,.nav-cta,.submit-btn').forEach(function(el){
 el.addEventListener('click',function(){gtag('event','click',{event_category:'cta',event_label:this.textContent.trim()||'cta_click'})});
 });
-var gf=document.querySelector('form');if(gf){gf.addEventListener('submit',function(){gtag('event','form_submit',{event_category:'engagement',event_label:this.id||'contact_form'})})};
+var gfs=document.querySelectorAll('form');for(var gi2=0;gi2<gfs.length;gi2++){gfs[gi2].addEventListener('submit',function(){gtag('event','form_submit',{event_category:'engagement',event_label:this.id||'contact_form'})})};
 var p=document.querySelectorAll('.cta-contact-item a[href^="tel"]');if(p.length){p[0].addEventListener('click',function(){gtag('event','click',{event_category:'contact',event_label:'phone'})})};
 var e=document.querySelectorAll('.cta-contact-item a[href^="mailto"]');if(e.length){e[0].addEventListener('click',function(){gtag('event','click',{event_category:'contact',event_label:'email'})})};
 }
