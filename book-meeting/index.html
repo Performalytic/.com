@@ -6,21 +6,32 @@ a{color:inherit;text-decoration:none}
 ul{list-style:none}
 img{max-width:100%;height:auto;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid rgba(0,0,0,0.04)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo img{height:40px;width:auto}
-.desktop-nav{display:flex;gap:32px}
-.desktop-nav a{font-size:14px;font-weight:500;color:#475569;transition:color .15s}
-.desktop-nav a:hover,.desktop-nav a.active{color:#2563eb}
-.btn-nav-cta{display:inline-flex;align-items:center;padding:10px 24px;background:#2563eb;color:#fff;border-radius:100px;font-size:14px;font-weight:600;transition:background .15s}
-.btn-nav-cta:hover{background:#1d4ed8;color:#fff}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.25rem;color:#0f172a;letter-spacing:-0.5px}
+.nav-logo img{height:36px;width:240px;object-fit:cover;object-position:center;display:block}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a{text-decoration:none;color:#475569;font-size:0.9rem;font-weight:500;transition:color 0.2s;padding:8px 0;display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.nav-links>li>a:hover{color:#2563eb}
+.nav-links>li>a .arrow{font-size:0.6rem;transition:transform 0.2s}
+.nav-links>li:hover>a .arrow{transform:rotate(180deg)}
+.nav-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:220px;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.1);border:1px solid #e2e8f0;padding:8px;z-index:100}
+.nav-links>li:hover .nav-dropdown{display:block}
+.nav-dropdown a{display:block;padding:10px 16px;color:#475569;text-decoration:none;font-size:0.85rem;font-weight:500;border-radius:8px;transition:all 0.15s}
+.nav-dropdown a:hover{background:#f8fafc;color:#2563eb}
+.nav-cta{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff!important;padding:10px 32px!important;border-radius:100px;font-weight:600;font-size:0.88rem;letter-spacing:0.01em;transition:all 0.25s}
+.nav-cta:hover{background:linear-gradient(135deg,#1d4ed8,#6d28d9)!important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.35)}
+.nav-cta:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
 .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
-.menu-toggle span{display:block;width:24px;height:2px;background:#0f172a;border-radius:2px;transition:transform .3s,opacity .3s}
+.menu-toggle span{display:block;width:24px;height:2px;background:#0f172a;border-radius:2px;transition:transform 0.3s,opacity 0.3s}
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;padding:24px;box-shadow:0 20px 40px rgba(0,0,0,0.1);flex-direction:column;gap:8px;z-index:999;max-height:calc(100vh - 72px);overflow-y:auto}
 .mobile-menu.active{display:flex}
-.mobile-menu a{text-decoration:none;color:#0f172a;font-size:15px;font-weight:500;padding:12px 0;border-bottom:1px solid #f1f5f9;display:block}
+.mobile-menu .mm-group{margin-bottom:12px}
+.mobile-menu .mm-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#94a3b8;padding:8px 0 4px}
+.mobile-menu a{text-decoration:none;color:#0f172a;font-size:0.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid #f1f5f9;display:block}
 .mobile-menu a:last-child{border-bottom:none}
-.mobile-cta{text-align:center;padding:14px;margin-top:8px;border-radius:100px;background:#2563eb;color:#fff!important;font-weight:600}
+.mobile-menu .nav-cta{text-align:center;padding:14px;margin-top:8px;border-radius:100px;display:block}
 .footer{background:#0f172a;color:#fff;padding:64px 0 32px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
 .footer-brand-logo{height:48px;max-width:140px;display:block;margin-bottom:16px;filter:brightness(0) invert(1)}
@@ -29,7 +40,6 @@ img{max-width:100%;height:auto;display:block}
 .footer-links a{display:block;font-size:14px;color:#94a3b8;padding:5px 0;transition:color .2s}
 .footer-links a:hover{color:#e2e8f0}
 .footer-bottom{padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#94a3b8;text-align:center}
-@media(max-width:768px){.desktop-nav,.btn-nav-cta{display:none}.menu-toggle{display:flex}.mobile-menu.active{display:flex}.footer-grid{grid-template-columns:1fr;gap:32px}}
 .page-hero-mini{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);padding:100px 0 48px;color:#fff;text-align:center}
 .page-hero-mini h1{font-size:clamp(28px,5vw,40px);font-weight:800;margin:0 0 12px}
 .page-hero-mini p{font-size:17px;color:rgba(255,255,255,0.8);margin:0;max-width:520px;margin-inline:auto}
@@ -62,11 +72,12 @@ img{max-width:100%;height:auto;display:block}
 .mp-back-btn:hover{background:#1d4ed8}
 .mp-email-btn{display:inline-block;padding:12px 24px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:15px;transition:background .15s}
 .mp-email-btn:hover{background:#1d4ed8}
-@media(max-width:768px){.meeting-page-grid{grid-template-columns:1fr;gap:32px}.mp-form-row{grid-template-columns:1fr}.page-hero-mini{padding:80px 0 32px}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.menu-toggle{display:flex}.mobile-menu.active{display:flex}.meeting-page-grid{grid-template-columns:1fr;gap:32px}.mp-form-row{grid-template-columns:1fr}.page-hero-mini{padding:80px 0 32px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
 </style>
 </head>
 <body>
-<header class="header" role="banner"><div class="header-inner container"><a href="/" class="logo" aria-label="Performalytic home"><img src="/assets/images/performalytic-logo-original.png" alt="Performalytic" width="160" height="40" /></a><nav class="desktop-nav" aria-label="Main"><a href="/">Home</a><a href="/about/">About</a><a href="/services/">Services</a><a href="/industries/">Industries</a><a href="/case-studies/">Case Studies</a><a href="/careers/">Careers</a></nav><a href="https://calendar.app.google/xE6k8wGhKz2Csp13" class="btn-nav-cta">Let's Talk</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button><div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="Mobile"><a href="/">Home</a><a href="/about/">About</a><a href="/services/">Services</a><a href="/industries/">Industries</a><a href="/case-studies/">Case Studies</a><a href="/careers/">Careers</a><a href="https://calendar.app.google/xE6k8wGhKz2Csp13" class="mobile-cta">Let's Talk</a></nav></div></div></header>
+<header><nav aria-label="Main navigation"><div class="container"><a href="/" class="nav-logo" aria-label="Performalytic home"><img src="/assets/images/performalytic-logo-blue-2.png" alt="Performalytic" width="411" height="78" fetchpriority="high" decoding="async" /></a><ul class="nav-links" role="list"><li><a href="/">Home</a></li><li><a href="#" aria-haspopup="true">Our Services <span class="arrow" aria-hidden="true">&#9662;</span></a><div class="nav-dropdown" role="menu"><a href="/enterprise-solution-development/" role="menuitem">Enterprise Solution Development</a><a href="/advanced-analytics-ai/" role="menuitem">Advanced Analytics &amp; AI</a><a href="/bi-integration/" role="menuitem">BI Integration</a><a href="/application-development-and-system-integration/" role="menuitem">Application Development &amp; Integration</a></div></li><li><a href="#" aria-haspopup="true">Company <span class="arrow" aria-hidden="true">&#9662;</span></a><div class="nav-dropdown" role="menu"><a href="/about/" role="menuitem">About</a><a href="/contact/" role="menuitem">Contact</a><a href="/careers/" role="menuitem">Careers</a><a href="/industries/" role="menuitem">Industries</a></div></li><li><a href="#" aria-haspopup="true">Resources <span class="arrow" aria-hidden="true">&#9662;</span></a><div class="nav-dropdown" role="menu"><a href="/products/" role="menuitem">Products</a><a href="/technologies/" role="menuitem">Technologies</a><a href="/faq/" role="menuitem">FAQ</a><a href="/knowledge/" role="menuitem">Knowledge Hub</a><a href="/tools/" role="menuitem">Tools</a><a href="/blog/" role="menuitem">Blog</a><a href="/contact/" role="menuitem">Schedule a Consultation</a></div></li><li><a href="/contact/" class="nav-cta">Contact Us</a></li></ul><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button></div></nav><nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="/">Home</a><div class="mm-group"><div class="mm-label">Our Services</div><a href="/enterprise-solution-development/">Enterprise Solution Development</a><a href="/advanced-analytics-ai/">Advanced Analytics &amp; AI</a><a href="/bi-integration/">BI Integration</a><a href="/application-development-and-system-integration/">Application Development &amp; Integration</a></div><div class="mm-group"><div class="mm-label">Company</div><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/careers/">Careers</a><a href="/industries/">Industries</a></div><div class="mm-group"><div class="mm-label">Resources</div><a href="/products/">Products</a><a href="/technologies/">Technologies</a><a href="/faq/">FAQ</a><a href="/knowledge/">Knowledge Hub</a><a href="/tools/">Tools</a><a href="/blog/">Blog</a></div><a href="/contact/" class="nav-cta">Contact Us</a></nav></header>
 <main>
 <div class="page-hero page-hero-mini"><div class="container"><h1>Book a Meeting</h1><p>Schedule a call with our team. We're happy to discuss career opportunities, answer your questions, or explore how you can join Performalytic.</p></div></div>
 <section class="meeting-page-section"><div class="container"><div class="meeting-page-grid">
