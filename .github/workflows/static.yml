@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Generate sitemap then deploy
   deploy:
     environment:
       name: github-pages
@@ -31,12 +31,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate sitemap.xml
+        run: node generate-sitemap.js
+      - name: Ping IndexNow (Bing)
+        if: env.INDEXNOW_KEY != ''
+        run: |
+          curl -X POST "https://www.bing.com/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"performalytic.com","key":"${{ env.INDEXNOW_KEY }}","keyLocation":"https://performalytic.com/${{ env.INDEXNOW_KEY }}.txt","urlList":["https://performalytic.com/sitemap.xml"]}'
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
