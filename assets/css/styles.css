@@ -98,6 +98,53 @@ html.js .industries-grid .industry-card.revealed {
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
 }
 
+/* Floating Book a Meeting Button */
+.floating-meeting-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  z-index: 998;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+.floating-meeting-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5);
+  color: #fff;
+}
+.floating-meeting-btn svg {
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .floating-meeting-btn {
+    bottom: 20px;
+    left: 16px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .floating-meeting-btn span {
+    display: none;
+  }
+  .floating-meeting-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+  }
+}
+
 /* Gradient Text */
 .gradient-text {
   background: linear-gradient(135deg, #60a5fa, #a78bfa);
