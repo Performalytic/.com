@@ -1,6 +1,8 @@
 (function(){
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   /* ============================================
      Scroll Reveal Animations
   ============================================ */

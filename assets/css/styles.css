@@ -1,30 +1,30 @@
 /* === Modern UI Additions for Performalytic === */
 
 /* Scroll Reveal */
-.reveal {
+html.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.revealed {
+html.js .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-left {
+html.js .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal-left.revealed {
+html.js .reveal-left.revealed {
   opacity: 1;
   transform: translateX(0);
 }
-.reveal-right {
+html.js .reveal-right {
   opacity: 0;
   transform: translateX(40px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal-right.revealed {
+html.js .reveal-right.revealed {
   opacity: 1;
   transform: translateX(0);
 }
@@ -32,33 +32,33 @@
 .hero-stat {
   display: block;
 }
-.reveal-scale {
+html.js .reveal-scale {
   opacity: 0;
   transform: scale(0.92);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal-scale.revealed {
+html.js .reveal-scale.revealed {
   opacity: 1;
   transform: scale(1);
 }
 
 /* Staggered reveal for grid items */
-.services-grid .service-card,
-.solutions-grid .solution-card,
-.tech-grid .tech-item,
-.trust-grid .trust-item,
-.process-grid .process-step,
-.industries-grid .industry-card {
+html.js .services-grid .service-card,
+html.js .solutions-grid .solution-card,
+html.js .tech-grid .tech-item,
+html.js .trust-grid .trust-item,
+html.js .process-grid .process-step,
+html.js .industries-grid .industry-card {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.services-grid .service-card.revealed,
-.solutions-grid .solution-card.revealed,
-.tech-grid .tech-item.revealed,
-.trust-grid .trust-item.revealed,
-.process-grid .process-step.revealed,
-.industries-grid .industry-card.revealed {
+html.js .services-grid .service-card.revealed,
+html.js .solutions-grid .solution-card.revealed,
+html.js .tech-grid .tech-item.revealed,
+html.js .trust-grid .trust-item.revealed,
+html.js .process-grid .process-step.revealed,
+html.js .industries-grid .industry-card.revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -160,11 +160,11 @@
 img {
   transition: opacity 0.3s;
 }
-img[loading="lazy"] {
+html.js img[loading="lazy"] {
   opacity: 0;
 }
-img[loading="lazy"].loaded,
-img[loading="lazy"]:not([src]) {
+html.js img[loading="lazy"].loaded,
+html.js img[loading="lazy"]:not([src]) {
   opacity: 1;
 }
 
@@ -686,7 +686,7 @@ section {
 }
 
 /* Better section transitions */
-section {
+html.js section {
   opacity: 0;
   animation: sectionFadeIn 0.5s ease forwards;
 }
@@ -721,10 +721,10 @@ section:first-of-type {
 
 /* Reduce motion */
 @media(prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
+  html.js .reveal,
+  html.js .reveal-left,
+  html.js .reveal-right,
+  html.js .reveal-scale {
     opacity: 1;
     transform: none;
     transition: none;
@@ -732,12 +732,12 @@ section:first-of-type {
   .back-to-top {
     transition: none;
   }
-  .services-grid .service-card,
-  .solutions-grid .solution-card,
-  .tech-grid .tech-item,
-  .trust-grid .trust-item,
-  .process-grid .process-step,
-  .industries-grid .industry-card {
+  html.js .services-grid .service-card,
+  html.js .solutions-grid .solution-card,
+  html.js .tech-grid .tech-item,
+  html.js .trust-grid .trust-item,
+  html.js .process-grid .process-step,
+  html.js .industries-grid .industry-card {
     opacity: 1;
     transform: none;
     transition: none;
