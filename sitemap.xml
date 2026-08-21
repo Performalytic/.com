@@ -46,6 +46,16 @@
     <priority>0.6</priority>
   </url>
 <url>
+    <loc>https://performalytic.com/careers/apply/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://performalytic.com/book-meeting/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
     <loc>https://performalytic.com/industries/</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
@@ -84,11 +94,6 @@
     <loc>https://performalytic.com/sitemap.html</loc>
     <lastmod>2026-08-17</lastmod>
     <priority>0.3</priority>
-  </url>
-<url>
-    <loc>https://performalytic.com/case-studies/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <priority>0.6</priority>
   </url>
 <url>
     <loc>https://performalytic.com/tools/</loc>
@@ -229,10 +234,5 @@
     <loc>https://performalytic.com/testimonials/</loc>
     <lastmod>2026-07-18</lastmod>
     <priority>0.6</priority>
-  </url>
-<url>
-    <loc>https://performalytic.com/partners/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <priority>0.5</priority>
   </url>
 </urlset>
