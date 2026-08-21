@@ -244,7 +244,7 @@ ff.action='https://docs.google.com/forms/d/e/1FAIpQLSeW4KhG8qmjM1XhJhyn9Yew_GsDl
 ff.target='afiframe';
 ff.style.display='none';
 var gi=document.createElement('iframe');gi.name='afiframe';gi.style.display='none';
-function ga(n,v){if(!v)return;var inp=document.createElement('input');inp.type='hidden';inp.name=n;inp.value=v;ff.appendChild(inp);}
+function ga(n,v){var inp=document.createElement('input');inp.type='hidden';inp.name=n;inp.value=v||'';ff.appendChild(inp);}
 ga('entry.704941400',gv('af-first'));
 ga('entry.703891546',gv('af-last'));
 ga('entry.1972987583',gv('af-email'));
