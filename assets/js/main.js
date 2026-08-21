@@ -261,6 +261,65 @@
   }
 
   /* ============================================
+     Blog Post Reading Progress Bar
+  ============================================ */
+  function initReadingProgress() {
+    var article = document.querySelector('.post-content');
+    if (!article) return;
+
+    var bar = document.querySelector('.reading-progress');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'reading-progress';
+      document.body.appendChild(bar);
+    }
+
+    var ticking = false;
+    function update() {
+      var rect = article.getBoundingClientRect();
+      var articleTop = rect.top + window.scrollY;
+      var total = article.offsetHeight - window.innerHeight;
+      var scrolled = window.scrollY - articleTop + window.innerHeight * 0.5;
+      var pct = total > 0 ? Math.min(100, Math.max(0, (scrolled / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  /* ============================================
+     FAQ Accordion
+  ============================================ */
+  function initFaqAccordion() {
+    var questions = document.querySelectorAll('.faq-question');
+    if (!questions.length) return;
+
+    questions.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+          openItem.classList.remove('open');
+          var q = openItem.querySelector('.faq-question');
+          if (q) q.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  /* ============================================
      Floating Book a Meeting Button
   ============================================ */
   function initFloatingMeetingBtn() {
@@ -288,6 +347,8 @@
     initHeroParallax();
     initNavScroll();
     initFloatingMeetingBtn();
+    initReadingProgress();
+    initFaqAccordion();
   }
 
   if (document.readyState === 'loading') {

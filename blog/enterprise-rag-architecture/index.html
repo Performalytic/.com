@@ -276,7 +276,7 @@ section{padding:60px 0}
 
 <section class="rag-pipeline-diagram" aria-label="RAG pipeline architecture diagram">
   <div class="container">
-    <h2>How RAG Works: The Complete Pipeline</h2>
+    <h2 id="how-rag-works-the-complete-pipeline">How RAG Works: The Complete Pipeline</h2>
     <p>This diagram shows the end-to-end flow of a production RAG system, from document ingestion through retrieval to answer generation.</p>
     <div class="diagram-container">
       <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RAG pipeline architecture diagram showing document ingestion, embedding, vector storage, retrieval, and generation">
@@ -382,6 +382,9 @@ section{padding:60px 0}
 <section>
   <div class="container post-content">
 
+    <nav class="post-toc" aria-label="Table of contents"><h3>In this article</h3><ul><li><a href="#how-rag-works-the-complete-pipeline">How RAG Works: The Complete Pipeline</a></li><li><a href="#what-is-rag-and-why-it-matters-for-enterprises">What is RAG and Why It Matters for Enterprises</a></li><li><a href="#rag-architecture-components">RAG Architecture Components</a></li><li><a href="#key-design-decisions">Key Design Decisions</a></li><li><a href="#implementation-patterns">Implementation Patterns</a></li><li><a href="#evaluation-and-quality-metrics">Evaluation and Quality Metrics</a></li><li><a href="#common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</a></li><li><a href="#rag-vs-fine-tuning-decision-framework">RAG vs Fine-Tuning: Decision Framework</a></li><li><a href="#enterprise-considerations">Enterprise Considerations</a></li><li><a href="#how-we-help">How We Help</a></li></ul></nav>
+
+
     <div class="tldr-box">
       <h3>TL;DR - Key Takeaways</h3>
       <ul>
@@ -397,7 +400,7 @@ section{padding:60px 0}
 
     <p>This guide provides a comprehensive, vendor-agnostic deep dive into enterprise RAG architecture. Whether you're building your first prototype or scaling an existing system, you'll find actionable guidance on every design decision you'll face.</p>
 
-    <h2>What is RAG and Why It Matters for Enterprises</h2>
+    <h2 id="what-is-rag-and-why-it-matters-for-enterprises">What is RAG and Why It Matters for Enterprises</h2>
 
     <h3>How RAG Works</h3>
     <p>RAG operates on a straightforward principle: before asking an LLM to answer a question, first retrieve the most relevant documents from your knowledge base, then provide those documents as context to the model. This three-step process - <strong>index, retrieve, generate</strong> - produces answers that are accurate, traceable, and grounded in your actual data.</p>
@@ -416,7 +419,7 @@ section{padding:60px 0}
       <p>"RAG is not just a technique - it's the foundational architecture pattern for enterprise AI in 2026. Every organization with proprietary data will need a RAG strategy." - Gartner AI Research</p>
     </blockquote>
 
-    <h2>RAG Architecture Components</h2>
+    <h2 id="rag-architecture-components">RAG Architecture Components</h2>
     <p>A production RAG system consists of four interconnected components. Understanding each component's role and options is critical for making the right design decisions.</p>
 
     <h3>Vector Databases</h3>
@@ -467,7 +470,7 @@ section{padding:60px 0}
       <li><strong>Fallback behavior:</strong> Define what happens when retrieved context is insufficient to answer</li>
     </ul>
 
-    <h2>Key Design Decisions</h2>
+    <h2 id="key-design-decisions">Key Design Decisions</h2>
     <p>Every enterprise RAG implementation requires navigating several critical design choices. Here are the decisions that matter most and how to approach them.</p>
 
     <h3>Chunking Strategies</h3>
@@ -539,7 +542,7 @@ section{padding:60px 0}
       <li><strong>Step-back prompting:</strong> Generates a more general question first, retrieves broader context, then narrows down. Useful for questions requiring background knowledge.</li>
     </ul>
 
-    <h2>Implementation Patterns</h2>
+    <h2 id="implementation-patterns">Implementation Patterns</h2>
     <p>RAG implementations follow three evolving patterns, each building on the previous one. Understanding these patterns helps you choose the right level of complexity for your use case.</p>
 
     <h3>Naive RAG</h3>
@@ -601,7 +604,7 @@ section{padding:60px 0}
       </div>
     </div>
 
-    <h2>Evaluation and Quality Metrics</h2>
+    <h2 id="evaluation-and-quality-metrics">Evaluation and Quality Metrics</h2>
     <p>You can't improve what you can't measure. Enterprise RAG systems require systematic evaluation across multiple dimensions.</p>
 
     <h3>RAGAS Framework</h3>
@@ -630,7 +633,7 @@ section{padding:60px 0}
     <h3>Building an Evaluation Pipeline</h3>
     <p>Create a benchmark dataset with at least 100-200 representative questions and their expected answers. Run this dataset through your RAG pipeline regularly. Track metrics over time to identify regressions. Use LLM-as-judge evaluations for scaling, but validate with human reviews monthly.</p>
 
-    <h2>Common Pitfalls and How to Avoid Them</h2>
+    <h2 id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</h2>
     <p>After implementing RAG systems across dozens of enterprises, these are the mistakes we see most frequently:</p>
 
     <h3>1. Poor Chunking Strategy</h3>
@@ -657,7 +660,7 @@ section{padding:60px 0}
     <p><strong>The problem:</strong> RAG systems amplify data quality issues. Outdated documents, duplicate content, and poorly formatted data all degrade retrieval quality.</p>
     <p><strong>The fix:</strong> Invest in data preprocessing pipelines. Deduplicate content, extract text cleanly from PDFs and documents, and implement freshness tracking to flag outdated content.</p>
 
-    <h2>RAG vs Fine-Tuning: Decision Framework</h2>
+    <h2 id="rag-vs-fine-tuning-decision-framework">RAG vs Fine-Tuning: Decision Framework</h2>
     <p>The RAG vs fine-tuning question is one of the most common in enterprise AI. The answer isn't either/or - it's about matching the right approach to the right problem.</p>
 
     <div class="comparison-table-wrap">
@@ -743,7 +746,7 @@ section{padding:60px 0}
       <p>In practice, 70% of enterprise AI use cases are best served by RAG alone, 20% benefit from fine-tuning, and 10% require both approaches working together.</p>
     </blockquote>
 
-    <h2>Enterprise Considerations</h2>
+    <h2 id="enterprise-considerations">Enterprise Considerations</h2>
     <p>Building a production RAG system for the enterprise requires addressing requirements beyond technical architecture.</p>
 
     <h3>Security and Access Control</h3>
@@ -791,7 +794,7 @@ section{padding:60px 0}
       <li><strong>Rollback capability:</strong> Maintain ability to revert to previous configurations</li>
     </ul>
 
-    <h2>How We Help</h2>
+    <h2 id="how-we-help">How We Help</h2>
     <p>At Performalytic, we help enterprises design, build, and optimize RAG systems that deliver measurable business value. Our approach covers the full lifecycle:</p>
 
     <ol>

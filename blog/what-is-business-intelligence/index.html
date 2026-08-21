@@ -478,7 +478,7 @@ section{padding:60px 0}
   <div class="container" style="max-width:800px">
     <div class="text-center" style="margin-bottom:32px">
       <span class="section-label">FAQ</span>
-      <h2 class="section-title" style="font-size:1.8rem">Frequently Asked Questions</h2>
+      <h2 id="faq" class="section-title" style="font-size:1.8rem">Frequently Asked Questions</h2>
     </div>
 
     <div class="faq-item">
@@ -580,14 +580,6 @@ function tm(e){if(mm){var a=mm.classList.toggle('active');if(mt)mt.setAttribute(
 if(mt)mt.addEventListener('click',tm);
 if(mm){var q=mm.querySelectorAll('a');for(var i=0;i<q.length;i++)q[i].addEventListener('click',cm)}
 var tk=false;window.addEventListener('scroll',function(){if(!tk){window.requestAnimationFrame(function(){cm();tk=false});tk=true}},{passive:true});
-document.querySelectorAll('.faq-question').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=this.parentElement;
-    var isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(openItem){openItem.classList.remove('open');openItem.querySelector('.faq-question').setAttribute('aria-expanded','false')});
-    if(!isOpen){item.classList.add('open');this.setAttribute('aria-expanded','true')}
-  });
-});
 if(typeof gtag==='function'){
 document.querySelectorAll('a[href^="http"]:not([href*="performalytic.com"])').forEach(function(el){
 el.addEventListener('click',function(){gtag('event','click',{event_category:'outbound',event_label:this.href})});

@@ -250,11 +250,14 @@ section{padding:60px 0}
 
 <section>
   <div class="container post-content">
+
+    <nav class="post-toc" aria-label="Table of contents"><h3>In this article</h3><ul><li><a href="#1-version-control-everything">1. Version Control Everything</a></li><li><a href="#2-implement-cicd-for-data-pipelines">2. Implement CI/CD for Data Pipelines</a></li><li><a href="#3-infrastructure-as-code-iac">3. Infrastructure as Code (IaC)</a></li><li><a href="#4-automated-data-quality-testing">4. Automated Data Quality Testing</a></li><li><a href="#5-monitoring-observability">5. Monitoring &amp; Observability</a></li><li><a href="#6-containerization-environment-consistency">6. Containerization &amp; Environment Consistency</a></li><li><a href="#7-collaboration-documentation">7. Collaboration &amp; Documentation</a></li><li><a href="#getting-started-with-data-devops">Getting Started with Data DevOps</a></li></ul></nav>
+
     <p>Data teams have traditionally operated differently from software engineering teams. While developers embraced CI/CD, version control, and automated testing years ago, many data teams continued to manage pipelines manually, deploy changes infrequently, and struggle with reproducibility.</p>
 
     <p>That's changing rapidly. The adoption of DevOps practices - often called DataOps or MLOps when applied to data - is helping data teams deliver more reliable, scalable, and maintainable data products. Here are the best practices every data team should adopt.</p>
 
-    <h2>1. Version Control Everything</h2>
+    <h2 id="1-version-control-everything">1. Version Control Everything</h2>
     <p>Just as software engineers version their code, data teams should version everything: SQL scripts, dbt models, data pipeline configurations, infrastructure definitions, and even documentation. Git-based version control enables:</p>
     <ul>
       <li><strong>Collaboration:</strong> Multiple team members can work on the same codebase simultaneously</li>
@@ -263,7 +266,7 @@ section{padding:60px 0}
       <li><strong>Code review:</strong> Peer reviews catch errors before they reach production</li>
     </ul>
 
-    <h2>2. Implement CI/CD for Data Pipelines</h2>
+    <h2 id="2-implement-cicd-for-data-pipelines">2. Implement CI/CD for Data Pipelines</h2>
     <p>Continuous Integration and Continuous Deployment (CI/CD) isn't just for application code. Data pipelines benefit enormously from automated testing and deployment:</p>
     <ul>
       <li><strong>Automated testing:</strong> Validate data quality, schema changes, and transformation logic before deployment</li>
@@ -272,7 +275,7 @@ section{padding:60px 0}
     </ul>
     <p>At Performalytic, we help organizations implement <a href="/application-development-and-system-integration/">CI/CD pipeline automation</a> for their data infrastructure, enabling faster, more reliable releases.</p>
 
-    <h2>3. Infrastructure as Code (IaC)</h2>
+    <h2 id="3-infrastructure-as-code-iac">3. Infrastructure as Code (IaC)</h2>
     <p>Manual infrastructure setup is error-prone and hard to reproduce. Infrastructure as Code tools like Terraform, Pulumi, and AWS CloudFormation allow data teams to define their infrastructure in declarative configuration files:</p>
     <ul>
       <li>Define data warehouses, storage buckets, compute clusters, and networking in code</li>
@@ -281,7 +284,7 @@ section{padding:60px 0}
       <li>Automate scaling and disaster recovery</li>
     </ul>
 
-    <h2>4. Automated Data Quality Testing</h2>
+    <h2 id="4-automated-data-quality-testing">4. Automated Data Quality Testing</h2>
     <p>Data quality testing should be automated and integrated into the pipeline, not performed as a manual afterthought. Implement testing at multiple levels:</p>
     <ul>
       <li><strong>Schema tests:</strong> Validate that columns exist, have correct data types, and meet nullability requirements</li>
@@ -291,7 +294,7 @@ section{padding:60px 0}
       <li><strong>Custom business rules:</strong> Enforce domain-specific data quality requirements</li>
     </ul>
 
-    <h2>5. Monitoring &amp; Observability</h2>
+    <h2 id="5-monitoring-observability">5. Monitoring &amp; Observability</h2>
     <p>Data pipelines can fail silently. Without proper monitoring, data quality issues can propagate through downstream systems before anyone notices. Implement comprehensive observability:</p>
     <ul>
       <li>Track pipeline run status, duration, and failure rates</li>
@@ -300,14 +303,14 @@ section{padding:60px 0}
       <li>Create dashboards showing end-to-end pipeline health</li>
     </ul>
 
-    <h2>6. Containerization &amp; Environment Consistency</h2>
+    <h2 id="6-containerization-environment-consistency">6. Containerization &amp; Environment Consistency</h2>
     <p>Docker containers ensure that data pipelines run consistently across development, testing, and production environments. Containerization eliminates the "it works on my machine" problem and makes deployments more predictable. For larger workloads, Kubernetes provides orchestration for containerized data applications.</p>
 
     <blockquote>
       "The goal of DataOps is not just automation - it's delivering value from data faster, with higher quality, and lower risk."
     </blockquote>
 
-    <h2>7. Collaboration &amp; Documentation</h2>
+    <h2 id="7-collaboration-documentation">7. Collaboration &amp; Documentation</h2>
     <p>DevOps is as much about culture as it is about technology. Data teams should adopt collaborative practices that break down silos:</p>
     <ul>
       <li>Use data catalogs to document datasets, definitions, and lineage</li>
@@ -316,7 +319,7 @@ section{padding:60px 0}
       <li>Create runbooks for common operational procedures</li>
     </ul>
 
-    <h2>Getting Started with Data DevOps</h2>
+    <h2 id="getting-started-with-data-devops">Getting Started with Data DevOps</h2>
     <p>Transforming your data operations doesn't happen overnight. Start with these practical steps:</p>
     <ol>
       <li><strong>Audit your current state:</strong> Identify manual processes and pain points in your data workflows</li>

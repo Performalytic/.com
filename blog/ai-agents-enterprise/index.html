@@ -276,7 +276,7 @@ section{padding:60px 0}
 
 <section class="agent-loop-diagram" aria-label="AI agent core loop diagram">
   <div class="container">
-    <h2>The Agent Core Loop</h2>
+    <h2 id="the-agent-core-loop">The Agent Core Loop</h2>
     <p>Every AI agent follows a perception-reasoning-action-memory loop that repeats until the goal is achieved.</p>
     <div class="diagram-container">
       <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI agent core loop showing perception, reasoning, action, and memory stages">
@@ -335,6 +335,9 @@ section{padding:60px 0}
 <section>
   <div class="container post-content">
 
+    <nav class="post-toc" aria-label="Table of contents"><h3>In this article</h3><ul><li><a href="#the-agent-core-loop">The Agent Core Loop</a></li><li><a href="#what-are-ai-agents-vs-copilots-vs-traditional-ai">What Are AI Agents (vs Copilots, vs Traditional AI)</a></li><li><a href="#how-ai-agents-work-the-core-loop">How AI Agents Work: The Core Loop</a></li><li><a href="#types-of-ai-agents-in-the-enterprise">Types of AI Agents in the Enterprise</a></li><li><a href="#enterprise-use-cases">Enterprise Use Cases</a></li><li><a href="#architecture-patterns">Architecture Patterns</a></li><li><a href="#implementation-considerations">Implementation Considerations</a></li><li><a href="#building-vs-buying-ai-agents">Building vs Buying AI Agents</a></li><li><a href="#the-future-of-ai-agents-in-the-enterprise">The Future of AI Agents in the Enterprise</a></li><li><a href="#how-we-help">How We Help</a></li></ul></nav>
+
+
     <div class="tldr-box">
       <h3>TL;DR - Key Takeaways</h3>
       <ul>
@@ -352,7 +355,7 @@ section{padding:60px 0}
 
     <p>This guide is a comprehensive exploration of AI agents in the enterprise. We'll define what agents actually are (and aren't), break down how they work architecturally, examine real-world use cases, and provide practical guidance on implementation, governance, and the build-vs-buy decision.</p>
 
-    <h2>What Are AI Agents (vs Copilots, vs Traditional AI)</h2>
+    <h2 id="what-are-ai-agents-vs-copilots-vs-traditional-ai">What Are AI Agents (vs Copilots, vs Traditional AI)</h2>
 
     <p>The term "AI agent" is used loosely across the industry. Let's establish precise definitions.</p>
 
@@ -423,7 +426,7 @@ section{padding:60px 0}
     </table>
     </div>
 
-    <h2>How AI Agents Work: The Core Loop</h2>
+    <h2 id="how-ai-agents-work-the-core-loop">How AI Agents Work: The Core Loop</h2>
 
     <p>Every AI agent, regardless of its specific implementation, follows a core loop that repeats until the goal is achieved or a stopping condition is met.</p>
 
@@ -441,7 +444,7 @@ section{padding:60px 0}
 
     <p>The loop continues: the agent perceives the results of its actions, reasons about what happened, takes the next action, and so on. This iterative, goal-directed behavior is what makes agents fundamentally more powerful than copilots.</p>
 
-    <h2>Types of AI Agents in the Enterprise</h2>
+    <h2 id="types-of-ai-agents-in-the-enterprise">Types of AI Agents in the Enterprise</h2>
 
     <p>Not all agents are the same. Enterprise deployments typically involve one or more of these agent archetypes:</p>
 
@@ -457,7 +460,7 @@ section{padding:60px 0}
     <h3>Multi-Agent Systems</h3>
     <p>Complex enterprise workflows often require multiple specialized agents collaborating. A data platform might deploy a ingestion agent, a transformation agent, a quality-check agent, and a deployment agent - each with distinct capabilities and responsibilities. An orchestrator agent coordinates the workflow, handles inter-agent communication, and manages error recovery across the system.</p>
 
-    <h2>Enterprise Use Cases</h2>
+    <h2 id="enterprise-use-cases">Enterprise Use Cases</h2>
 
     <p>AI agents are moving from experimental to production across several high-value enterprise domains:</p>
 
@@ -476,7 +479,7 @@ section{padding:60px 0}
     <h3>Compliance and Governance Agents</h3>
     <p>In regulated industries, agents can continuously monitor data access patterns, detect policy violations, generate audit reports, and even recommend remediation steps. They can process regulatory changes, assess their impact on existing policies, and draft updated compliance procedures - accelerating the organization's ability to respond to evolving regulatory requirements.</p>
 
-    <h2>Architecture Patterns</h2>
+    <h2 id="architecture-patterns">Architecture Patterns</h2>
 
     <p>Deploying AI agents in production requires careful architectural decisions. Three patterns dominate enterprise implementations:</p>
 
@@ -513,7 +516,7 @@ section{padding:60px 0}
       </div>
     </div>
 
-    <h2>Implementation Considerations</h2>
+    <h2 id="implementation-considerations">Implementation Considerations</h2>
 
     <p>Deploying AI agents in enterprise environments requires addressing challenges that don't exist in prototype demos:</p>
 
@@ -532,7 +535,7 @@ section{padding:60px 0}
     <h3>Latency and Performance</h3>
     <p>Multi-step agent reasoning takes time. While a copilot response arrives in seconds, an agent task might take minutes or longer as it iterates through multiple reasoning-action cycles. Enterprise deployments must design for this reality - using asynchronous execution, progress notifications, and appropriate timeout policies. Users need visibility into agent progress, not just final results.</p>
 
-    <h2>Building vs Buying AI Agents</h2>
+    <h2 id="building-vs-buying-ai-agents">Building vs Buying AI Agents</h2>
 
     <p>This is one of the most consequential decisions enterprises face when adopting agent technology.</p>
 
@@ -561,7 +564,7 @@ section{padding:60px 0}
       <p>In our experience, the enterprises that succeed with AI agents are the ones that start with a clear business problem, not a desire to use the latest AI technology. Agent technology is a means to an end - the end is measurable business outcomes.</p>
     </blockquote>
 
-    <h2>The Future of AI Agents in the Enterprise</h2>
+    <h2 id="the-future-of-ai-agents-in-the-enterprise">The Future of AI Agents in the Enterprise</h2>
 
     <p>Several trends will shape the next phase of enterprise AI agents:</p>
 
@@ -580,7 +583,7 @@ section{padding:60px 0}
     <h3>The Copilot-to-Agent Continuum</h3>
     <p>The boundary between copilots and agents will blur. Copilots will gradually gain more autonomous capabilities, while agents will incorporate more human-in-the-loop interaction patterns. The distinction will become less about the technology and more about the degree of autonomy granted for specific tasks.</p>
 
-    <h2>How We Help</h2>
+    <h2 id="how-we-help">How We Help</h2>
 
     <p>At Performalytic, we help enterprises navigate the transition from AI experimentation to production-grade agent deployments. Our approach combines technical architecture expertise with business process understanding:</p>
 

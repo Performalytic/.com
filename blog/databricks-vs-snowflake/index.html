@@ -277,7 +277,7 @@ section{padding:60px 0}
 
 <section class="architecture-diagram" aria-label="Architecture comparison diagram">
   <div class="container">
-    <h2>Architecture Comparison</h2>
+    <h2 id="architecture-comparison">Architecture Comparison</h2>
     <p>The fundamental difference between these platforms isn't features - it's philosophy. Databricks builds on open formats you control; Snowflake provides a fully managed service.</p>
     <div class="diagram-container">
       <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Databricks lakehouse vs Snowflake data cloud architecture comparison">
@@ -377,6 +377,9 @@ section{padding:60px 0}
 <section>
   <div class="container post-content">
 
+    <nav class="post-toc" aria-label="Table of contents"><h3>In this article</h3><ul><li><a href="#architecture-comparison">Architecture Comparison</a></li><li><a href="#architecture-lakehouse-vs-data-warehouse">Architecture: Lakehouse vs Data Warehouse</a></li><li><a href="#head-to-head-comparison">Head-to-Head Comparison</a></li><li><a href="#performance-where-each-platform-excels">Performance: Where Each Platform Excels</a></li><li><a href="#pricing-the-real-cost-comparison">Pricing: The Real Cost Comparison</a></li><li><a href="#use-case-decision-framework">Use Case Decision Framework</a></li><li><a href="#the-convergence-trend">The Convergence Trend</a></li><li><a href="#migration-considerations">Migration Considerations</a></li><li><a href="#how-we-help">How We Help</a></li></ul></nav>
+
+
     <div class="tldr-box">
       <h3>TL;DR - Key Takeaways</h3>
       <ul>
@@ -392,7 +395,7 @@ section{padding:60px 0}
 
     <p>This guide cuts through the marketing noise to give you an honest, technical comparison. No vendor bias, no affiliate links - just the facts you need to make the right call for your organization.</p>
 
-    <h2>Architecture: Lakehouse vs Data Warehouse</h2>
+    <h2 id="architecture-lakehouse-vs-data-warehouse">Architecture: Lakehouse vs Data Warehouse</h2>
     <p>The fundamental difference between Databricks and Snowflake isn't features - it's philosophy. Understanding this distinction will help you evaluate everything else.</p>
 
     <h3>Databricks: The Lakehouse Approach</h3>
@@ -415,7 +418,7 @@ section{padding:60px 0}
       <li><strong>Data sharing:</strong> Built-in Snowflake Marketplace for data exchange</li>
     </ul>
 
-    <h2>Head-to-Head Comparison</h2>
+    <h2 id="head-to-head-comparison">Head-to-Head Comparison</h2>
     <p>Here's how the two platforms compare across the dimensions that matter most:</p>
 
     <div class="comparison-table-wrap">
@@ -497,7 +500,7 @@ section{padding:60px 0}
     </table>
     </div>
 
-    <h2>Performance: Where Each Platform Excels</h2>
+    <h2 id="performance-where-each-platform-excels">Performance: Where Each Platform Excels</h2>
 
     <h3>Databricks Performance Strengths</h3>
     <ul>
@@ -515,7 +518,7 @@ section{padding:60px 0}
       <li><strong>Semi-structured data:</strong> VARIANT type and FLATTEN function make JSON/XML querying seamless</li>
     </ul>
 
-    <h2>Pricing: The Real Cost Comparison</h2>
+    <h2 id="pricing-the-real-cost-comparison">Pricing: The Real Cost Comparison</h2>
     <p>Pricing is the most confusing aspect of this comparison because the models are fundamentally different. Here's a side-by-side breakdown of what you actually pay for.</p>
 
     <div class="pricing-comparison">
@@ -556,7 +559,7 @@ section{padding:60px 0}
       <p><strong>Key insight:</strong> The cheapest platform depends entirely on your workload mix. Right-sizing compute for each workload type is more important than the base pricing model. We recommend running a 30-day proof-of-concept with your actual workloads before committing.</p>
     </blockquote>
 
-    <h2>Use Case Decision Framework</h2>
+    <h2 id="use-case-decision-framework">Use Case Decision Framework</h2>
     <p>Stop asking "which is better?" and start asking "which is better <em>for what</em>?" This decision tree helps you identify the right platform based on your primary workloads.</p>
 
     <div class="use-case-diagram">
@@ -648,7 +651,7 @@ section{padding:60px 0}
       </div>
     </div>
 
-    <h2>The Convergence Trend</h2>
+    <h2 id="the-convergence-trend">The Convergence Trend</h2>
     <p>Here's what most comparison articles miss: <strong>these platforms are converging.</strong></p>
     <ul>
       <li><strong>Databricks</strong> launched Databricks SQL to compete directly with Snowflake's analytics capabilities</li>
@@ -658,7 +661,7 @@ section{padding:60px 0}
     </ul>
     <p>In 2-3 years, the feature gap will be much smaller. The decision today should be based on where you are <em>now</em> and where you're going in the next 12-18 months - not on permanent architectural differences that are rapidly disappearing.</p>
 
-    <h2>Migration Considerations</h2>
+    <h2 id="migration-considerations">Migration Considerations</h2>
     <p>If you're already on one platform and considering switching:</p>
     <ul>
       <li><strong>Snowflake to Databricks:</strong> Moderate complexity. Your SQL queries will work (Databricks SQL is SQL-compatible), but you'll need to rebuild pipelines and governance.</li>
@@ -666,7 +669,7 @@ section{padding:60px 0}
       <li><strong>Adding the other:</strong> The lowest-risk approach. Keep your existing platform and add the other for specific workloads.</li>
     </ul>
 
-    <h2>How We Help</h2>
+    <h2 id="how-we-help">How We Help</h2>
     <p>At Performalytic, we're vendor-agnostic. We've implemented both Databricks and Snowflake across industries - from finance and healthcare to manufacturing and technology. Our approach:</p>
     <ol>
       <li><strong>Assess your workloads</strong> - Map your current and planned data use cases</li>

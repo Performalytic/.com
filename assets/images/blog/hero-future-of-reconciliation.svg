@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="t">
+<title id="t">The reconciliation maturity curve: manual checks, automated rules, continuous reconciliation, and intelligent data quality</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1120"/><stop offset="1" stop-color="#1b2540"/></linearGradient>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+<linearGradient id="stage2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+<linearGradient id="stage3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+<linearGradient id="stage4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#c026d3"/></linearGradient>
+<marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#475569"/></marker>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1e293b" stroke-width="1"/></pattern>
+</defs>
+
+<rect width="1200" height="600" fill="url(#bg)"/>
+<rect width="1200" height="600" fill="url(#grid)" opacity="0.4"/>
+
+<text x="600" y="66" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="3">THE RECONCILIATION MATURITY CURVE</text>
+
+<!-- progress rail -->
+<line x1="90" y1="300" x2="1110" y2="300" stroke="#334155" stroke-width="2" stroke-dasharray="2,6"/>
+
+<!-- Stage 1: Manual Checks -->
+<g>
+  <rect x="70" y="220" width="220" height="160" rx="16" fill="#141b2e" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="180" cy="270" r="22" fill="none" stroke="#64748b" stroke-width="2.5"/>
+  <path d="M170 270 l7 7 l15 -15" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="180" y="322" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="15" font-weight="700">Manual Checks</text>
+  <text x="180" y="345" text-anchor="middle" fill="#64748b" font-family="Inter, sans-serif" font-size="10.5">Spreadsheets, ad hoc SQL,</text>
+  <text x="180" y="360" text-anchor="middle" fill="#64748b" font-family="Inter, sans-serif" font-size="10.5">someone eyeballing counts</text>
+</g>
+<path d="M295 300 L365 300" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Stage 2: Automated Rules -->
+<g>
+  <rect x="370" y="210" width="220" height="180" rx="16" fill="#141b2e" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
+  <rect x="440" y="245" width="80" height="80" rx="12" fill="none" stroke="url(#stage2)" stroke-width="2.5"/>
+  <path d="M462 285 h36 M480 267 v36" stroke="url(#stage2)" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="480" y="352" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="15" font-weight="700">Automated Rules</text>
+  <text x="480" y="374" text-anchor="middle" fill="#93c5fd" font-family="Inter, sans-serif" font-size="10.5">Scheduled, consistent,</text>
+  <text x="480" y="388" text-anchor="middle" fill="#93c5fd" font-family="Inter, sans-serif" font-size="10.5">rule-based comparisons</text>
+</g>
+<path d="M595 300 L665 300" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Stage 3: Continuous Reconciliation -->
+<g>
+  <rect x="670" y="195" width="240" height="210" rx="18" fill="#141b2e" stroke="url(#stage3)" stroke-width="2"/>
+  <circle cx="790" cy="255" r="34" fill="none" stroke="url(#stage3)" stroke-width="3"/>
+  <path d="M790 235 v20 l14 14" fill="none" stroke="url(#stage3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="790" cy="255" r="3" fill="url(#stage3)"/>
+  <text x="790" y="327" text-anchor="middle" fill="#f1f5f9" font-family="Inter, sans-serif" font-size="16" font-weight="800">Continuous</text>
+  <text x="790" y="348" text-anchor="middle" fill="#f1f5f9" font-family="Inter, sans-serif" font-size="16" font-weight="800">Reconciliation</text>
+  <text x="790" y="372" text-anchor="middle" fill="#c4b5fd" font-family="Inter, sans-serif" font-size="10.5">Event-triggered, always-on</text>
+  <text x="790" y="386" text-anchor="middle" fill="#c4b5fd" font-family="Inter, sans-serif" font-size="10.5">validation, not a nightly job</text>
+</g>
+<path d="M912 300 L982 300" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Stage 4: Intelligent Data Quality -->
+<g>
+  <rect x="985" y="210" width="220" height="180" rx="16" fill="#141b2e" stroke="url(#stage4)" stroke-width="1.5"/>
+  <g fill="none" stroke="url(#stage4)" stroke-width="2.2" stroke-linecap="round">
+    <circle cx="1095" cy="285" r="6"/>
+    <circle cx="1067" cy="265" r="5"/>
+    <circle cx="1123" cy="265" r="5"/>
+    <circle cx="1067" cy="305" r="5"/>
+    <circle cx="1123" cy="305" r="5"/>
+    <path d="M1095 285 L1067 265 M1095 285 L1123 265 M1095 285 L1067 305 M1095 285 L1123 305"/>
+  </g>
+  <text x="1095" y="352" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="15" font-weight="700">Intelligent DQ</text>
+  <text x="1095" y="374" text-anchor="middle" fill="#e9d5ff" font-family="Inter, sans-serif" font-size="10.5">AI-assisted triage,</text>
+  <text x="1095" y="388" text-anchor="middle" fill="#e9d5ff" font-family="Inter, sans-serif" font-size="10.5">adaptive thresholds</text>
+</g>
+
+<!-- bottom caption strip -->
+<text x="600" y="470" text-anchor="middle" fill="#64748b" font-family="Inter, sans-serif" font-size="12" font-style="italic">Most teams are further left on this curve than they think</text>
+
+<!-- stat chips -->
+<rect x="120" y="500" width="220" height="56" rx="10" fill="#141b2e" stroke="#334155" stroke-width="1"/>
+<text x="230" y="524" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="13" font-weight="800">10 hrs</text>
+<text x="230" y="542" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="9.5">of undetected drift on a nightly check</text>
+
+<rect x="490" y="500" width="220" height="56" rx="10" fill="#141b2e" stroke="#334155" stroke-width="1"/>
+<text x="600" y="524" text-anchor="middle" fill="#60a5fa" font-family="Inter, sans-serif" font-size="13" font-weight="800">0.25%</text>
+<text x="600" y="542" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="9.5">mismatch rate still needs a threshold</text>
+
+<rect x="860" y="500" width="220" height="56" rx="10" fill="#141b2e" stroke="#334155" stroke-width="1"/>
+<text x="970" y="524" text-anchor="middle" fill="#c084fc" font-family="Inter, sans-serif" font-size="13" font-weight="800">Assist, not replace</text>
+<text x="970" y="542" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="9.5">AI narrows the search, humans decide</text>
+</svg>
