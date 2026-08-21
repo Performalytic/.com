@@ -1,5 +1,8 @@
 /* === Modern UI Additions for Performalytic === */
 
+/* Design tokens - canonical definition (pages may override locally) */
+:root{--section-pad:80px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px}
+
 /* Scroll Reveal */
 html.js .reveal {
   opacity: 0;
