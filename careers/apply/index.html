@@ -275,11 +275,27 @@ ga('emailAddress',gv('af-email'));
 ga('fvv','1');
 ga('pageHistory','0');
 ga('fbzx',-Math.floor(Math.random()*9999999999999));
-document.body.appendChild(gi);document.body.appendChild(ff);ff.submit();
-setTimeout(function(){try{document.body.removeChild(ff);document.body.removeChild(gi);}catch(e){}},5000);
+document.body.appendChild(gi);document.body.appendChild(ff);
+var submitTimeout=setTimeout(function(){showSubmitError();},10000);
+gi.onload=function(){clearTimeout(submitTimeout);showSubmitSuccess();};
+ff.submit();
+function showSubmitSuccess(){
+try{document.body.removeChild(ff);document.body.removeChild(gi);}catch(e){}
 form.querySelectorAll('.form-step-page').forEach(function(s){s.classList.remove('active');s.style.display='none'});
 var successStep=form.querySelector('[data-step="success"]');
 if(successStep){successStep.style.display='block';successStep.classList.add('active')}
+formActions.style.display='none';document.getElementById('progressBar').style.display='none';
+}
+function showSubmitError(){
+try{document.body.removeChild(ff);document.body.removeChild(gi);}catch(e){}
+var errBox=document.getElementById('submitError');
+if(!errBox){
+errBox=document.createElement('div');
+errBox.id='submitError';
+errBox.style.cssText='background:#fee2e2;border:1px solid #f87171;border-radius:8px;padding:16px;margin-top:16px;color:#991b1b;';
+errBox.innerHTML='<strong>Submission failed.</strong> Please try again or email your application directly to <a href="mailto:hr@performalytic.com" style="color:#1d4ed8;text-decoration:underline;">hr@performalytic.com</a>';
+formActions.parentNode.insertBefore(errBox,formActions);
+}
 formActions.style.display='none';document.getElementById('progressBar').style.display='none';
 }
 form.querySelectorAll('input, select, textarea').forEach(function(f){f.addEventListener('input',function(){var group=f.closest('.form-group');if(group)group.classList.remove('has-error');var cg=document.getElementById('consentGroup');if(f.id==='af-consent'&&cg)cg.classList.remove('has-error');});});
