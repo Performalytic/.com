@@ -301,6 +301,7 @@ formActions.parentNode.insertBefore(errBox,formActions);
 formActions.style.display='none';document.getElementById('progressBar').style.display='none';
 }
 form.querySelectorAll('input, select, textarea').forEach(function(f){f.addEventListener('input',function(){var group=f.closest('.form-group');if(group)group.classList.remove('has-error');var cg=document.getElementById('consentGroup');if(f.id==='af-consent'&&cg)cg.classList.remove('has-error');});});
+})
 })();
 </script>
 <script src="/assets/js/main.js" nonce="P3rf0rm4lyt1c" defer></script></body></html>
