@@ -52,3 +52,5 @@
 - [Data Reconciliation Across Cloud Platforms](/blog/cross-cloud-data-reconciliation/)
 - [The Ultimate Guide to Data-Driven Decision Making in 2026](/blog/data-driven-decision-making/)
 - [How AI is Transforming Business Intelligence](/blog/ai-business-intelligence/)
+- [The Ultimate Guide to Schema Compare & CI/CD for Databases](/blog/schema-compare-guide/)
+- [Building a Data Quality Framework That Actually Works](/blog/data-quality-framework/)

@@ -133,6 +133,8 @@ We serve enterprises across regulated industries including finance, healthcare, 
 - Data Reconciliation Across Cloud Platforms — https://performalytic.com/blog/cross-cloud-data-reconciliation/
 - The Ultimate Guide to Data-Driven Decision Making in 2026 — https://performalytic.com/blog/data-driven-decision-making/
 - How AI is Transforming Business Intelligence — https://performalytic.com/blog/ai-business-intelligence/
+- The Ultimate Guide to Schema Compare & CI/CD for Databases — https://performalytic.com/blog/schema-compare-guide/
+- Building a Data Quality Framework That Actually Works — https://performalytic.com/blog/data-quality-framework/
 - Data-driven Decision Making Guide — https://performalytic.com/blog/data-driven-decision-making/
 
 ## Full Site Index
