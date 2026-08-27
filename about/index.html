@@ -132,6 +132,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e29
 a{color:inherit}
 img{max-width:100%;height:auto}
 
+.skip-link{position:absolute;top:-100%;left:16px;z-index:9999;background:#2563eb;color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:top 0.2s}.skip-link:focus{top:0}
 /* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.06)}
 nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -353,6 +354,7 @@ section{padding:60px 0}
 @media(max-width:768px){.hero-visual{max-width:300px;margin:0 auto}.hero-illustration{max-width:280px}}</style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
 <nav aria-label="Main navigation">
@@ -428,7 +430,7 @@ section{padding:60px 0}
 </nav>
 </header>
 
-<main>
+<main id="main-content">
 <section class="hero" id="home" aria-label="Hero banner">
   <div class="hero-particles" aria-hidden="true">
     <svg class="hero-particle hero-particle-1" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#60a5fa" opacity="0.4"/></svg>
@@ -544,12 +546,12 @@ section{padding:60px 0}
       <h3>What drives us</h3>
       <p>Six principles that guide everything we do</p>
       <div class="values-grid" role="list" aria-label="Company values">
-        <span class="value-tag" role="listitem">Secure by Design</span>
-        <span class="value-tag" role="listitem">Engineering Excellence</span>
-        <span class="value-tag" role="listitem">Data-Driven Innovation</span>
-        <span class="value-tag" role="listitem">Cloud-First Architecture</span>
-        <span class="value-tag" role="listitem">AI-Powered Intelligence</span>
-        <span class="value-tag" role="listitem">Scalable Digital Solutions</span>
+        <span class="value-tag" role="listitem">Client-First</span>
+        <span class="value-tag" role="listitem">Results-Obsessed</span>
+        <span class="value-tag" role="listitem">Independent Thinkers</span>
+        <span class="value-tag" role="listitem">Problem Solvers</span>
+        <span class="value-tag" role="listitem">Deeply Competent</span>
+        <span class="value-tag" role="listitem">Radically Transparent</span>
       </div>
 
     </div>

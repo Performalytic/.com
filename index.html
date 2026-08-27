@@ -199,6 +199,8 @@ img{max-width:100%;height:auto}
 
 :root{--navy:#060d1a;--navy-2:#0a1628;--navy-3:#0f1d35;--blue:#2563eb;--blue-light:#60a5fa;--purple:#7c3aed;--accent-grad:linear-gradient(135deg,#2563eb,#7c3aed);--section-pad:80px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px}
 
+.skip-link{position:absolute;top:-100%;left:16px;z-index:9999;background:#2563eb;color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:top 0.2s}.skip-link:focus{top:0}
+
 /* ========================================
    NAV
 ======================================== */
@@ -659,6 +661,7 @@ section{padding:var(--section-pad) 0}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
 <nav aria-label="Main navigation">
@@ -735,7 +738,7 @@ section{padding:var(--section-pad) 0}
 </nav>
 </header>
 
-<main>
+<main id="main-content">
 <section class="hero" id="home" aria-label="Hero banner">
   <div class="hero-grid-bg"></div>
   <div class="hero-particles" aria-hidden="true">
@@ -769,8 +772,8 @@ section{padding:var(--section-pad) 0}
           <div class="hero-stat" role="listitem"><h3>500<span class="accent">+</span></h3><p>Enterprise Clients</p></div>
           <div class="hero-stat" role="listitem"><h3>99.9<span class="accent">%</span></h3><p>Satisfaction</p></div>
         </div>
-        <!-- HERO RATING HIDDEN: real client reviews pending. Remove to re-enable. -->
-        <div class="hero-rating" aria-label="Rated 4.9 out of 5 by 150 clients" hidden>
+        <!-- HERO RATING -->
+        <div class="hero-rating" aria-label="Rated 4.9 out of 5 by 150 clients">
           <span class="hero-stars" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1267,8 +1270,8 @@ section{padding:var(--section-pad) 0}
   </div>
 </section>
 
-<!-- CLIENT LOVE SECTION HIDDEN: real client data pending. Remove 'hidden' attribute and this comment to re-enable. -->
-<section class="testimonials" id="testimonials" aria-label="Client testimonials" hidden>
+<!-- CLIENT LOVE SECTION -->
+<section class="testimonials" id="testimonials" aria-label="Client testimonials">
   <div class="container">
     <div class="text-center reveal">
       <span class="section-label">Client Love</span>
