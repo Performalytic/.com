@@ -93,6 +93,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e29
 a{color:inherit}
 img{max-width:100%;height:auto}
 
+.skip-link{position:absolute;top:-100%;left:16px;z-index:9999;background:#2563eb;color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:top 0.2s}.skip-link:focus{top:0}
 /* Nav */
 header nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.06)}
 header nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -156,6 +157,7 @@ section{padding:60px 0}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
 <nav aria-label="Main navigation">
@@ -228,7 +230,7 @@ section{padding:60px 0}
 </nav>
 </header>
 
-<main>
+<main id="main-content">
 <article>
 <section class="post-hero" aria-label="Article header">
   <div class="container hero-content">

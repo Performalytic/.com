@@ -81,6 +81,7 @@ a{color:inherit}
 img{max-width:100%;height:auto}
 :root{--navy:#060d1a;--navy-2:#0a1628;--navy-3:#0f1d35;--blue:#2563eb;--blue-light:#60a5fa;--purple:#7c3aed;--accent-grad:linear-gradient(135deg,#2563eb,#7c3aed);--section-pad:80px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px}
 
+.skip-link{position:absolute;top:-100%;left:16px;z-index:9999;background:#2563eb;color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:top 0.2s}.skip-link:focus{top:0}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.04);transition:all .3s}
 nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -274,6 +275,7 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
 <nav aria-label="Main navigation">
@@ -348,7 +350,7 @@ footer{background:#060d1a;border-top:1px solid rgba(255,255,255,0.04);padding:va
 </nav>
 </header>
 
-<main>
+<main id="main-content">
 
 <!-- ========== HERO ========== -->
 <section class="hero">
