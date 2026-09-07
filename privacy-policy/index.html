@@ -409,8 +409,6 @@ document.querySelectorAll('.btn-primary,.nav-cta,.submit-btn').forEach(function(
 el.addEventListener('click',function(){gtag('event','click',{event_category:'cta',event_label:this.textContent.trim()||'cta_click'})});
 });
 var gf=document.querySelector('form');if(gf){gf.addEventListener('submit',function(){gtag('event','form_submit',{event_category:'engagement',event_label:this.id||'contact_form'})})};
-var p=document.querySelectorAll('.cta-contact-item a[href^="tel"]');if(p.length){p[0].addEventListener('click',function(){gtag('event','click',{event_category:'contact',event_label:'phone'})})};
-var e=document.querySelectorAll('.cta-contact-item a[href^="mailto"]');if(e.length){e[0].addEventListener('click',function(){gtag('event','click',{event_category:'contact',event_label:'email'})})};
 }
 </script>
 <script src="/assets/js/main.js" nonce="P3rf0rm4lyt1c" defer></script>
