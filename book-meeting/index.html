@@ -120,8 +120,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
     var successDiv = document.getElementById('mpSuccess');
     var errorDiv = document.getElementById('mpError');
     var submitBtn = document.getElementById('mpSubmitBtn');
-    
-    // Set minimum date to tomorrow
+    var isSubmitting = false;
+
+    // --- Form field setup ---
     var minDate = new Date();
     minDate.setDate(minDate.getDate() + 1);
     var dateInput = document.getElementById('mp-date');
@@ -129,7 +130,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         dateInput.min = minDate.toISOString().split('T')[0];
         dateInput.value = minDate.toISOString().split('T')[0];
     }
-    
+
     // Auto-detect timezone
     var tzSelect = document.getElementById('mp-timezone');
     if (tzSelect) {
@@ -148,22 +149,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             }
         } catch (e) {}
     }
-    
-    // Real-time validation on blur
-    ['mp-name', 'mp-email', 'mp-date', 'mp-time', 'mp-timezone', 'mp-topic'].forEach(function(id) {
-        var el = document.getElementById(id);
-        if (el) {
-            el.addEventListener('blur', function() {
-                validateField(this);
-            });
-            el.addEventListener('input', function() {
-                if (this.closest('.mp-form-group').classList.contains('has-error')) {
-                    validateField(this);
-                }
-            });
-        }
-    });
-    
+
+    // --- Validation ---
     function validateField(el) {
         var grp = el.closest('.mp-form-group');
         var val = el.value.trim();
@@ -173,6 +160,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             ok = val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
         } else if (el.id === 'mp-date') {
             ok = val && new Date(val) >= new Date();
+        } else if (el.tagName === 'SELECT') {
+            ok = val && val !== '';
         } else {
             ok = val && val.length > 0;
         }
@@ -187,11 +176,121 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             return true;
         }
     }
-    
+
+    ['mp-name', 'mp-email', 'mp-date', 'mp-time', 'mp-timezone', 'mp-topic'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('blur', function() { validateField(this); });
+            el.addEventListener('input', function() {
+                if (this.closest('.mp-form-group').classList.contains('has-error')) {
+                    validateField(this);
+                }
+            });
+        }
+    });
+
+    // --- Submission via Google Form (using fetch) ---
+    function submitToGoogleForm(data) {
+        var formData = new FormData();
+        formData.append('entry.1423833295', data.name);      // Full Name
+        formData.append('entry.1334309858', data.email);     // Email
+        formData.append('entry.542707410', data.phone);      // Phone
+        formData.append('entry.1539017083', data.date);      // Preferred Date
+        formData.append('entry.1947505895', data.time);      // Preferred Time
+        formData.append('entry.1738796657', data.timezone);  // Your Timezone
+        formData.append('entry.1642892952', data.topic);     // Meeting Topic
+        formData.append('entry.998721038', data.message);    // Message
+        
+        // These extra parameters are often required by Google Forms.
+        formData.append('fvv', '1');
+        formData.append('partialResponse', '');
+        formData.append('pageHistory', '0');
+        // 'fbzx' can sometimes be required; if needed, get it from your form's HTML.
+        // formData.append('fbzx', ''); 
+
+        // Use fetch with 'no-cors' mode. The browser will send the request,
+        // but we won't be able to read the response.
+        return fetch('https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams(formData).toString()
+        });
+    }
+
+    // --- Submission via hidden iframe (fallback) ---
+    function submitViaIframe(data) {
+        return new Promise(function(resolve, reject) {
+            try {
+                var ff = document.createElement('form');
+                ff.method = 'POST';
+                ff.action = 'https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse';
+                var iframeName = 'gfi_' + Date.now();
+                ff.target = iframeName;
+                ff.style.display = 'none';
+                
+                var gi = document.createElement('iframe');
+                gi.name = iframeName;
+                gi.style.display = 'none';
+                
+                var timedOut = false;
+                var timer = setTimeout(function() {
+                    timedOut = true;
+                    reject(new Error('Iframe submission timeout'));
+                }, 6000);
+                
+                gi.onload = function() {
+                    clearTimeout(timer);
+                    if (!timedOut) {
+                        resolve();
+                    }
+                };
+                
+                function addInput(name, value) {
+                    var input = document.createElement('input');
+                    input.name = name;
+                    input.value = value || '';
+                    ff.appendChild(input);
+                }
+                
+                addInput('entry.1423833295', data.name);
+                addInput('entry.1334309858', data.email);
+                addInput('entry.542707410', data.phone);
+                addInput('entry.1539017083', data.date);
+                addInput('entry.1947505895', data.time);
+                addInput('entry.1738796657', data.timezone);
+                addInput('entry.1642892952', data.topic);
+                addInput('entry.998721038', data.message);
+                addInput('fvv', '1');
+                addInput('partialResponse', '');
+                addInput('pageHistory', '0');
+                
+                document.body.appendChild(gi);
+                document.body.appendChild(ff);
+                
+                ff.submit();
+                
+                // Clean up after submission
+                setTimeout(function() {
+                    if (ff.parentNode) document.body.removeChild(ff);
+                    if (gi.parentNode) document.body.removeChild(gi);
+                }, 10000);
+                
+            } catch (e) {
+                reject(e);
+            }
+        });
+    }
+
+    // --- Main form submit handler ---
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Validate all fields
+        if (isSubmitting) return;
+        
+        // Validate all required fields
         var valid = true;
         ['mp-name', 'mp-email', 'mp-date', 'mp-time', 'mp-timezone', 'mp-topic'].forEach(function(id) {
             var el = document.getElementById(id);
@@ -201,18 +300,20 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         });
         
         if (!valid) {
-            // Scroll to first error
             var firstError = document.querySelector('.mp-form-group.has-error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                var input = firstError.querySelector('input, select');
+                if (input) input.focus();
             }
             return;
         }
         
+        isSubmitting = true;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
         
-        // Get form data
+        // Gather form data
         var data = {
             name: document.getElementById('mp-name').value.trim(),
             email: document.getElementById('mp-email').value.trim(),
@@ -224,143 +325,53 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             message: document.getElementById('mp-message').value.trim()
         };
         
-        // Build the Google Form submission URL with query parameters
-        var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse';
+        console.log('Submitting data:', data);
         
-        // Map form fields to Google Form entry IDs
-        var params = new URLSearchParams();
-        params.append('entry.1423833295', data.name);
-        params.append('entry.1334309858', data.email);
-        params.append('entry.542707410', data.phone);
-        params.append('entry.1539017083', data.date);
-        params.append('entry.1947505895', data.time);
-        params.append('entry.1738796657', data.timezone);
-        params.append('entry.1642892952', data.topic);
-        params.append('entry.998721038', data.message);
-        params.append('fvv', '1');
-        params.append('pageHistory', '0');
-        
-        // Use fetch with CORS mode to submit to Google Forms
-        fetch(formUrl, {
-            method: 'POST',
-            mode: 'no-cors', // Important: no-cors mode allows the request but hides response
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: params.toString()
-        })
-        .then(function(response) {
-            // With no-cors, response is opaque and we can't read it
-            // But if we got here without an error, the request was sent
-            console.log('Form submitted successfully (no-cors mode)');
-            showSuccess();
-        })
-        .catch(function(error) {
-            console.error('Error submitting form:', error);
-            // Try fallback: create a hidden iframe form submission
-            fallbackSubmit(data);
-        });
-        
-        // Also try the iframe method as a fallback
-        setTimeout(function() {
-            // If success hasn't been shown yet, try the iframe fallback
-            if (document.getElementById('mpSuccess').style.display !== 'block') {
-                fallbackSubmit(data);
-            }
-        }, 3000);
+        // Try fetch first, then iframe as fallback
+        submitToGoogleForm(data)
+            .then(function() {
+                // With no-cors, we can't check status, but if no error occurred,
+                // the request was sent. Show success.
+                showSuccess();
+            })
+            .catch(function(error) {
+                console.warn('Fetch submission failed, trying iframe fallback...', error);
+                return submitViaIframe(data);
+            })
+            .then(function() {
+                showSuccess();
+            })
+            .catch(function(error) {
+                console.error('All submission methods failed:', error);
+                // Even if everything fails, show success with a backup email note.
+                showSuccessWithBackup();
+            });
     });
-    
-    function fallbackSubmit(data) {
-        try {
-            // Create a hidden form with iframe target
-            var ff = document.createElement('form');
-            ff.method = 'POST';
-            ff.action = 'https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse';
-            ff.target = 'gfi';
-            ff.style.display = 'none';
-            
-            var gi = document.createElement('iframe');
-            gi.name = 'gfi';
-            gi.style.display = 'none';
-            gi.onload = function() {
-                // The iframe loaded, but we can't detect success/failure with Google Forms
-                // Just show success after a brief delay
-                setTimeout(showSuccess, 1000);
-            };
-            
-            function addInput(name, value) {
-                var input = document.createElement('input');
-                input.name = name;
-                input.value = value;
-                ff.appendChild(input);
-            }
-            
-            addInput('entry.1423833295', data.name);
-            addInput('entry.1334309858', data.email);
-            addInput('entry.542707410', data.phone);
-            addInput('entry.1539017083', data.date);
-            addInput('entry.1947505895', data.time);
-            addInput('entry.1738796657', data.timezone);
-            addInput('entry.1642892952', data.topic);
-            addInput('entry.998721038', data.message);
-            addInput('fvv', '1');
-            addInput('pageHistory', '0');
-            
-            document.body.appendChild(gi);
-            document.body.appendChild(ff);
-            
-            // Submit the form
-            ff.submit();
-            
-            // Clean up after a delay
-            setTimeout(function() {
-                if (ff.parentNode) document.body.removeChild(ff);
-                if (gi.parentNode) document.body.removeChild(gi);
-            }, 5000);
-            
-        } catch (e) {
-            console.error('Fallback submission failed:', e);
-            // If everything fails, still show success and recommend email backup
-            showSuccess();
-        }
-    }
-    
+
     function showSuccess() {
-        if (document.getElementById('mpSuccess').style.display === 'block') return;
-        
+        isSubmitting = false;
         submitBtn.disabled = false;
         submitBtn.textContent = 'Confirm Meeting →';
         form.style.display = 'none';
         successDiv.style.display = 'block';
         errorDiv.style.display = 'none';
-        
-        // Track successful submission
-        if (window.gtag) {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXX/YYYYYYYY', // Replace with your conversion ID
-                'value': 1.0,
-                'currency': 'USD'
-            });
-        }
     }
-    
-    function showError() {
+
+    function showSuccessWithBackup() {
+        isSubmitting = false;
         submitBtn.disabled = false;
         submitBtn.textContent = 'Confirm Meeting →';
         form.style.display = 'none';
-        errorDiv.style.display = 'block';
-        successDiv.style.display = 'none';
-    }
-    
-    // Handle keyboard navigation for the form
-    form.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-            e.preventDefault();
-            form.dispatchEvent(new Event('submit'));
+        successDiv.style.display = 'block';
+        
+        // Update the success message to include an email fallback.
+        var successMsg = successDiv.querySelector('p');
+        if (successMsg) {
+            successMsg.innerHTML = 'We\'ll send a confirmation email with meeting details within 24 hours. If you don\'t hear from us, please email us directly at <a href="mailto:hr@performalytic.com" style="color:#2563eb;text-decoration:underline;">hr@performalytic.com</a>';
         }
-    });
-    
+        errorDiv.style.display = 'none';
+    }
+
 })();
 </script>
-<script nonce="P3rf0rm4lyt1c">(function(){'use strict';var mm=document.getElementById('mobileMenu'),mt=document.getElementById('menuToggle');function cm(){if(mm)mm.classList.remove('active');if(mt)mt.setAttribute('aria-expanded','false')}function tm(e){if(mm){var a=mm.classList.toggle('active');if(mt)mt.setAttribute('aria-expanded',a+'')}e.stopPropagation()}if(mt)mt.addEventListener('click',tm);if(mm){var q=mm.querySelectorAll('a');for(var i=0;i<q.length;i++)q[i].addEventListener('click',cm)}var tk=false;window.addEventListener('scroll',function(){if(!tk){window.requestAnimationFrame(function(){cm();tk=false});tk=true}},{passive:true});})();</script>
 <script src="/assets/js/main.js" nonce="P3rf0rm4lyt1c" defer></script></body></html>
