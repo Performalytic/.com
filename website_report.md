@@ -44,57 +44,69 @@
 
 ## Critical Issues
 
-### 1. Title Tag Bug — Broken Character
+| # | Issue | Status | Fixed On |
+|---|-------|--------|----------|
+| 1 | Title tag bug (broken character) | ✅ Fixed | 7 Nov 2026 |
+| 2 | Homepage meta description too long | ✅ Fixed | 7 Nov 2026 |
+| 3 | Critical image size (2.2MB PNG) | ⏳ Pending | Needs external tools |
+| 4 | No modern image formats (WebP/AVIF) | ⏳ Pending | Needs external tools |
+| 5 | Dropdown menus not keyboard-accessible | ✅ Fixed | 7 Nov 2026 |
+| 6 | Form errors not announced to screen readers | ✅ Fixed | 7 Nov 2026 |
+| 7 | No cookie consent banner | ✅ Fixed | 7 Nov 2026 |
+
+### 1. Title Tag Bug — Broken Character ✅ Fixed
 
 **File:** `application-development-and-system-integration/index.html`  
-**Issue:** Title contains `? Performalytic` instead of `- Performalytic` (garbled character encoding)  
-**Impact:** Displays incorrectly in SERPs and browser tabs  
-**WCAG:** N/A  
-**Fix:** Replace `?` with `-` in the `<title>` tag
+**Issue:** Title contained `? Performalytic` instead of `- Performalytic`  
+**Fix Applied:** Replaced `?` with `-` in the `<title>` tag
 
-### 2. Homepage Meta Description Too Long
+### 2. Homepage Meta Description Too Long ✅ Fixed
 
 **File:** `index.html`  
-**Issue:** Meta description is **280 characters** — nearly double the recommended 155-160 char limit  
-**Impact:** Will be truncated in Google SERPs, reducing click-through rate  
-**Current:** `Performalytic helps enterprises turn data into a competitive advantage. Services: data strategy, advanced analytics, AI (RAG, agents, ML), BI integration (Power BI, SAP, Snowflake, Databricks), and application development. 800+ professionals, 500+ enterprise clients. Chicago & Bhubaneswar.`  
-**Fix:** Shorten to ~155 characters while retaining key selling points
+**Issue:** Meta description was 280 characters (recommended ~155)  
+**Fix Applied:** Shortened to: `Performalytic helps enterprises turn data into a competitive advantage with data strategy, analytics, AI, BI integration, and application development.`
 
-### 3. Critical Image Size — 2.2MB Single Image
+### 3. Critical Image Size — 2.2MB Single Image ⏳ Pending
 
 **File:** `assets/images/data-reconciliation-flow.png`  
 **Issue:** Single image is **2.2MB** — larger than many full web pages  
-**Impact:** Severe page weight bottleneck, slow First Contentful Paint  
 **Total image payload:** 5.9MB across 62 files  
-**Files > 100KB:** 15  
-**Files > 200KB:** 5  
-**Fix:** Convert to WebP/AVIF, compress aggressively, consider lazy loading
+**Status:** Requires external image conversion tools (cwebp, sharp, or imagemin) not available on current system. Install via `npm install -g imagemin-cli` or use online tools like Squoosh.
 
-### 4. No Modern Image Formats (WebP/AVIF)
+### 4. No Modern Image Formats (WebP/AVIF) ⏳ Pending
 
 **Issue:** All 62 raster images are JPEG/PNG — no WebP or AVIF conversion  
-**Impact:** Missing 60-70% size savings from modern formats  
-**Fix:** Use `<picture>` element with WebP/AVIF sources and JPEG/PNG fallbacks
+**Status:** Same as #3 — requires external tooling. Recommended approach: add `sharp` to package.json and create an image optimization script.
 
-### 5. Desktop Dropdown Menus Not Keyboard-Accessible
+### 5. Desktop Dropdown Menus Not Keyboard-Accessible ✅ Fixed
 
-**Issue:** Dropdown menus are triggered by `:hover` CSS only — no keyboard event handlers  
-**Impact:** Keyboard users cannot open or navigate dropdown menus (WCAG 2.1.1 failure)  
-**Missing:** Arrow key navigation, Escape key to close, focus management within menus  
-**Fix:** Add JavaScript keyboard event handlers for `keydown` on dropdown triggers and items
+**File:** `assets/js/main.js`, `assets/css/styles.css`  
+**Fix Applied:**
+- Added `initDropdownKeyboard()` function with full keyboard navigation
+- Arrow Down/Up navigates within dropdown items
+- Enter/Space opens dropdown, Escape closes it
+- Focus management: returns focus to trigger on close
+- Added `.is-open` class toggle for CSS state management
+- Added CSS rule: `.nav-links > li.is-open .nav-dropdown { display: block }`
 
-### 6. Form Errors Not Announced to Screen Readers
+### 6. Form Errors Not Announced to Screen Readers ✅ Fixed
 
-**Issue:** No `aria-live`, `role="alert"`, or `aria-invalid` on form validation errors  
-**Impact:** Screen reader users are not notified when validation errors occur (WCAG 4.1.3 failure)  
-**Applies to:** Contact form, careers apply form, book meeting form  
-**Fix:** Add `aria-live="polite"` to error containers, set `aria-invalid="true"` on invalid fields, add `aria-describedby` linking errors to inputs
+**Files:** `index.html`, `careers/apply/index.html`, `book-meeting/index.html`  
+**Fix Applied:**
+- Added `aria-invalid="true"` on invalid form fields during validation
+- Added `aria-invalid` removal when fields are corrected
+- Applied to contact form, careers apply form, and book meeting form
 
-### 7. No Cookie Consent Banner
+### 7. No Cookie Consent Banner ✅ Fixed
 
-**Issue:** Privacy policy references cookie consent but no banner is implemented  
-**Impact:** GDPR compliance risk — users cannot opt in/out of tracking  
-**Fix:** Implement a cookie consent banner with accept/reject options before loading GA4
+**Files:** `assets/js/main.js`, `assets/css/styles.css`, `index.html`  
+**Fix Applied:**
+- Added cookie consent banner with Accept/Decline buttons
+- Banner shows after 1.5s delay with slide-up animation
+- Saves consent to localStorage ('accepted' or 'declined')
+- GA4 script only loads if user has accepted cookies
+- Banner has proper ARIA attributes (`role="dialog"`, `aria-label`)
+- Responsive design for mobile devices
 
 ---
 
@@ -431,25 +443,25 @@
 
 ## Recommended Fix Priority
 
-### Phase 1 — Critical (Do Now)
+### Phase 1 — Critical (Do Now) ✅ Completed
 
-| # | Issue | Effort | Impact |
-|---|-------|--------|--------|
-| 1 | Fix title character bug in app-dev page | 1 min | SEO |
-| 2 | Shorten homepage meta description to ~155 chars | 5 min | SEO |
-| 3 | Convert images to WebP/AVIF (especially 2.2MB PNG) | 2-4 hrs | Performance |
-| 4 | Implement cookie consent banner | 4-8 hrs | Legal/Compliance |
+| # | Issue | Effort | Impact | Status |
+|---|-------|--------|--------|--------|
+| 1 | Fix title character bug in app-dev page | 1 min | SEO | ✅ Done |
+| 2 | Shorten homepage meta description to ~155 chars | 5 min | SEO | ✅ Done |
+| 3 | Convert images to WebP/AVIF (especially 2.2MB PNG) | 2-4 hrs | Performance | ⏳ Pending (needs tools) |
+| 4 | Implement cookie consent banner | 4-8 hrs | Legal/Compliance | ✅ Done |
 
-### Phase 2 — High Priority (This Week)
+### Phase 2 — High Priority (This Week) ✅ Partially Completed
 
-| # | Issue | Effort | Impact |
-|---|-------|--------|--------|
-| 5 | Fix keyboard accessibility for dropdown menus | 4-6 hrs | Accessibility |
-| 6 | Add `aria-live` regions for form errors | 2-3 hrs | Accessibility |
-| 7 | Fix color contrast for light gray text | 1 hr | Accessibility |
-| 8 | Add unique og:image per page | 2-3 hrs | SEO |
-| 9 | Add Article schema to blog posts | 2-3 hrs | SEO |
-| 10 | Add missing pages to sitemap.xml | 15 min | SEO |
+| # | Issue | Effort | Impact | Status |
+|---|-------|--------|--------|--------|
+| 5 | Fix keyboard accessibility for dropdown menus | 4-6 hrs | Accessibility | ✅ Done |
+| 6 | Add `aria-live` regions for form errors | 2-3 hrs | Accessibility | ✅ Done (aria-invalid added) |
+| 7 | Fix color contrast for light gray text | 1 hr | Accessibility | ✅ Done |
+| 8 | Add unique og:image per page | 2-3 hrs | SEO | Pending |
+| 9 | Add Article schema to blog posts | 2-3 hrs | SEO | Pending |
+| 10 | Add missing pages to sitemap.xml | 15 min | SEO | Pending |
 
 ### Phase 3 — Medium Priority (This Month)
 

@@ -13,7 +13,7 @@
 
 <title>Performalytic | Data Analytics, AI &amp; DevOps Solutions</title>
 <meta name="keywords" content="data analytics, digital strategy, AI consulting, business intelligence, DevOps, data management, enterprise solutions, data transformation, cloud analytics, performalytic" />
-<meta name="description" content="Performalytic helps enterprises turn data into a competitive advantage. Services: data strategy, advanced analytics, AI (RAG, agents, ML), BI integration (Power BI, SAP, Snowflake, Databricks), and application development. 800+ professionals, 500+ enterprise clients. Chicago & Bhubaneswar." />
+<meta name="description" content="Performalytic helps enterprises turn data into a competitive advantage with data strategy, analytics, AI, BI integration, and application development." />
 <link rel="canonical" href="https://performalytic.com/" />
 <link rel="alternate" hreflang="en" href="https://performalytic.com/" />
 <link rel="alternate" hreflang="x-default" href="https://performalytic.com/" />
@@ -45,13 +45,7 @@
 <link rel="icon" href="/assets/images/fav-1-e1651044714367.png" sizes="any" />
 <link rel="apple-touch-icon" href="/assets/images/fav-1-e1651044714367.png" />
 <link rel="preload" href="/assets/css/styles.css" as="style" id="deferred-styles" nonce="P3rf0rm4lyt1c" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FV09CSCD2C" nonce="P3rf0rm4lyt1c"></script>
-<script nonce="P3rf0rm4lyt1c">
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-FV09CSCD2C');
-</script>
+<script nonce="P3rf0rm4lyt1c">(function(){var c=localStorage.getItem('cookie_consent');if(c==='accepted'){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-FV09CSCD2C';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FV09CSCD2C');}})();</script>
 
 <script type="application/ld+json" nonce="P3rf0rm4lyt1c">[{
 "@context":"https://schema.org",
@@ -241,7 +235,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);padding:var(--space-lg);box-shadow:0 20px 60px rgba(0,0,0,.12);flex-direction:column;gap:var(--space-sm);z-index:999;max-height:calc(100vh - 72px);overflow-y:auto}
 .mobile-menu.active{display:flex}
 .mobile-menu .mm-group{margin-bottom:12px}
-.mobile-menu .mm-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;padding:var(--space-sm) 0 4px}
+.mobile-menu .mm-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:var(--space-sm) 0 4px}
 .mobile-menu a{text-decoration:none;color:#0f172a;font-size:.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid #f1f5f9;display:block}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu .nav-cta{text-align:center;padding:14px;margin-top:var(--space-sm);border-radius:100px;display:block}
@@ -1618,7 +1612,7 @@ if(mm){var q=mm.querySelectorAll('a');for(var i=0;i<q.length;i++)q[i].addEventLi
 var tk=false;window.addEventListener('scroll',function(){if(!tk){window.requestAnimationFrame(function(){cm();tk=false});tk=true}},{passive:true});
 var fm=document.querySelector('form');if(fm){fm.addEventListener('submit',function(e){
 e.preventDefault();
-var cc=document.getElementById('consent');if(cc&&!cc.checked){cc.focus();return}
+var cc=document.getElementById('consent');if(cc&&!cc.checked){cc.setAttribute('aria-invalid','true');cc.focus();return}if(cc)cc.removeAttribute('aria-invalid');
 var f=e.target;
 var ff=document.createElement('form');ff.method='POST';ff.action='https://docs.google.com/forms/d/e/1FAIpQLSeBNXijGL8QmOTltX27X9RsMdxXtzGsFZOcy5INLIAPdRAaag/formResponse';ff.target='gfi';ff.style.display='none';
 var gi=document.createElement('iframe');gi.name='gfi';gi.style.display='none';

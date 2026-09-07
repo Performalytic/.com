@@ -733,6 +733,8 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
 
         form.querySelectorAll('.form-group').forEach(function (group) {
             group.classList.remove('has-error');
+            var inp = group.querySelector('input, select, textarea');
+            if (inp) inp.removeAttribute('aria-invalid');
         });
 
         var skillsContainer =
@@ -740,6 +742,9 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
 
         if (skillsContainer) {
             skillsContainer.classList.remove('has-error');
+            var skillsInput =
+                document.getElementById('af-skills');
+            if (skillsInput) skillsInput.removeAttribute('aria-invalid');
         }
 
         var consentGroup =
@@ -747,6 +752,9 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
 
         if (consentGroup) {
             consentGroup.classList.remove('has-error');
+            var consentInput =
+                document.getElementById('af-consent');
+            if (consentInput) consentInput.removeAttribute('aria-invalid');
         }
     }
 
@@ -777,6 +785,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
                     group.classList.add('has-error');
                 }
 
+                field.setAttribute('aria-invalid', 'true');
                 valid = false;
             }
         });
@@ -796,6 +805,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
                     skillsContainer.classList.add('has-error');
                 }
 
+                if (skills) skills.setAttribute('aria-invalid', 'true');
                 valid = false;
             }
         }
@@ -815,6 +825,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
                     consentGroup.classList.add('has-error');
                 }
 
+                consent.setAttribute('aria-invalid', 'true');
                 valid = false;
             }
         }
@@ -1386,6 +1397,8 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
                     );
                 }
 
+                field.removeAttribute('aria-invalid');
+
 
                 var consentGroup =
                     document.getElementById(
@@ -1417,6 +1430,8 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
                         'has-error'
                     );
                 }
+
+                field.removeAttribute('aria-invalid');
 
 
                 var consentGroup =

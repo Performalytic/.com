@@ -335,15 +335,181 @@
   }
 
   /* ============================================
+     Dropdown Keyboard Accessibility
+  ============================================ */
+  function initDropdownKeyboard() {
+    var triggers = document.querySelectorAll('.nav-links > li > a[aria-haspopup]');
+    if (!triggers.length) return;
+
+    function closeAll(exceptLi) {
+      document.querySelectorAll('.nav-links > li').forEach(function(li) {
+        if (li !== exceptLi) {
+          li.classList.remove('is-open');
+          var t = li.querySelector('a[aria-haspopup]');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    function closeAndRefocus(trigger) {
+      var li = trigger.closest('li');
+      li.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+
+    triggers.forEach(function(trigger) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        var li = this.parentElement;
+        var isOpen = li.classList.contains('is-open');
+        closeAll(li);
+        if (isOpen) {
+          li.classList.remove('is-open');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          li.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        } else if (e.key === 'Escape') {
+          closeAndRefocus(this);
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          var li = this.closest('li');
+          var menu = li.querySelector('.nav-dropdown, .dropdown');
+          if (!menu) return;
+          var items = menu.querySelectorAll('a, button, [tabindex]');
+          if (items.length) {
+            if (!li.classList.contains('is-open')) {
+              this.click();
+            }
+            items[0].focus();
+          }
+        } else if (e.key === 'Tab') {
+          var li = this.closest('li');
+          if (li.classList.contains('is-open')) {
+            var menu = li.querySelector('.nav-dropdown, .dropdown');
+            var items = menu ? menu.querySelectorAll('a, button, [tabindex]') : [];
+            if (items.length) {
+              if (e.shiftKey && document.activeElement === this) {
+                e.preventDefault();
+                closeAndRefocus(this);
+              } else if (!e.shiftKey && document.activeElement === items[items.length - 1]) {
+                closeAll();
+                li.classList.remove('is-open');
+                this.setAttribute('aria-expanded', 'false');
+              }
+            }
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll('.nav-dropdown, .dropdown').forEach(function(menu) {
+      var menuItems = menu.querySelectorAll('a, button, [tabindex]');
+      menuItems.forEach(function(item) {
+        item.addEventListener('keydown', function(e) {
+          var list = Array.from(menuItems);
+          var idx = list.indexOf(this);
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (idx < list.length - 1) {
+              list[idx + 1].focus();
+            }
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (idx > 0) {
+              list[idx - 1].focus();
+            } else {
+              var trigger = menu.closest('li').querySelector('a[aria-haspopup]');
+              if (trigger) trigger.focus();
+            }
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            var trigger = menu.closest('li').querySelector('a[aria-haspopup]');
+            if (trigger) closeAndRefocus(trigger);
+          } else if (e.key === 'Tab') {
+            var li = menu.closest('li');
+            if (e.shiftKey && document.activeElement === menuItems[0]) {
+              var trigger = li.querySelector('a[aria-haspopup]');
+              if (trigger) {
+                e.preventDefault();
+                closeAndRefocus(trigger);
+              }
+            } else if (!e.shiftKey && document.activeElement === menuItems[menuItems.length - 1]) {
+              closeAll();
+              li.classList.remove('is-open');
+              var trigger = li.querySelector('a[aria-haspopup]');
+              if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-links > li')) {
+        closeAll();
+      }
+    });
+
+    document.addEventListener('focusin', function(e) {
+      if (!e.target.closest('.nav-links > li')) {
+        closeAll();
+      }
+    });
+  }
+
+  /* ============================================
+     Cookie Consent Banner
+  ============================================ */
+  function initCookieConsent() {
+    if (localStorage.getItem('cookie_consent')) return;
+
+    setTimeout(function() {
+      if (document.querySelector('.cookie-consent')) return;
+
+      var banner = document.createElement('div');
+      banner.className = 'cookie-consent';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-label', 'Cookie consent');
+      banner.innerHTML = '<p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="/cookie-policy/">Learn more</a></p><div class="cookie-consent-btns"><button class="btn-accept" aria-label="Accept cookies">Accept</button><button class="btn-decline" aria-label="Decline cookies">Decline</button></div>';
+      document.body.appendChild(banner);
+
+      banner.querySelector('.btn-accept').addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        banner.classList.remove('visible');
+      });
+
+      banner.querySelector('.btn-decline').addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'declined');
+        banner.classList.remove('visible');
+      });
+
+      requestAnimationFrame(function() {
+        banner.classList.add('visible');
+      });
+    }, 1500);
+  }
+
+  /* ============================================
      Initialize Everything
   ============================================ */
   function init() {
+    initCookieConsent();
     initScrollReveal();
     initBackToTop();
     initLazyImages();
     initCounters();
     initSmoothAnchors();
     initDropdownTouch();
+    initDropdownKeyboard();
     initHeroParallax();
     initNavScroll();
     initFloatingMeetingBtn();
