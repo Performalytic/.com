@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html lang="en" prefix="og: https://ogp.me/ns#"><head><script nonce="P3rf0rm4lyt1c">document.documentElement.classList.add('js');</script><meta charset="UTF-8" /><meta http-equiv="X-Content-Type-Options" content="nosniff" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="referrer" content="strict-origin-when-cross-origin" /><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" /><meta name="author" content="Performalytic" /><meta name="format-detection" content="telephone=no, address=no" /><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://script.google.com 'nonce-P3rf0rm4lyt1c' 'strict-dynamic'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://docs.google.com; frame-src 'self' https://docs.google.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" /><title>Book a Meeting - Performalytic</title><link rel="canonical" href="https://performalytic.com/book-meeting/" /><meta name="description" content="Book a meeting with our team to discuss opportunities at Performalytic." /><meta property="og:locale" content="en_US" /><meta property="og:type" content="website" /><meta property="og:title" content="Book a Meeting - Performalytic" /><meta property="og:description" content="Schedule a meeting with our team." /><meta property="og:url" content="https://performalytic.com/book-meeting/" /><meta property="og:site_name" content="Performalytic" /><meta property="og:image" content="https://performalytic.com/assets/images/pexels-photomix-company-518244.jpg" /><meta property="og:image:width" content="2560" /><meta property="og:image:height" content="688" /><meta property="og:image:type" content="image/jpeg" /><meta property="og:image:alt" content="Performalytic - Book a Meeting" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Book a Meeting - Performalytic" /><meta name="twitter:description" content="Schedule a meeting with our team." /><meta name="twitter:image" content="https://performalytic.com/assets/images/pexels-photomix-company-518244.jpg" /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /><link rel="stylesheet" href="/assets/css/styles.css" /><link rel="icon" href="/assets/images/fav-1-e1651044714367.png" sizes="any" />
+﻿<!DOCTYPE html><html lang="en" prefix="og: https://ogp.me/ns#"><head><script nonce="P3rf0rm4lyt1c">document.documentElement.classList.add('js');</script><meta charset="UTF-8" /><meta http-equiv="X-Content-Type-Options" content="nosniff" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="referrer" content="strict-origin-when-cross-origin" /><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" /><meta name="author" content="Performalytic" /><meta name="format-detection" content="telephone=no, address=no" /><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://script.google.com 'nonce-P3rf0rm4lyt1c' 'strict-dynamic'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://docs.google.com; frame-src 'self' https://docs.google.com; form-action 'self' https://docs.google.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" /><title>Book a Meeting - Performalytic</title><link rel="canonical" href="https://performalytic.com/book-meeting/" /><meta name="description" content="Book a meeting with our team to discuss opportunities at Performalytic." /><meta property="og:locale" content="en_US" /><meta property="og:type" content="website" /><meta property="og:title" content="Book a Meeting - Performalytic" /><meta property="og:description" content="Schedule a meeting with our team." /><meta property="og:url" content="https://performalytic.com/book-meeting/" /><meta property="og:site_name" content="Performalytic" /><meta property="og:image" content="https://performalytic.com/assets/images/pexels-photomix-company-518244.jpg" /><meta property="og:image:width" content="2560" /><meta property="og:image:height" content="688" /><meta property="og:image:type" content="image/jpeg" /><meta property="og:image:alt" content="Performalytic - Book a Meeting" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Book a Meeting - Performalytic" /><meta name="twitter:description" content="Schedule a meeting with our team." /><meta name="twitter:image" content="https://performalytic.com/assets/images/pexels-photomix-company-518244.jpg" /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /><link rel="stylesheet" href="/assets/css/styles.css" /><link rel="icon" href="/assets/images/fav-1-e1651044714367.png" sizes="any" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e293b;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -115,12 +115,29 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 <script nonce="P3rf0rm4lyt1c">
 (function() {
     'use strict';
-    
+
     var form = document.getElementById('meetingPageForm');
     var successDiv = document.getElementById('mpSuccess');
     var errorDiv = document.getElementById('mpError');
     var submitBtn = document.getElementById('mpSubmitBtn');
     var isSubmitting = false;
+
+    // Google Form target + field mapping.
+    // IMPORTANT: verify these entry.XXXXXXX IDs against your live form's
+    // "Get pre-filled link" output — if the form has been edited since these
+    // were captured, the IDs below may no longer match and data will be
+    // silently dropped by Google (no error is shown to the user).
+    var GFORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse';
+    var FIELD_MAP = {
+        name: 'entry.1423833295',
+        email: 'entry.1334309858',
+        phone: 'entry.542707410',
+        date: 'entry.1539017083',
+        time: 'entry.1947505895',
+        timezone: 'entry.1738796657',
+        topic: 'entry.1642892952',
+        message: 'entry.998721038'
+    };
 
     // --- Form field setup ---
     var minDate = new Date();
@@ -155,7 +172,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         var grp = el.closest('.mp-form-group');
         var val = el.value.trim();
         var ok = false;
-        
+
         if (el.type === 'email') {
             ok = val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
         } else if (el.id === 'mp-date') {
@@ -165,7 +182,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         } else {
             ok = val && val.length > 0;
         }
-        
+
         if (!ok) {
             grp.classList.add('has-error');
             el.setAttribute('aria-invalid', 'true');
@@ -189,34 +206,31 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         }
     });
 
-    // --- Submission via Google Form (using fetch) ---
-    function submitToGoogleForm(data) {
-        var formData = new FormData();
-        formData.append('entry.1423833295', data.name);      // Full Name
-        formData.append('entry.1334309858', data.email);     // Email
-        formData.append('entry.542707410', data.phone);      // Phone
-        formData.append('entry.1539017083', data.date);      // Preferred Date
-        formData.append('entry.1947505895', data.time);      // Preferred Time
-        formData.append('entry.1738796657', data.timezone);  // Your Timezone
-        formData.append('entry.1642892952', data.topic);     // Meeting Topic
-        formData.append('entry.998721038', data.message);    // Message
-        
-        // These extra parameters are often required by Google Forms.
-        formData.append('fvv', '1');
-        formData.append('partialResponse', '');
-        formData.append('pageHistory', '0');
-        // 'fbzx' can sometimes be required; if needed, get it from your form's HTML.
-        // formData.append('fbzx', ''); 
+    // Build the request body explicitly (don't rely on FormData->URLSearchParams
+    // interop, which isn't guaranteed the same way across browsers).
+    function buildRequestBody(data) {
+        var params = new URLSearchParams();
+        Object.keys(FIELD_MAP).forEach(function(key) {
+            params.append(FIELD_MAP[key], data[key] || '');
+        });
+        params.append('fvv', '1');
+        params.append('partialResponse', '');
+        params.append('pageHistory', '0');
+        return params;
+    }
 
-        // Use fetch with 'no-cors' mode. The browser will send the request,
-        // but we won't be able to read the response.
-        return fetch('https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse', {
+    // --- Submission via fetch (no-cors) ---
+    // Note: with mode:'no-cors' the response is always opaque, so we cannot
+    // detect a server-side rejection here (e.g. stale entry IDs). This only
+    // confirms the request was sent, not that Google accepted it.
+    function submitToGoogleForm(data) {
+        return fetch(GFORM_ACTION_URL, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: new URLSearchParams(formData).toString()
+            body: buildRequestBody(data).toString()
         });
     }
 
@@ -226,58 +240,53 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             try {
                 var ff = document.createElement('form');
                 ff.method = 'POST';
-                ff.action = 'https://docs.google.com/forms/d/e/1FAIpQLSehVJ7XrWRRJ6uG_xJniTOVnSklKsvjhQl_T3wUgkbcQ-20zw/formResponse';
+                ff.action = GFORM_ACTION_URL;
                 var iframeName = 'gfi_' + Date.now();
                 ff.target = iframeName;
                 ff.style.display = 'none';
-                
+
                 var gi = document.createElement('iframe');
                 gi.name = iframeName;
                 gi.style.display = 'none';
-                
+
                 var timedOut = false;
                 var timer = setTimeout(function() {
                     timedOut = true;
                     reject(new Error('Iframe submission timeout'));
                 }, 6000);
-                
+
                 gi.onload = function() {
                     clearTimeout(timer);
                     if (!timedOut) {
                         resolve();
                     }
                 };
-                
+
                 function addInput(name, value) {
                     var input = document.createElement('input');
                     input.name = name;
                     input.value = value || '';
                     ff.appendChild(input);
                 }
-                
-                addInput('entry.1423833295', data.name);
-                addInput('entry.1334309858', data.email);
-                addInput('entry.542707410', data.phone);
-                addInput('entry.1539017083', data.date);
-                addInput('entry.1947505895', data.time);
-                addInput('entry.1738796657', data.timezone);
-                addInput('entry.1642892952', data.topic);
-                addInput('entry.998721038', data.message);
+
+                Object.keys(FIELD_MAP).forEach(function(key) {
+                    addInput(FIELD_MAP[key], data[key]);
+                });
                 addInput('fvv', '1');
                 addInput('partialResponse', '');
                 addInput('pageHistory', '0');
-                
+
                 document.body.appendChild(gi);
                 document.body.appendChild(ff);
-                
+
                 ff.submit();
-                
+
                 // Clean up after submission
                 setTimeout(function() {
                     if (ff.parentNode) document.body.removeChild(ff);
                     if (gi.parentNode) document.body.removeChild(gi);
                 }, 10000);
-                
+
             } catch (e) {
                 reject(e);
             }
@@ -287,9 +296,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
     // --- Main form submit handler ---
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         if (isSubmitting) return;
-        
+
         // Validate all required fields
         var valid = true;
         ['mp-name', 'mp-email', 'mp-date', 'mp-time', 'mp-timezone', 'mp-topic'].forEach(function(id) {
@@ -298,7 +307,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
                 valid = false;
             }
         });
-        
+
         if (!valid) {
             var firstError = document.querySelector('.mp-form-group.has-error');
             if (firstError) {
@@ -308,11 +317,11 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             }
             return;
         }
-        
+
         isSubmitting = true;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
-        
+
         // Gather form data
         var data = {
             name: document.getElementById('mp-name').value.trim(),
@@ -324,9 +333,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
             topic: document.getElementById('mp-topic').value,
             message: document.getElementById('mp-message').value.trim()
         };
-        
+
         console.log('Submitting data:', data);
-        
+
         // Try fetch first, then iframe as fallback
         submitToGoogleForm(data)
             .then(function() {
@@ -363,7 +372,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
         submitBtn.textContent = 'Confirm Meeting →';
         form.style.display = 'none';
         successDiv.style.display = 'block';
-        
+
         // Update the success message to include an email fallback.
         var successMsg = successDiv.querySelector('p');
         if (successMsg) {
