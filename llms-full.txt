@@ -4,7 +4,7 @@
 
 Performalytic is an enterprise data analytics, AI, and DevOps consulting firm headquartered at 111 W. Jackson Blvd, Suite 1700, Chicago, IL 60604, USA, with a global delivery center in Patia, Bhubaneswar, Odisha 751024, India. We help organizations turn data into a competitive advantage through digital strategy, advanced analytics, artificial intelligence, business intelligence, and application development.
 
-- **Founded:** 2023
+- **Founded:** 2018
 - **Team:** 800+ data professionals
 - **Clients:** 500+ enterprises, including Fortune 500 companies
 - **Client satisfaction:** 99.9%
