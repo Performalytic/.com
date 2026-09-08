@@ -239,10 +239,10 @@
 
     function updateNav() {
       if (window.scrollY > 10) {
-        nav.style.background = 'rgba(255,255,255,0.98)';
-        nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
+        nav.style.background = 'rgba(8,14,28,0.98)';
+        nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.3)';
       } else {
-        nav.style.background = 'rgba(255,255,255,0.97)';
+        nav.style.background = 'rgba(8,14,28,0.92)';
         nav.style.boxShadow = 'none';
       }
     }
