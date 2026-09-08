@@ -143,30 +143,30 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 
 /* Nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.06)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,14,28,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04)}
 nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.25rem;color:#0f172a;letter-spacing:-0.5px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.25rem;color:#fff;letter-spacing:-0.5px;letter-spacing:-0.5px}
 .nav-logo img{height:36px;width:240px;object-fit:cover;object-position:center;display:block}
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links>li{position:relative}
-.nav-links>li>a{text-decoration:none;color:#475569;font-size:0.9rem;font-weight:500;transition:color 0.2s;padding:8px 0;display:inline-flex;align-items:center;gap:4px;cursor:pointer}
-.nav-links>li>a:hover{color:#2563eb}
+.nav-links>li>a{text-decoration:none;color:#94a3b8;font-size:0.9rem;font-weight:500;transition:color 0.2s;padding:8px 0;display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.nav-links>li>a:hover{color:#fff}
 .nav-links>li>a .arrow{font-size:0.6rem;transition:transform 0.2s}
 .nav-links>li:hover>a .arrow{transform:rotate(180deg)}
 .nav-links>li:hover .nav-dropdown{display:block}
 .nav-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:8px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,0.08)}
-.nav-dropdown a{display:block;padding:10px 16px;border-radius:8px;font-size:0.875rem;color:#475569;transition:background 0.2s,color 0.2s}
+.nav-dropdown a{display:block;padding:10px 16px;border-radius:8px;font-size:0.875rem;color:#94a3b8;transition:background 0.2s,color 0.2s}
 .nav-dropdown a:hover{background:#f1f5f9;color:#2563eb}
 .nav-cta{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff!important;padding:10px 32px!important;border-radius:100px;font-weight:600;font-size:0.88rem;letter-spacing:0.01em;transition:all 0.25s}
 .nav-cta:hover{background:linear-gradient(135deg,#1d4ed8,#6d28d9)!important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.35)}
 .nav-cta:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
 .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
-.menu-toggle span{display:block;width:24px;height:2px;background:#0f172a;border-radius:2px;transition:transform 0.3s,opacity 0.3s}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;padding:24px;box-shadow:0 20px 40px rgba(0,0,0,0.1);flex-direction:column;gap:8px;z-index:999;max-height:calc(100vh - 72px);overflow-y:auto}
+.menu-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform 0.3s,opacity 0.3s}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(8,14,28,0.98);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.4);flex-direction:column;gap:8px;z-index:999;max-height:calc(100vh - 72px);overflow-y:auto}
 .mobile-menu.active{display:flex}
 .mobile-menu .mm-group{margin-bottom:12px}
 .mobile-menu .mm-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#94a3b8;padding:8px 0 4px}
-.mobile-menu a{text-decoration:none;color:#0f172a;font-size:0.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid #f1f5f9;display:block}
+.mobile-menu a{text-decoration:none;color:#e2e8f0;font-size:0.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:block}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu .nav-cta{text-align:center;padding:14px;margin-top:8px;border-radius:100px;display:block}
 @media(max-width:768px){
@@ -275,7 +275,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
     <ul class="nav-links" role="list">
       <li><a href="/">Home</a></li>
       <li>
-        <a href="#" aria-haspopup="true">Our Services <span class="arrow" aria-hidden="true">&#9662;</span></a>
+        <a href="#" aria-haspopup="true">Solutions <span class="arrow" aria-hidden="true">&#9662;</span></a>
         <div class="nav-dropdown" role="menu">
           <a href="/enterprise-solution-development/" role="menuitem">Enterprise Solution Development</a>
           <a href="/advanced-analytics-ai/" role="menuitem">Advanced Analytics &amp; AI</a>
@@ -293,7 +293,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
         </div>
       </li>
       <li>
-        <a href="#" aria-haspopup="true">Resources <span class="arrow" aria-hidden="true">&#9662;</span></a>
+        <a href="#" aria-haspopup="true">Insights <span class="arrow" aria-hidden="true">&#9662;</span></a>
         <div class="nav-dropdown" role="menu">
           <a href="/products/" role="menuitem">Products</a>
           <a href="/technologies/" role="menuitem">Technologies</a>
@@ -303,7 +303,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
           <a href="/contact/" role="menuitem">Schedule a Consultation</a>
         </div>
       </li>
-      <li><a href="/contact/" class="nav-cta">Contact Us</a></li>
+      <li><a href="/contact/" class="nav-cta">Let's Talk</a></li>
     </ul>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
@@ -313,7 +313,7 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
   <div class="mm-group">
-    <div class="mm-label">Our Services</div>
+    <div class="mm-label">Solutions</div>
     <a href="/enterprise-solution-development/">Enterprise Solution Development</a>
     <a href="/advanced-analytics-ai/">Advanced Analytics &amp; AI</a>
     <a href="/bi-integration/">BI Integration</a>
@@ -324,17 +324,16 @@ footer{background:#0f172a;border-top:1px solid rgba(255,255,255,0.06);padding:56
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/careers/">Careers</a>
-    <a href="/industries/">Industries</a>
+    <a href="/faq/">FAQ</a>
   </div>
   <div class="mm-group">
-    <div class="mm-label">Resources</div>
-    <a href="/products/">Products</a>
-    <a href="/technologies/">Technologies</a>
-    <a href="/faq/">FAQ</a>
-    <a href="/tools/">Tools</a>
+    <div class="mm-label">Insights</div>
     <a href="/blog/">Blog</a>
+    <a href="/knowledge/">Knowledge Hub</a>
+    <a href="/products/">Products</a>
+    <a href="/tools/">Tools</a>
   </div>
-  <a href="/contact/" class="nav-cta">Contact Us</a>
+  <a href="/contact/" class="nav-cta">Let's Talk</a>
 </nav>
 </header>
 
