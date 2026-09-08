@@ -1,13 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="solGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
   <rect width="48" height="48" rx="12" fill="rgba(124,58,237,0.1)"/>
   <g transform="translate(24,24)">
-    <!-- Two arrows reconciling -->
-    <path d="M-12,-4 L-4,-4 L-4,-10" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12,4 L4,4 L4,10" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Center sync circle -->
-    <circle cx="0" cy="0" r="6" fill="none" stroke="#7c3aed" stroke-width="2"/>
-    <path d="M-3,-1 L0,2 L3,-1" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M-3,1 L0,-2 L3,1" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    <!-- Two opposing arrows forming a sync/reconciliation symbol -->
+    <path d="M-6,-10 A10,10 0 0,1 6,-10" fill="none" stroke="url(#solGrad2)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M8,-10 L6,-14 L4,-10" fill="none" stroke="url(#solGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6,10 A10,10 0 0,1 -6,10" fill="none" stroke="url(#solGrad2)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M-8,10 L-6,14 L-4,10" fill="none" stroke="url(#solGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Center checkmark -->
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+    <path d="M-2.5,0 L-0.5,2.5 L3,-2.5" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>
