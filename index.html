@@ -170,8 +170,11 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 
 /* Hero Illustration */
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
-.hero-illustration{width:100%;max-width:520px;height:auto}
-.hero-illustration .node{position:absolute;background:rgba(15,23,42,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:#e2e8f0;white-space:nowrap;backdrop-filter:blur(8px);transition:all .3s}
+.hero-illustration{width:100%;max-width:520px;height:auto;animation:heroFloat 6s ease-in-out infinite;transition:transform .5s cubic-bezier(.16,1,.3,1),filter .5s ease;will-change:transform}
+.hero-visual:hover .hero-illustration{animation-play-state:paused;transform:scale(1.06);filter:drop-shadow(0 20px 60px rgba(37,99,235,0.35))}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-visual::after{content:'';position:absolute;inset:0;max-width:520px;margin:0 auto;background:linear-gradient(105deg,transparent 40%,rgba(96,165,250,0.18) 50%,transparent 60%);background-size:250% 100%;background-position:100% 0;transition:background-position .8s ease;pointer-events:none;border-radius:20px}
+.hero-visual:hover::after{background-position:-100% 0}.hero-illustration .node{position:absolute;background:rgba(15,23,42,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:#e2e8f0;white-space:nowrap;backdrop-filter:blur(8px);transition:all .3s}
 .hero-illustration .node:hover{border-color:rgba(96,165,250,0.3);transform:translateY(-2px)}
 .hero-illustration .node svg{width:18px;height:18px;flex-shrink:0}
 .hero-illustration .center-node{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(124,58,237,0.15));border-color:rgba(96,165,250,0.2);padding:20px 28px;font-size:.9rem;font-weight:700;color:#fff}
@@ -249,14 +252,26 @@ section{padding:80px 0}
 
 /* ========================================
    IMPACT / PROCESS
-======================================== */
+======================================= */
 .impact{background:linear-gradient(180deg,#0c1425 0%,#080e1c 100%)}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
-.impact-grid::before{content:'';position:absolute;top:40px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(96,165,250,0.15),transparent);z-index:0}
-.impact-step{text-align:center;padding:24px 16px;position:relative;z-index:1}
-.impact-step .step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 16px;box-shadow:0 4px 14px rgba(37,99,235,0.3)}
-.impact-step h4{font-size:.9rem;font-weight:700;color:#e2e8f0;margin-bottom:6px}
-.impact-step p{font-size:.78rem;color:#64748b;line-height:1.55}
+.impact-grid::before{content:'';position:absolute;top:45px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,rgba(37,99,235,0.08),rgba(37,99,235,0.35),rgba(124,58,237,0.35),rgba(124,58,237,0.08));z-index:0}
+.impact-step{text-align:center;padding:22px 16px;position:relative;z-index:1;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;backdrop-filter:blur(6px);transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .4s,background .3s;overflow:hidden}
+.impact-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#7c3aed);opacity:0;transition:opacity .3s;transform:scaleX(.3)}
+.impact-step::after{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:200%;background:radial-gradient(circle,rgba(96,165,250,0.12) 0%,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.impact-step:hover{transform:translateY(-8px);border-color:rgba(96,165,250,0.3);box-shadow:0 20px 50px rgba(37,99,235,0.18),inset 0 0 30px rgba(37,99,235,0.03);background:rgba(37,99,235,0.05)}
+.impact-step:hover::before{opacity:1;transform:scaleX(1);transition:transform .5s,opacity .2s}
+.impact-step:hover::after{opacity:1}
+.step-top{display:flex;align-items:center;justify-content:space-between;flex-direction:column;gap:12px;margin-bottom:14px}
+.impact-step .step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem;box-shadow:0 4px 14px rgba(37,99,235,0.3);position:absolute;top:10px;left:10px}
+.impact-step .step-icon{width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(124,58,237,0.15));border:1px solid rgba(96,165,250,0.2);display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s}
+.impact-step .step-icon svg{width:22px;height:22px;color:#60a5fa;transition:transform .4s cubic-bezier(.16,1,.3,1),color .3s}
+.impact-step:hover .step-icon{border-color:rgba(96,165,250,0.45);box-shadow:0 10px 28px rgba(37,99,235,0.25);transform:translateY(-3px) rotate(-6deg)}
+.impact-step:hover .step-icon svg{transform:scale(1.15) rotate(6deg);color:#93c5fd}
+.impact-step h4{font-size:.95rem;font-weight:700;color:#e2e8f0;margin-bottom:8px}
+.impact-step p{font-size:.8rem;color:#64748b;line-height:1.6;margin-bottom:16px}
+.impact-step .step-tag{display:inline-block;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:#60a5fa;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.15);padding:5px 14px;border-radius:100px;transition:all .3s}
+.impact-step:hover .step-tag{color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed);border-color:transparent;box-shadow:0 6px 16px rgba(37,99,235,0.3)}
 
 /* ========================================
    INDUSTRIES
@@ -518,81 +533,95 @@ Explore Solutions
 </div>
 </div>
 <div class="hero-visual" aria-hidden="true">
-<svg class="hero-illustration" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Grid lines -->
-<line x1="0" y1="80" x2="600" y2="80" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="0" y1="160" x2="600" y2="160" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="0" y1="240" x2="600" y2="240" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="100" y1="0" x2="100" y2="320" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="200" y1="0" x2="200" y2="320" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="300" y1="0" x2="300" y2="320" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="400" y1="0" x2="400" y2="320" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
-<line x1="500" y1="0" x2="500" y2="320" stroke="rgba(96,165,250,0.04)" stroke-width="1"/>
+<svg class="hero-illustration" viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background glow -->
+  <circle cx="260" cy="200" r="140" fill="rgba(37,99,235,0.04)"/>
+  <circle cx="260" cy="200" r="90" fill="rgba(37,99,235,0.05)"/>
+  <circle cx="260" cy="200" r="45" fill="rgba(37,99,235,0.06)"/>
 
-<!-- Input nodes (left side) -->
-<rect x="10" y="20" width="110" height="32" rx="8" fill="rgba(15,23,42,0.9)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-<circle cx="26" cy="36" r="5" fill="rgba(96,165,250,0.3)"/>
-<text x="38" y="40" fill="#94a3b8" font-size="10" font-family="Inter" font-weight="500">Databases</text>
+  <!-- Flowing data streams -->
+  <path d="M90,80 Q175,120 260,200" stroke="url(#heroGrad1)" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M90,160 Q175,180 260,200" stroke="url(#heroGrad1)" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M90,240 Q175,220 260,200" stroke="url(#heroGrad1)" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M90,320 Q175,280 260,200" stroke="url(#heroGrad1)" stroke-width="2" fill="none" opacity="0.5"/>
 
-<rect x="10" y="62" width="110" height="32" rx="8" fill="rgba(15,23,42,0.9)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-<circle cx="26" cy="78" r="5" fill="rgba(124,58,237,0.3)"/>
-<text x="38" y="82" fill="#94a3b8" font-size="10" font-family="Inter" font-weight="500">Applications</text>
+  <!-- Right side streams -->
+  <path d="M260,200 Q345,120 430,80" stroke="url(#heroGrad2)" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M260,200 Q345,180 430,160" stroke="url(#heroGrad2)" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M260,200 Q345,220 430,240" stroke="url(#heroGrad2)" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M260,200 Q345,280 430,320" stroke="url(#heroGrad2)" stroke-width="2" fill="none" opacity="0.5"/>
 
-<rect x="10" y="104" width="110" height="32" rx="8" fill="rgba(15,23,42,0.9)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-<circle cx="26" cy="120" r="5" fill="rgba(5,150,105,0.3)"/>
-<text x="38" y="124" fill="#94a3b8" font-size="10" font-family="Inter" font-weight="500">Files &amp; Docs</text>
+  <!-- Data nodes (left) with labels -->
+  <circle cx="90" cy="80" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(96,165,250,0.4)" stroke-width="1.5"/>
+  <circle cx="90" cy="80" r="6" fill="rgba(96,165,250,0.5)"/>
+  <text x="118" y="85" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Databases</text>
 
-<rect x="10" y="146" width="110" height="32" rx="8" fill="rgba(15,23,42,0.9)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-<circle cx="26" cy="162" r="5" fill="rgba(220,38,38,0.3)"/>
-<text x="38" y="166" fill="#94a3b8" font-size="10" font-family="Inter" font-weight="500">IoT / Devices</text>
+  <circle cx="90" cy="160" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(124,58,237,0.4)" stroke-width="1.5"/>
+  <circle cx="90" cy="160" r="6" fill="rgba(124,58,237,0.5)"/>
+  <text x="118" y="165" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Applications</text>
 
-<rect x="10" y="188" width="110" height="32" rx="8" fill="rgba(15,23,42,0.9)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-<circle cx="26" cy="204" r="5" fill="rgba(251,191,36,0.3)"/>
-<text x="38" y="208" fill="#94a3b8" font-size="10" font-family="Inter" font-weight="500">Third Party Data</text>
+  <circle cx="90" cy="240" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(5,150,105,0.4)" stroke-width="1.5"/>
+  <circle cx="90" cy="240" r="6" fill="rgba(5,150,105,0.5)"/>
+  <text x="118" y="245" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Files &amp; Docs</text>
 
-<!-- Connecting lines from inputs to Data Platform -->
-<line x1="120" y1="36" x2="170" y2="120" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="120" y1="78" x2="170" y2="120" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="120" y1="120" x2="170" y2="120" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="120" y1="162" x2="170" y2="120" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="120" y1="204" x2="170" y2="120" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="4 4"/>
+  <circle cx="90" cy="320" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5"/>
+  <circle cx="90" cy="320" r="6" fill="rgba(251,191,36,0.5)"/>
+  <text x="118" y="325" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">IoT &amp; Devices</text>
 
-<!-- Data Platform (center-left) -->
-<rect x="160" y="100" width="110" height="44" rx="10" fill="rgba(37,99,235,0.12)" stroke="rgba(96,165,250,0.2)" stroke-width="1"/>
-<text x="182" y="118" fill="#60a5fa" font-size="10" font-family="Inter" font-weight="600">Data Platform</text>
-<text x="186" y="134" fill="#64748b" font-size="8" font-family="Inter">Unified Layer</text>
+  <!-- Output nodes (right) with labels -->
+  <circle cx="430" cy="80" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(96,165,250,0.4)" stroke-width="1.5"/>
+  <circle cx="430" cy="80" r="6" fill="rgba(96,165,250,0.5)"/>
+  <text x="312" y="85" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Analytics &amp; BI</text>
 
-<!-- Connection line: Data Platform to AI -->
-<line x1="270" y1="122" x2="310" y2="122" stroke="rgba(96,165,250,0.2)" stroke-width="1.5"/>
+  <circle cx="430" cy="160" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(124,58,237,0.4)" stroke-width="1.5"/>
+  <circle cx="430" cy="160" r="6" fill="rgba(124,58,237,0.5)"/>
+  <text x="327" y="165" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Automation</text>
 
-<!-- AI (center) -->
-<rect x="300" y="90" width="90" height="64" rx="14" fill="rgba(37,99,235,0.1)" stroke="rgba(96,165,250,0.25)" stroke-width="1.5"/>
-<circle cx="345" cy="112" r="14" fill="rgba(37,99,235,0.15)" stroke="rgba(96,165,250,0.2)" stroke-width="1"/>
-<text x="337" y="117" fill="#60a5fa" font-size="11" font-family="Inter" font-weight="700">AI</text>
-<text x="327" y="142" fill="#94a3b8" font-size="8" font-family="Inter">Intelligence</text>
+  <circle cx="430" cy="240" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(5,150,105,0.4)" stroke-width="1.5"/>
+  <circle cx="430" cy="240" r="6" fill="rgba(5,150,105,0.5)"/>
+  <text x="315" y="245" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Business Insights</text>
 
-<!-- Connection lines from AI to outputs -->
-<line x1="390" y1="108" x2="430" y2="44" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="3 3"/>
-<line x1="390" y1="114" x2="430" y2="100" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="3 3"/>
-<line x1="390" y1="120" x2="430" y2="156" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="3 3"/>
-<line x1="390" y1="126" x2="430" y2="212" stroke="rgba(96,165,250,0.12)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="430" cy="320" r="18" fill="rgba(15,23,42,0.9)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5"/>
+  <circle cx="430" cy="320" r="6" fill="rgba(251,191,36,0.5)"/>
+  <text x="322" y="325" fill="#94a3b8" font-size="11" font-family="Inter" font-weight="500">Better Outcomes</text>
 
-<!-- Output nodes (right side) -->
-<rect x="420" y="28" width="100" height="30" rx="6" fill="rgba(15,23,42,0.8)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-<text x="432" y="47" fill="#94a3b8" font-size="9" font-family="Inter" font-weight="500">Analytics &amp; BI</text>
+  <!-- Central AI hub -->
+  <circle cx="260" cy="200" r="44" fill="rgba(37,99,235,0.12)" stroke="rgba(96,165,250,0.3)" stroke-width="2"/>
+  <circle cx="260" cy="200" r="26" fill="rgba(37,99,235,0.15)" stroke="rgba(96,165,250,0.4)" stroke-width="1.5"/>
+  <text x="260" y="196" text-anchor="middle" fill="#60a5fa" font-size="14" font-family="Inter" font-weight="700">AI</text>
+  <text x="260" y="216" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="Inter" font-weight="500">Intelligence</text>
 
-<rect x="420" y="84" width="100" height="30" rx="6" fill="rgba(15,23,42,0.8)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-<text x="432" y="103" fill="#94a3b8" font-size="9" font-family="Inter" font-weight="500">Automation</text>
+  <!-- Orbiting particles -->
+  <circle r="4" fill="#60a5fa" opacity="0.8">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M260,200 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0"/>
+  </circle>
+  <circle r="3" fill="#a78bfa" opacity="0.7">
+    <animateMotion dur="8s" repeatCount="indefinite" path="M260,200 m0,-70 a70,70 0 1,1 0,140 a70,70 0 1,1 0,-140"/>
+  </circle>
+  <circle r="3.5" fill="#4ade80" opacity="0.6">
+    <animateMotion dur="10s" repeatCount="indefinite" path="M260,200 m50,-50 a50,50 0 1,1 0,100 a50,50 0 1,1 0,-100"/>
+  </circle>
 
-<rect x="420" y="140" width="100" height="30" rx="6" fill="rgba(15,23,42,0.8)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-<text x="432" y="159" fill="#94a3b8" font-size="9" font-family="Inter" font-weight="500">Business Insights</text>
+  <!-- Pulse rings -->
+  <circle cx="260" cy="200" r="60" fill="none" stroke="rgba(96,165,250,0.15)" stroke-width="1">
+    <animate attributeName="r" values="45;80;45" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="260" cy="200" r="70" fill="none" stroke="rgba(124,58,237,0.1)" stroke-width="1">
+    <animate attributeName="r" values="55;90;55" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0;0.2" dur="5s" repeatCount="indefinite"/>
+  </circle>
 
-<rect x="420" y="196" width="100" height="30" rx="6" fill="rgba(15,23,42,0.8)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-<text x="432" y="215" fill="#94a3b8" font-size="9" font-family="Inter" font-weight="500">Better Outcomes</text>
-
-<!-- Decorative glow -->
-<circle cx="345" cy="122" r="50" fill="rgba(37,99,235,0.04)"/>
-<circle cx="345" cy="122" r="25" fill="rgba(37,99,235,0.06)"/>
+  <defs>
+    <linearGradient id="heroGrad1" x1="80" y1="200" x2="260" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="heroGrad2" x1="260" y1="200" x2="440" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b5cf6" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
 </svg>
 </div>
 </div>
@@ -716,24 +745,28 @@ Explore Solutions
 </div>
 <div class="impact-grid" role="list">
 <div class="impact-step" role="listitem">
-<div class="step-num" aria-hidden="true">01</div>
+<div class="step-top"><span class="step-num" aria-hidden="true">01</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
 <h4>Discover</h4>
 <p>Understand your business, data and challenges.</p>
+<span class="step-tag">Exploration</span>
 </div>
 <div class="impact-step" role="listitem">
-<div class="step-num" aria-hidden="true">02</div>
+<div class="step-top"><span class="step-num" aria-hidden="true">02</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div></div>
 <h4>Design</h4>
 <p>Create the architecture for long-term success.</p>
+<span class="step-tag">Strategy</span>
 </div>
 <div class="impact-step" role="listitem">
-<div class="step-num" aria-hidden="true">03</div>
+<div class="step-top"><span class="step-num" aria-hidden="true">03</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div></div>
 <h4>Build</h4>
 <p>Deploy scalable data, analytics and AI systems.</p>
+<span class="step-tag">Development</span>
 </div>
 <div class="impact-step" role="listitem">
-<div class="step-num" aria-hidden="true">04</div>
+<div class="step-top"><span class="step-num" aria-hidden="true">04</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div></div>
 <h4>Scale</h4>
 <p>Optimize, automate and continuously improve.</p>
+<span class="step-tag">Growth</span>
 </div>
 </div>
 <div style="text-align:center;margin-top:40px">
