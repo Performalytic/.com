@@ -197,7 +197,13 @@ section{padding:80px 0}
 .text-center{text-align:center}
 .mx-auto{margin-left:auto;margin-right:auto}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.mt-56{margin-top:56px}
+.mt-56{margin-top:40px}
+.about-stats{display:flex;justify-content:center;gap:24px;margin:32px auto 36px;flex-wrap:wrap}
+.about-stat{min-width:180px;padding:24px 28px;border-radius:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);text-align:center;transition:all 0.3s}
+.about-stat:hover{transform:translateY(-4px);border-color:rgba(96,165,250,0.25);box-shadow:0 16px 40px rgba(37,99,235,0.12)}
+.stat-num{font-size:2.1rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat-suffix{font-size:2.1rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-stat p{font-size:0.82rem;color:#94a3b8;margin-top:10px}
 
 /* Services */
 .services{background:linear-gradient(180deg,#080e1c 0%,#0c1425 100%)}
@@ -215,40 +221,51 @@ section{padding:80px 0}
 .service-card a:hover{gap:10px}
 
 /* Impact */
-.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px}
 .impact-item{padding:40px 36px;border-radius:20px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden}
 .impact-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#2563eb,#7c3aed);opacity:0;transition:opacity 0.3s}
 .impact-item:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.2);border-color:rgba(96,165,250,0.15);background:rgba(255,255,255,0.04)}
 .impact-item:hover::before{opacity:1}
-.impact-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px;font-weight:700}
+.impact-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px;font-weight:700;transition:transform 0.3s,box-shadow 0.3s}
+.impact-icon svg{width:24px;height:24px}
+.impact-item:hover .impact-icon{transform:scale(1.08)}
 .impact-item h4{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:#e2e8f0}
 .impact-item p{font-size:0.9rem;color:#64748b;line-height:1.7}
-.about-cta{text-align:center;margin-top:56px;padding:56px 48px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(124,58,237,0.08));border-radius:20px;border:1px solid rgba(37,99,235,0.12);transition:all 0.3s}
+.about-cta{text-align:center;margin-top:40px;padding:44px 40px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(124,58,237,0.08));border-radius:20px;border:1px solid rgba(37,99,235,0.12);transition:all 0.3s;position:relative;overflow:hidden}
+.about-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#7c3aed)}
 .about-cta:hover{border-color:rgba(96,165,250,0.2)}
 .about-cta h3{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
 .about-cta p{color:#94a3b8;max-width:600px;margin:0 auto 28px;line-height:1.8}
 
 /* Story */
 .story-content{max-width:800px;margin:0 auto}
-.story-content p{font-size:1.05rem;color:#94a3b8;line-height:1.8;margin-bottom:20px}
-.story-mission{text-align:center;margin:48px 0;padding:56px 48px;background:linear-gradient(135deg,#0c1425 0%,#0f1a30 100%);border-radius:20px;color:#fff;position:relative;overflow:hidden}
+.story-content p{font-size:1.02rem;color:#94a3b8;line-height:1.75;margin-bottom:16px}
+.story-mission{text-align:center;margin:32px 0;padding:44px 40px;background:linear-gradient(135deg,#0c1425 0%,#0f1a30 100%);border-radius:20px;color:#fff;position:relative;overflow:hidden}
+.story-mission::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#7c3aed)}
 .story-mission::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,0.08) 0%,transparent 70%);pointer-events:none}
 .story-mission h3{font-size:1.5rem;font-weight:800;margin-bottom:16px;color:#fff}
 .story-mission p{font-size:1.1rem;color:#94a3b8;max-width:700px;margin:0 auto;line-height:1.7;position:relative;z-index:1}
 
 /* Team */
 .team{background:linear-gradient(180deg,#080e1c 0%,#0c1425 100%)}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:32px;margin-top:48px}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:32px;margin-top:40px}
 .team-card{background:rgba(255,255,255,0.02);border-radius:20px;padding:40px 36px;border:1px solid rgba(255,255,255,0.06);display:flex;gap:24px;align-items:flex-start;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);position:relative}
 .team-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.2);border-color:rgba(96,165,250,0.15);background:rgba(255,255,255,0.04)}
-.team-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#1e293b;border:3px solid rgba(255,255,255,0.08);box-shadow:0 4px 14px rgba(0,0,0,0.2)}
+.team-avatar-wrap{position:relative;flex-shrink:0;width:100px;height:100px}
+.team-avatar-wrap::before{content:'';position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(#2563eb,#7c3aed,#60a5fa,#2563eb);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));animation:ringSpin 6s linear infinite;opacity:0.9}
+.team-avatar-wrap::after{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(96,165,250,0.25);animation:haloPulse 3s ease-out infinite}
+.team-card:hover .team-avatar-wrap::before{animation-duration:3s;opacity:1}
+.team-card:hover .team-avatar-wrap::after{animation-play-state:paused;opacity:0}
+.team-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#1e293b;border:3px solid #0f1a30;box-shadow:0 6px 20px rgba(0,0,0,0.35);position:relative}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+@keyframes haloPulse{0%{transform:scale(0.85);opacity:0.9}70%{transform:scale(1.18);opacity:0}100%{transform:scale(1.18);opacity:0}}
 .team-card h4{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:2px}
 .team-card .role{font-size:0.85rem;color:#60a5fa;font-weight:600;margin-bottom:14px;display:inline-flex;align-items:center;gap:6px}
 .team-card .role::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#60a5fa}
 .team-card p{font-size:0.88rem;color:#64748b;line-height:1.8}
 .team-linkedin{display:inline-flex;align-items:center;gap:6px;margin-top:12px;color:#60a5fa;text-decoration:none;font-size:0.85rem;font-weight:600;transition:gap 0.2s}
 .team-linkedin:hover{gap:10px;text-decoration:underline}
-.values-section{text-align:center;margin-top:56px}
+.values-section{text-align:center;margin-top:44px}
 .values-section h3{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:8px}
 .values-section>p{color:#94a3b8;margin-bottom:24px}
 .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;max-width:640px;margin:0 auto}
@@ -330,6 +347,9 @@ footer{background:#060a14;border-top:1px solid rgba(255,255,255,0.04);padding:56
 .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
 .form-row{grid-template-columns:1fr}
 .team-card{flex-direction:column}
+.team-avatar-wrap{margin:0 auto}
+.team-card{text-align:center}
+.team-card .role{justify-content:center}
 section{padding:60px 0}
 .steps{grid-template-columns:1fr;gap:16px}
 .step{padding:28px 20px 24px}
@@ -491,12 +511,12 @@ section{padding:60px 0}
         <p>The better the data accuracy, the more confidence users will have in the outputs they produce, lowering risk in the outcomes and increasing efficiency. When outputs are reliable, guesswork and risk in decision making can be mitigated.</p>
       </article>
       <article class="impact-item" role="listitem">
-        <div class="impact-icon icon-green">&#9650;</div>
+        <div class="impact-icon icon-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
         <h4>Productivity</h4>
         <p>High-quality, trusted data enables teams to work more efficiently and confidently. Rather than spending valuable time identifying, validating, and correcting data issues, employees can focus on their core responsibilities and deliver greater impact to the business overall.</p>
       </article>
       <article class="impact-item" role="listitem">
-        <div class="impact-icon icon-purple">&#9632;</div>
+        <div class="impact-icon icon-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><path d="M9 11.5l2 2 4-4.5"/></svg></div>
         <h4>Compliance</h4>
         <p>In industries where regulations govern trade with certain customers, especially in finance, maintaining accurate data can be the difference between compliance and millions of dollars in fines. Compliance continues to be an ongoing focus as new regulations evolve in regions around the world.</p>
       </article>
@@ -505,6 +525,11 @@ section{padding:60px 0}
       <span class="section-label">Growing with Purpose</span>
       <h2 class="section-title">A team built on experience</h2>
       <p class="section-subtitle mx-auto">Performalytic is steadily strengthening its national footprint by bringing together top-tier technical talent and service-focused professionals. With a workforce of over 800 across the United States, we are scaling with purpose.</p>
+      <div class="about-stats" role="list">
+        <div class="about-stat" role="listitem"><span class="stat-num">800</span><span class="stat-suffix">+</span><p>Workforce across the US</p></div>
+        <div class="about-stat" role="listitem"><span class="stat-num">500</span><span class="stat-suffix">+</span><p>Enterprises Trusted Worldwide</p></div>
+        <div class="about-stat" role="listitem"><span class="stat-num">2</span><p>Global Delivery Centers</p></div>
+      </div>
       <a href="#team" class="btn-primary">Meet the team &rarr;</a>
     </div>
     <div class="about-cta">
@@ -525,7 +550,9 @@ section{padding:60px 0}
     </div>
     <div class="team-grid" role="list">
       <article class="team-card" role="listitem">
-        <img src="/assets/images/Nihar-Rout.png" alt="Nihar Rout, Managing Partner &amp; Advisor at Performalytic" class="team-avatar" width="100" height="100" loading="lazy" decoding="async" />
+        <div class="team-avatar-wrap">
+          <img src="/assets/images/Nihar-Rout.png" alt="Nihar Rout, Managing Partner &amp; Advisor at Performalytic" class="team-avatar" width="100" height="100" loading="lazy" decoding="async" />
+        </div>
         <div>
           <h4>Nihar Rout</h4>
           <p class="role">Managing Partner &amp; Advisor</p>
@@ -534,7 +561,9 @@ section{padding:60px 0}
         </div>
       </article>
       <article class="team-card" role="listitem">
-        <img src="/assets/images/Abani-Pattanayak.png" alt="Abani Pattanayak, Partner &amp; Advisor at Performalytic" class="team-avatar" width="100" height="100" loading="lazy" decoding="async" />
+        <div class="team-avatar-wrap">
+          <img src="/assets/images/Abani-Pattanayak.png" alt="Abani Pattanayak, Partner &amp; Advisor at Performalytic" class="team-avatar" width="100" height="100" loading="lazy" decoding="async" />
+        </div>
         <div>
           <h4>Abani Pattanayak</h4>
           <p class="role">Partner &amp; Advisor</p>
