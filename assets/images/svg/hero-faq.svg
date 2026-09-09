@@ -1,25 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" font-family="Inter, Arial, sans-serif">
   <defs>
-    <linearGradient id="faqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.12"/>
+    <radialGradient id="faqGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.18"/>
       <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.06"/>
-    </linearGradient>
+    </radialGradient>
   </defs>
+
   <rect width="400" height="280" rx="20" fill="#0f1d35"/>
-  <circle cx="200" cy="140" r="110" fill="url(#faqGrad)" opacity="0.5"/>
-  <!-- Question mark -->
-  <circle cx="200" cy="110" r="50" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
-  <text x="200" y="125" text-anchor="middle" fill="#60a5fa" font-size="56" font-weight="800">?</text>
-  <!-- Speech bubbles -->
-  <rect x="80" y="170" width="80" height="40" rx="10" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
-  <circle cx="100" cy="220" r="4" fill="#a78bfa" opacity="0.3"/>
-  <rect x="240" y="170" width="80" height="40" rx="10" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
-  <circle cx="260" cy="220" r="4" fill="#60a5fa" opacity="0.3"/>
-  <!-- Sparkles -->
-  <circle cx="130" cy="80" r="3" fill="#a78bfa" opacity="0.4">
-    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite"/>
+  <circle cx="200" cy="140" r="120" fill="url(#faqGrad)" opacity="0.7"/>
+
+  <g opacity="0.8">
+    <path d="M38,80 l-5,10 M33,85 l10,-5 M44,90 l-1,1" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round">
+      <animate attributeName="opacity" values="0.25;1;0.25" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M352,110 l-5,10 M347,115 l10,-5 M358,120 l-1,1" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round">
+      <animate attributeName="opacity" values="1;0.25;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M348,196 l-5,10 M343,201 l10,-5 M354,206 l-1,1" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round">
+      <animate attributeName="opacity" values="0.25;1;0.25" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g>
+    <rect x="246" y="24" width="96" height="24" rx="12" fill="#0b1526" stroke="rgba(52,211,153,0.45)"/>
+    <circle cx="260" cy="36" r="4" fill="#34d399">
+      <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="36" r="4" fill="none" stroke="#34d399" stroke-width="1.5">
+      <animate attributeName="r" values="4;11" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="270" y="40" font-size="9.5" fill="#a7f3d0">24h Response</text>
+  </g>
+
+  <rect x="70" y="48" width="260" height="176" rx="14" fill="#0b1526" stroke="rgba(96,165,250,0.35)" stroke-width="1.5"/>
+  <circle cx="86" cy="64" r="3" fill="#ef4444" opacity="0.55"/>
+  <circle cx="97" cy="64" r="3" fill="#eab308" opacity="0.55"/>
+  <circle cx="108" cy="64" r="3" fill="#22c55e" opacity="0.55"/>
+  <text x="136" y="68" font-size="10.5" fill="#e2e8f0">Ask an Expert</text>
+  <rect x="264" y="58" width="54" height="16" rx="8" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.45)" stroke-width="1"/>
+  <circle cx="273" cy="66" r="2.5" fill="#34d399">
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="270" cy="80" r="3" fill="#60a5fa" opacity="0.4">
-    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
-  </circle>
+  <text x="281" y="69.5" font-size="7.5" font-weight="600" fill="#4ade80">Online</text>
+
+  <g>
+    <rect x="176" y="88" width="138" height="42" rx="19" fill="rgba(37,99,235,0.3)" stroke="rgba(96,165,250,0.6)" stroke-width="1">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.4s" fill="freeze"/>
+    </rect>
+    <text x="245" y="114" text-anchor="middle" font-size="11.5" fill="#e0f2fe">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.5s" fill="freeze"/>What is 4DAlert?
+    </text>
+  </g>
+
+  <g>
+    <rect x="88" y="146" width="184" height="58" rx="16" fill="rgba(15,23,42,0.65)" stroke="rgba(167,139,250,0.5)" stroke-width="1">
+      <animate attributeName="opacity" values="0;1" dur="0.7s" begin="1s" fill="freeze"/>
+    </rect>
+    <text x="104" y="167" font-size="10" fill="#cbd5e1">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.15s" fill="freeze"/>4DAlert automates reconciliation,
+    </text>
+    <text x="104" y="183" font-size="10" fill="#cbd5e1">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.35s" fill="freeze"/>data quality, and observability.
+    </text>
+    <rect x="250" y="175" width="2" height="10" fill="#a78bfa">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g>
+    <rect x="74" y="230" width="100" height="24" rx="12" fill="#0b1526" stroke="rgba(167,139,250,0.45)"/>
+    <circle cx="86" cy="242" r="3.5" fill="#a78bfa">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="98" y="245.5" font-size="9.5" fill="#d5c9f5">800+ Experts</text>
+  </g>
+  <g>
+    <rect x="232" y="230" width="96" height="24" rx="12" fill="#0b1526" stroke="rgba(56,189,248,0.45)"/>
+    <circle cx="244" cy="242" r="3.5" fill="#38bdf8">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="256" y="245.5" font-size="9.5" fill="#bae6fd">Free Consultation</text>
+  </g>
 </svg>
