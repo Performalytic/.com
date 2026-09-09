@@ -27,15 +27,15 @@
     }
 
     // Staggered reveal for grid items
-    var gridContainers = document.querySelectorAll('.services-grid, .solutions-grid, .tech-grid, .trust-grid, .process-grid, .industries-grid');
+    var gridContainers = document.querySelectorAll('.services-grid, .solutions-grid, .tech-grid, .trust-grid, .process-grid, .industries-grid, .tech-card-grid');
     gridContainers.forEach(function(grid) {
-      var items = grid.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card');
+      var items = grid.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card, .tech-card');
       if (!items.length) return;
 
       var gridObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            var gridItems = entry.target.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card');
+            var gridItems = entry.target.querySelectorAll('.service-card, .solution-card, .tech-item, .trust-item, .process-step, .industry-card, .tech-card');
             gridItems.forEach(function(item, index) {
               setTimeout(function() {
                 item.classList.add('revealed');
