@@ -71,11 +71,20 @@ section{padding:80px 0}
  
 .culture-section{background:linear-gradient(180deg,#080e1c 0%,#0c1425 100%)}
 .culture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px}
-.culture-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1)}
-.culture-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.2);border-color:#60a5fa}
-.culture-icon{width:56px;height:56px;border-radius:14px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.culture-card h3{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
-.culture-card p{font-size:0.9rem;color:#64748b;line-height:1.7}
+.culture-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1),border-color .45s;z-index:1}
+.culture-card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:conic-gradient(from var(--ang,0deg),#60a5fa,transparent 25%,transparent 75%,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .45s;pointer-events:none;animation:spin 5s linear infinite paused;z-index:2}
+.culture-card::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,0.09),transparent);transform:skewX(-20deg);transition:left .7s cubic-bezier(.16,1,.3,1);pointer-events:none;z-index:3}
+.culture-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px -20px rgba(37,99,235,0.28);border-color:rgba(96,165,250,0.4)}
+.culture-card:hover::before{opacity:1;animation-play-state:running}
+.culture-card:hover::after{left:150%}
+.culture-icon{width:56px;height:56px;border-radius:14px;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:transform .45s cubic-bezier(.16,1,.3,1),background .45s,box-shadow .45s}
+.culture-card:hover .culture-icon{transform:rotate(-8deg) scale(1.12);background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 12px 24px -6px rgba(37,99,235,0.5)}
+.culture-icon svg{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.culture-card:hover .culture-icon svg{stroke:#fff;transform:scale(1.1)}
+.culture-card h3{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px;transition:color .3s}
+.culture-card:hover h3{color:#93c5fd}
+.culture-card p{font-size:0.9rem;color:#64748b;line-height:1.7;transition:color .3s}
+.culture-card:hover p{color:#94a3b8}
  
 .openings-section{background:linear-gradient(180deg,#080e1c 0%,#0c1425 100%)}
 .jobs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:28px;margin-top:48px}
@@ -226,22 +235,23 @@ section{padding:60px 0}
   </nav>
   </header>
   <main id="main-content">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge" role="text">Careers</div>
-        <h1>Build your <span>future with us</span></h1>
-        <p>Join a team of 800+ data experts shaping the future of digital strategy, analytics, and AI. We&#x27;re hiring across roles &mdash; find yours below.</p>
-        <div class="hero-btns">
-          <a href="#openings" class="btn-primary">View Open Positions &rarr;</a>
+  <section class="hero" aria-label="Careers banner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge" role="text">Careers</div>
+          <h1>Build your <span>future with us</span></h1>
+          <p>Join a team of 800+ data experts shaping the future of digital strategy, analytics, and AI. We&#x27;re hiring across roles &mdash; find yours below.</p>
+          <div class="hero-btns">
+            <a href="#openings" class="btn-primary">View Open Positions &rarr;</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/assets/images/svg/hero-careers.svg" alt="Careers at Performalytic" class="hero-illustration" width="400" height="280" />
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="/assets/images/svg/hero-careers.svg" alt="Careers at Performalytic" class="hero-illustration" width="400" height="280" />
-      </div>
     </div>
-  </div>
-</section>
+    </section>
  
 <section class="culture-section" aria-label="Why work with us">
   <div class="container">
